@@ -46,12 +46,14 @@ const IndexPageTemplate = ({ data }) => {
                 items-center justify-center px-4 relative"
             >
               <GatsbyImage className="max-w-full sm:max-w-none" image={logoPier} alt="Pier logo" />
-              <GatsbyImage 
-                className="w-24 lg:w-52 absolute bottom-8 right-8
-                lg:bottom-24 lg:right-28" 
-                image={allinclusive} 
-                alt="All inclusive" 
-              />
+              <div className="absolute bottom-8 right-8
+                  lg:bottom-24 lg:right-28">
+                <GatsbyImage 
+                  className="w-24 lg:w-52" 
+                  image={allinclusive} 
+                  alt="All inclusive" 
+                /> 
+              </div>
             </div>
           </div>
         </Carousel.Item>
