@@ -38,7 +38,7 @@ const Navbar = class extends React.Component {
     return (
       <header className="flex justify-center text-white shadow-xl bg-gray-900">
         <div className="flex-col sm:flex-row items-center flex justify-center sm:justify-between w-full sm:w-4/5 p-5">
-          <div className="flex w-full justify-center sm:justify-start relative">
+          <div className="flex w-full md:w-auto justify-center sm:justify-start relative">
             <button id="nav-btn" className="sm:hidden absolute left-3 inset-y-0 p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset">
               <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" aria-hidden="true">
@@ -78,7 +78,7 @@ const Navbar = class extends React.Component {
               </button>
             </nav>
           </div>
-          <div className="hidden inline-flex items-center">
+          <div className="hidden sm:inline-flex items-center">
             <button type="button" className="mx-2 inline-flex rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <img className="w-8 fill-current hover:text-black" src={flex} alt="Tarifa Flex" />
               <span>Tarifa flex</span>
