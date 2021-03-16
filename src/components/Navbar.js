@@ -11,7 +11,13 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      destinationsActive: false,
     }
+    this.destinationsDisplay = this.destinationsDisplay.bind(this)
+  }
+
+  destinationsDisplay (event) {
+    this.setState({destinationsActive: true})
   }
 
   toggleHamburger = () => {
@@ -58,12 +64,52 @@ const Navbar = class extends React.Component {
               <a href="/" className="mx-4 p-2">
                 Inicio
               </a>
-              <button type="button" className="rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
-                <span>Destinos</span>
-                <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
+              <div className="relative">
+                <button 
+                  onClick={this.destinationsDisplay}
+                  type="button" 
+                  className="rounded-md p-2 inline-flex 
+                    items-center justify-center 
+                    hover:text-gray-900 
+                    hover:bg-white focus:outline-none 
+                    focus:ring-2 focus:ring-inset 
+                    focus:ring-white" 
+                  ariaExpanded="false"
+                >
+                  <span>Destinos</span>
+                  <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+
+                <div className={`${this.state.destinationsActive? 'block' : 'hidden'} absolute z-50 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}>
+                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                      <Link
+                        to="/destinos/hotel-pier-bacalar/"
+                        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                      >
+                        <div className="ml-4">
+                          <p className="text-base font-medium text-gray-900">
+                            Pier Bacalar - All Inclusive
+                          </p>
+                        </div>
+                      </Link>
+                      <Link
+                        to="/destinos/hotel-casa-maya-holbox/"
+                        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                      >
+                        <div className="ml-4">
+                          <p className="text-base font-medium text-gray-900">
+                            Casa Maya Holbox
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
               <button type="button" className="rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
                 <span>Tours</span>
                 <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -79,7 +125,7 @@ const Navbar = class extends React.Component {
             </nav>
           </div>
           <div className="hidden sm:inline-flex items-center">
-            <button type="button" className="mx-2 inline-flex rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <button type="button" className="mx-2 rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <img className="w-8 fill-current hover:text-black" src={flex} alt="Tarifa Flex" />
               <span>Tarifa flex</span>
             </button>
