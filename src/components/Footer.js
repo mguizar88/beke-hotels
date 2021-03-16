@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="fixed bottom-0 z-0 w-full h-96" style={{backgroundColor: '#08495f'}}>
+      <footer className="fixed 2xl:static bottom-0 z-0 w-full h-96" style={{backgroundColor: '#08495f'}}>
         <div className="grid grid-cols-1 sm:grid-cols-3 
           w-full sm:w-4/5 mx-auto text-white p-4 xl:p-16 
           gap-4 sm:gap-8 xl:text-2xl break-words"

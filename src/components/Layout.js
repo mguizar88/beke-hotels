@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Reservation from '../components/Reservation'
 
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
@@ -49,7 +50,12 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-gray-100 relative z-10 mb-96">{children}</div>
+      <div 
+        className="bg-gray-100 relative z-10 mb-96 2xl:mb-0 mx-auto"
+      >
+        {children}
+      </div>
+      <Reservation />
       <Footer />
     </div>
   )

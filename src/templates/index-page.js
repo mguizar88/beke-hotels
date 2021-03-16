@@ -76,12 +76,12 @@ const IndexPageTemplate = ({ data }) => {
         </Carousel.Item>
       </Carousel>
 
-      <section>
+      <section className="container mx-auto">
         <h1 className="sm:text-6xl text-2xl text-gray-900 my-4
-        font-bold text-center sm:my-36">
+        font-bold text-center sm:mt-24">
           BEKE HOTELS
         </h1>
-         
+        
         <div className="grid grid-cols-1 grid-rows-none sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4">
           <div className="sm:col-span-2 row-span-2">
             <GatsbyImage className="max-w-full rounded-sm" image={laguna} alt="Bacalar" />
@@ -111,7 +111,7 @@ const IndexPageTemplate = ({ data }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 sm:my-36">
+        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4">
           <div className="sm:col-span-2 row-span-2 flex flex-col">
             <GatsbyImage className="max-w-full rounded-sm" image={second} alt="Bacalar" />
             <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
@@ -144,10 +144,10 @@ const IndexPageTemplate = ({ data }) => {
         </div>
       </section>
 
-      <section>
+      <section className="container mx-auto">
         <h2
           className="sm:text-6xl text-2xl text-gray-900 my-4
-            font-bold text-center sm:my-36"
+            font-bold text-center sm:mt-24"
         >
           REVIEWS
         </h2>
@@ -165,7 +165,7 @@ const IndexPageTemplate = ({ data }) => {
       </section>
 
       <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 mt-16 sm:mt-36">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-16 sm:mt-24">
             <div>
               <iframe 
                 title="map"
@@ -179,33 +179,33 @@ const IndexPageTemplate = ({ data }) => {
               <h3 className="text-4xl text-bold mb-4">LOCACIONES</h3>
               <p>
                 Disfruta los destinos más increíbles de la
-                 península de Yucatán y el estado de Quintana Roo
+                península de Yucatán y el estado de Quintana Roo
                   en los hoteles que Béke Hotels tiene a tu
-                   disposición para que puedas relajarte.
+                  disposición para que puedas relajarte.
               </p>
             </div>
         </div>
       </section>
 
       <section>
-        <div 
-          className="bg-fixed" 
-          style={{
-            backgroundImage: `url(${flamencosSrc})`
-          }}
-        >
-          <div className="p-8 sm:p-36 bg-blue-50 bg-opacity-70 text-center">
-            <GatsbyImage image={bekeAzul} alt="Beke blue logo"/>
-            <p style={{color: '#08495f'}} className="max-w-3xl mx-auto my-5 sm:text-2xl rounded  sm:p-8 p-4 ring-4 ring-blue-900">
-              En Béke Hotels nos esforzamos por siempre ofrecer una
-              experiencia diferente, que deja a todos nuestros 
-              huéspedes con ganas de regresar a disfrutar de nuestro 
-              servicio, hospedaje, instalaciones y esa esencia que nos 
-              caracteriza.
-            </p>
-          </div>
+      <div 
+        className="bg-fixed" 
+        style={{
+          backgroundImage: `url(${flamencosSrc})`
+        }}
+      >
+        <div className="p-8 sm:p-36 bg-blue-50 bg-opacity-70 text-center">
+          <GatsbyImage image={bekeAzul} alt="Beke blue logo"/>
+          <p style={{color: '#08495f'}} className="max-w-3xl mx-auto my-5 sm:text-2xl rounded  sm:p-8 p-4 ring-4 ring-blue-900">
+            En Béke Hotels nos esforzamos por siempre ofrecer una
+            experiencia diferente, que deja a todos nuestros 
+            huéspedes con ganas de regresar a disfrutar de nuestro 
+            servicio, hospedaje, instalaciones y esa esencia que nos 
+            caracteriza.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
     </Layout>
   )
@@ -225,6 +225,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   first: file(relativePath: {eq: "2.jpg"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: FULL_WIDTH
         width: 1920
         placeholder: BLURRED 
         formats: [WEBP]
@@ -235,6 +236,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   second: file(relativePath: {eq: "14.jpg"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: FULL_WIDTH
         width: 1920
         placeholder: BLURRED 
         formats: [WEBP]
@@ -245,7 +247,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   flamencos: file(relativePath: {eq: "flamencos.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 1920
+        layout: CONSTRAINED
+        width: 1536
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 70
@@ -255,6 +258,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   secondSmall: file(relativePath: {eq: "14.jpg"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 1024
         placeholder: BLURRED 
         formats: [WEBP]
@@ -265,6 +269,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   laguna: file(relativePath: {eq: "laguna.jpg"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 1024
         placeholder: BLURRED 
         formats: [WEBP]
@@ -275,7 +280,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   pierMuelle: file(relativePath: {eq: "pier-muelle.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400 
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -285,7 +291,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   lagunaBacalar: file(relativePath: {eq: "bacalar-laguna.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -295,7 +302,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   muelle: file(relativePath: {eq: "muelle.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -305,7 +313,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   duck: file(relativePath: {eq: "duck.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -315,7 +324,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   cm: file(relativePath: {eq: "casa-maya.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -325,7 +335,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   cmPlaya: file(relativePath: {eq: "casa-maya-portafolio.png"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -335,7 +346,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   cmSecond: file(relativePath: {eq: "3.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -345,7 +357,8 @@ export const pageQuery = graphql`query IndexPageTemplate {
   cmThird: file(relativePath: {eq: "35.jpg"}) {
     childImageSharp {
       gatsbyImageData(
-        width: 512
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100
@@ -355,6 +368,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   pierReview: file(relativePath: {eq: "pier-review-btn.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 462
         placeholder: BLURRED 
         formats: [WEBP]
@@ -365,6 +379,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   cmReview: file(relativePath: {eq: "cm-review-button.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 462
         placeholder: BLURRED 
         formats: [WEBP]
@@ -375,6 +390,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   xoReview: file(relativePath: {eq: "xo-btn.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 462
         placeholder: BLURRED 
         formats: [WEBP]
@@ -385,6 +401,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   pier: file(relativePath: {eq: "pier.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 334
         placeholder: BLURRED 
         formats: [WEBP]
@@ -395,6 +412,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   casamaya: file(relativePath: {eq: "logo-casa-maya.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 334
         placeholder: BLURRED 
         formats: [WEBP]
@@ -405,6 +423,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   bekeAzul: file(relativePath: {eq: "logo-beke-azul.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 200
         placeholder: BLURRED 
         formats: [WEBP]
@@ -415,6 +434,7 @@ export const pageQuery = graphql`query IndexPageTemplate {
   allinclusive: file(relativePath: {eq: "all-inclusive.png"}) {
     childImageSharp {
       gatsbyImageData(
+        layout: CONSTRAINED
         width: 300
         placeholder: BLURRED 
         formats: [WEBP]

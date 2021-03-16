@@ -1,3 +1,6 @@
+const { resolve } = require(`path`)
+const { platform } = require(`os`)
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby + Netlify CMS Starter',
