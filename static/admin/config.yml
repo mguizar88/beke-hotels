@@ -23,6 +23,13 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Room Image", name: "roomimage", widget: image}
+      - {
+          label: "Amenities", name: "amenities", widget: list,
+          fields: 
+            [
+              {label: "amenity", name: "amenity", widget: string}
+            ]
+        }
       - {label: "Hotel", name: "hotel", widget: string}
 
   - name: "pages"
