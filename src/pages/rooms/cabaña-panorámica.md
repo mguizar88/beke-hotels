@@ -13,5 +13,8 @@ description: Con sus 6 habitaciones rodeado de naturaleza hace un entorno de
   vacaciones en pareja o en familia.
 featuredimage: /img/pier-muelle.jpg
 roomimage: /img/20-1024x768.jpg
+amenities:
+  - amenity: 1 camas king size
+  - amenity: Vista a laguna
 hotel: hotel-pier-bacalar
 ---
