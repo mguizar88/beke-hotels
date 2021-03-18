@@ -31,12 +31,12 @@ const Footer = class extends React.Component {
               <h3 className="mb-4">Enlaces Rápidos</h3>
             </div>
             <div>
-              <a className="block m-2" href="#">
+              <Link className="block m-2" to="/">
                 Políticas de privacidad
-              </a>
-              <a className="block m-2" href="#">
+              </Link>
+              <Link className="block m-2" to="/">
                 Políticas de cookies
-              </a>
+              </Link>
             </div>
           </div>
           <div className="divide-y divide-yellow-400">

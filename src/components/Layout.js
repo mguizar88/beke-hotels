@@ -3,14 +3,51 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Reservation from '../components/Reservation'
+import PromoModal from '../components/PromoModal'
 
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ children }) => {
+export default class Layout extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      modalIsActive: false,
+    }
+    this.modalHandler = this.modalHandler.bind(this)
+  }
+
+  modalHandler(event) {
+    this.setState(
+      {
+        modalIsActive: !this.state.modalIsActive
+      }
+    )
+  }
+
+  render() {
+
+    const children = this.props.children
+
+    return (
+      <TemplateWrapper modalIsActive={this.state.modalIsActive} modalHandler={this.modalHandler} children={children}/>
+    )
+  }
+
+}
+
+const TemplateWrapper = ({children, modalHandler, modalIsActive}) => {
+  
   const { title, description } = useSiteMetadata()
+
   return (
-    <div>
+    <div className="relative">
+      {
+        
+        modalIsActive
+        ? <PromoModal handler={modalHandler} />
+        : ''
+      }
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -49,8 +86,10 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <Navbar modalHandler={modalHandler} />
+      
       <div 
+
         className="bg-gray-100 relative z-10 mb-96 2xl:mb-0 mx-auto"
       >
         {children}
@@ -59,6 +98,6 @@ const TemplateWrapper = ({ children }) => {
       <Footer />
     </div>
   )
+
 }
 
-export default TemplateWrapper

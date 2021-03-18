@@ -37,7 +37,7 @@ const Reservation = class extends React.Component {
     render() {
         return (
             <div 
-                className="fixed bottom-0 z-50 w-full 
+                className="fixed bottom-0 z-40 w-full 
                 text-white bg-gray-900"
             >
                 <form 

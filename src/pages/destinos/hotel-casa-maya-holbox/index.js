@@ -2,8 +2,8 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-import Layout from '../../components/Layout'
-import video from '../../img/cm-video.mp4'
+import Layout from '../../../components/Layout'
+import video from '../../../img/cm-video.mp4'
 
 const CasaMayaPage = ({data}) => {
 
@@ -190,7 +190,7 @@ const CasaMayaPage = ({data}) => {
                     </div>
                     <div className="sm:p-16">
                         <h2
-                            className="text-beke text-3xl
+                            className="text-beke sm:text-xl xl:text-3xl
                                 mb-4 text-center"
                         >
                             HOLBOX

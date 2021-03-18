@@ -12,12 +12,26 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: '',
       destinationsActive: false,
+      destinationsActiveClass: 'hidden',
     }
     this.destinationsDisplay = this.destinationsDisplay.bind(this)
   }
 
-  destinationsDisplay (event) {
-    this.setState({destinationsActive: true})
+  destinationsDisplay () {
+    this.setState(
+      {
+        destinationsActive: !this.state.destinationsActive
+      },
+      () => {
+        this.state.destinationsActive
+          ? this.setState({
+            destinationsActiveClass: 'block',
+          })
+          : this.setState({
+            destinationsActiveClass: 'hidden',
+          })
+      }
+    )
   }
 
   toggleHamburger = () => {
@@ -41,6 +55,7 @@ const Navbar = class extends React.Component {
   }
 
   render() {
+    
     return (
       <header className="flex justify-center text-white shadow-xl bg-gray-900">
         <div className="flex-col sm:flex-row items-center flex justify-center sm:justify-between w-full sm:w-4/5 p-5">
@@ -61,9 +76,9 @@ const Navbar = class extends React.Component {
           </div>
           <div id="nav-links" className="hidden sm:block p-4 sm:p-0">
             <nav className="flex">
-              <a href="/" className="mx-4 p-2">
+              <Link to="/" className="mx-4 p-2">
                 Inicio
-              </a>
+              </Link>
               <div className="relative">
                 <button 
                   onClick={this.destinationsDisplay}
@@ -74,7 +89,7 @@ const Navbar = class extends React.Component {
                     hover:bg-white focus:outline-none 
                     focus:ring-2 focus:ring-inset 
                     focus:ring-white" 
-                  ariaExpanded="false"
+                  aria-expanded="false"
                 >
                   <span>Destinos</span>
                   <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -82,7 +97,7 @@ const Navbar = class extends React.Component {
                   </svg>
                 </button>
 
-                <div className={`${this.state.destinationsActive? 'block' : 'hidden'} absolute z-50 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}>
+                <div className={`${ this.state.destinationsActiveClass } absolute z-50 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}>
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       <Link
@@ -125,7 +140,15 @@ const Navbar = class extends React.Component {
             </nav>
           </div>
           <div className="hidden sm:inline-flex items-center">
-            <button type="button" className="mx-2 rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <button 
+              onClick={this.props.modalHandler}
+              type="button" 
+              className="mx-2 rounded-md p-2 inline-flex 
+                items-center justify-center 
+                hover:text-gray-900 hover:bg-white 
+                focus:outline-none focus:ring-2 
+                focus:ring-inset focus:ring-white"
+            >
               <img className="w-8 fill-current hover:text-black" src={flex} alt="Tarifa Flex" />
               <span>Tarifa flex</span>
             </button>

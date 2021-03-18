@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
+    create: '[skip ci] Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
     delete: 'Delete {{collection}} “{{slug}}”'
     uploadMedia: '[skip ci] Upload “{{path}}”'
@@ -12,20 +12,18 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "hotels"
-    label: "Hotels"
-    folder: "src/pages/hotels"
+  - name: "rooms"
+    label: "Rooms"
+    folder: "src/pages/rooms"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Short Description", name: "shortdescription", widget: "text"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Room Image", name: "roomimage", widget: image}
+      - {label: "Hotel", name: "hotel", widget: string}
 
   - name: "pages"
     label: "Pages"

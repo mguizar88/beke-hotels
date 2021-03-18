@@ -2,8 +2,8 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-import Layout from '../../components/Layout'
-import video from '../../img/pier-video.mp4'
+import Layout from '../../../components/Layout'
+import video from '../../../img/pier-video.mp4'
 
 const PierPage = ({data}) => {
 
