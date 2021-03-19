@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: SUITE TERRAZA
 shortdescription: >-
   suite con dos camas queen size y vista al jardín.

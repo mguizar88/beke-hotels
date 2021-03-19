@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: BUNGALOW FRENTE AL MAR
 shortdescription: Con cama king size, un sofá cama individual, baño privado y
   vista parcial al mar.

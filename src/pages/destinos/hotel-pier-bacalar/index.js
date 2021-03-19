@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -66,12 +66,12 @@ const PierPage = ({data}) => {
                         />
                     </div>
                     <div 
-                        className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                        className="p-4 sm:p-10 flex items-center 
+                            justify-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                mb-4 text-center w-4/5"
+                                mb-4 text-center "
                         >
                             SUITE TERRAZA
                         </h2>
@@ -79,35 +79,49 @@ const PierPage = ({data}) => {
                             suite con dos camas queen size 
                             y vista al jardín.
                         </p>
-                        <p className="text-beke text-lg text-justify w-4/5">
+                        <p className="text-beke text-lg text-justify ">
                             Habitación perfecta para familias que buscan comodidad. Todas las
                             habitaciones cuentan con dos camas queen size, televisión, baño completo, cocineta,
                             refrigerador, microondas y lo mejor de todo, están a unos cuantos metros de la laguna de
                             Bacalar.
                         </p>
+                        <Link 
+                            to="/hotel-pier-bacalar/rooms/suite-terraza/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                     <div 
-                        className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                        className="p-4 sm:p-10 flex ml-auto 
+                            justify-center flex-col w-4/5 items-center"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                mb-4 text-center w-4/5 ml-auto"
+                                mb-4 text-center"
                         >
                             SUITE PANORÁMICA
                         </h2>
                         <p 
                             className="text-beke text-xl 
-                            w-4/5 text-justify ml-auto"
+                             text-justify ml-auto"
                         >
                             Cama King Size con terraza y 
                             vista parcial a la laguna.
                         </p>
-                        <p className="w-4/5 ml-auto text-beke text-lg text-justify">
+                        <p className=" ml-auto text-beke text-lg text-justify">
                             Habitación familiar que cuenta con el beneficio de tener una hermosa
                             vista a la laguna de Bacalar. Todas las habitaciones cuentan con una cama king size y un
                             sofá cama matrimonial, televisión, baño completo, cocineta, refrigerador y microondas.
                         </p>
+                        <Link 
+                            to="/hotel-pier-bacalar/rooms/suite-panorámica-con-vista-parcial-a-la-laguna/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                     <div 
                         className="sm:h-96"
@@ -128,20 +142,20 @@ const PierPage = ({data}) => {
                         />
                     </div>
                     <div 
-                        className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                        className="p-4 sm:p-10 flex items-center
+                            justify-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                text-center mb-4 w-4/5"
+                                text-center mb-4 "
                         >
                             CABAÑA PANORÁMICA 
                         </h2>
-                        <p className="text-beke text-xl text-justify w-4/5">
+                        <p className="text-beke text-xl text-justify ">
                             Suite con cama King Size y 
                             vista parcial a la laguna.
                         </p>
-                        <p className="text-beke text-lg text-justify w-4/5">
+                        <p className="text-beke text-lg text-justify ">
                             Habitación perfecta para 
                             parejas que buscan un lugar 
                             romántico para relajarse y 
@@ -150,6 +164,13 @@ const PierPage = ({data}) => {
                             cuenta con una cama
                             king size y baño completo.
                         </p>
+                        <Link 
+                            to="/hotel-pier-bacalar/rooms/cabaña-panorámica/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                 </div>
             </section>

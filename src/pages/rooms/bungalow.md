@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: BUNGALOW
 shortdescription: Bungalow con una cama matrimonial y una cama individual, baño
   privado y vista al jardín.

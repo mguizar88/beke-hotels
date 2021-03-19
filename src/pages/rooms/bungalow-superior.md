@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: BUNGALOW SUPERIOR
 shortdescription: Ideales para familias grandes, con dos camas matrimoniales,
   una cama individual y baño privado.

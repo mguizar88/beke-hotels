@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -59,35 +59,49 @@ const CasaMayaPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                            justify-center items-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                mb-4 text-center w-4/5"
+                                mb-4 text-center "
                         >
                             BUNGALOW FRENTE AL MAR
                         </h2>
         
-                        <p className="text-beke text-lg text-justify w-4/5">
+                        <p className="text-beke text-lg text-justify ">
                             Con cama king size, un sofá cama individual, baño privado y vista
                             parcial al mar.
                         </p>
+                        <Link 
+                            to="/hotel-casa-maya-holbox/rooms/bungalow-frente-al-mar/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                            justify-center ml-auto items-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                mb-4 text-center w-4/5 ml-auto"
+                                mb-4 text-center"
                         >
                             BUNGALOW SUPERIOR
                         </h2>
                         
-                        <p className="w-4/5 ml-auto text-beke text-lg text-justify">
+                        <p className=" ml-auto text-beke text-lg text-justify">
                             Ideales para familias grandes, con dos camas matrimoniales, una cama
                             individual y baño privado.
                         </p>
+                        <Link 
+                            to="/hotel-casa-maya-holbox/rooms/bungalow-superior/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                     <div 
                         className="sm:h-96"
@@ -109,35 +123,49 @@ const CasaMayaPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                            justify-center items-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                text-center mb-4 w-4/5"
+                                text-center mb-4 "
                         >
                             BUNGALOW CON VISTA AL MAR 
                         </h2>
-                        <p className="text-beke text-lg text-justify w-4/5">
+                        <p className="text-beke text-lg text-justify ">
                             Cercano al mar, ideal para parejas,
                             cuenta con una cama king size, sofá cama individual, baño privado y vista parcial al
                             mar.
                         </p>
+                        <Link 
+                            to="/hotel-casa-maya-holbox/rooms/bungalow-con-vista-al-mar/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                            justify-center ml-auto items-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                mb-4 text-center w-4/5 ml-auto"
+                                mb-4 text-center "
                         >
                             BUNGALOW
                         </h2>
                         
-                        <p className="w-4/5 ml-auto text-beke text-lg text-justify">
+                        <p className=" ml-auto text-beke text-lg text-justify">
                             Bungalow con una cama matrimonial y una cama individual, baño
                             privado y vista al jardín.
                         </p>
+                        <Link 
+                            to="/hotel-casa-maya-holbox/rooms/bungalow/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                     <div 
                         className="sm:h-96"
@@ -159,19 +187,26 @@ const CasaMayaPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center flex-col"
+                            justify-center items-center flex-col w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                text-center mb-4 w-4/5"
+                                text-center mb-4 "
                         >
                             BUNGALOW ESTÁNDAR 
                         </h2>
-                        <p className="text-beke text-lg text-justify w-4/5">
+                        <p className="text-beke text-lg text-justify ">
                             Habitación perfecta para viajeros que buscan un lugar para descansar
                             y aprovechar al máximo la isla. La habitación cuenta con una cama matrimonial, baño privado
                             y televisión con cable.
                         </p>
+                        <Link 
+                            to="/hotel-casa-maya-holbox/rooms/bungalow-estándar/"
+                            className="p-2 text-white bg-beke
+                                rounded-md w-1/6 text-center mt-4"
+                        >
+                            Ver más
+                        </Link>
                     </div>
                 </div>
             </section>

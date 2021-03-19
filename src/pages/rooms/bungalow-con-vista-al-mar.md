@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: BUNGALOW CON VISTA AL MAR
 shortdescription: Cercano al mar, ideal para parejas, cuenta con una cama king
   size, sofá cama individual, baño privado y vista parcial al mar

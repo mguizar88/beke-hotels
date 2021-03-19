@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: SUITE PANORÁMICA CON VISTA PARCIAL A LA LAGUNA
 shortdescription: >-
   Cama King Size con terraza y vista parcial a la laguna.

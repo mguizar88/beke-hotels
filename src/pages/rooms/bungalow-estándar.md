@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: BUNGALOW ESTÁNDAR
 shortdescription: Habitación perfecta para viajeros que buscan un lugar para
   descansar y aprovechar al máximo la isla. La habitación cuenta con una cama

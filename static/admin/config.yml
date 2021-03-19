@@ -17,7 +17,7 @@ collections:
     folder: "src/pages/rooms"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "room-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Short Description", name: "shortdescription", widget: "text"}
       - {label: "Description", name: "description", widget: "text"}

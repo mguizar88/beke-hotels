@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: room-page
 title: CABAÑA PANORÁMICA
 shortdescription: >-
   Suite con cama King Size y vista parcial a la laguna.
