@@ -15,7 +15,7 @@ export default class Layout extends React.Component {
     super()
     this.state = {
       modalIsActive: true,
-      windowWidth: window.innerWidth,
+      windowWidth: null,
       reservationBarActive: false,
       reservationBarActiveClass: 'max-h-0'
     }
@@ -25,6 +25,12 @@ export default class Layout extends React.Component {
   }
 
   componentDidMount() {
+    if(typeof window !== 'undefined') {
+      this.setState({
+        windowWidth: window.innerWidth
+      })
+    }
+    
     window.addEventListener("resize", this.resizeHandler)
   }
 
