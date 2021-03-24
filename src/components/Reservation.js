@@ -35,10 +35,16 @@ const Reservation = class extends React.Component {
     }
 
     render() {
+
+        console.log(this.props.class)
+
         return (
             <div 
-                className="fixed bottom-0 z-40 w-full 
-                text-white bg-gray-900"
+                className={`${this.props.class} sm:max-h-full
+                    fixed bottom-0 z-40 w-full text-white 
+                    bg-gray-900 sm:h-auto mb-16 sm:mb-0
+                    transition-all duration-500`
+                }
             >
                 <form 
                     onSubmit={this.callBookingEngine}

@@ -17,7 +17,7 @@ const CasaMayaPage = ({data}) => {
 
     return (
         <Layout>
-            <div style={{height: '600px'}} className="relative overflow-hidden">
+            <div className="sm:h-screen relative overflow-hidden">
             <video  
                 src={video} 
                 muted 
@@ -28,7 +28,7 @@ const CasaMayaPage = ({data}) => {
             </video>
             </div>
             <section 
-                className="container mx-auto text-center p-4
+                className="container mx-auto text-center px-4 mb-16
                     sm:py-32"
             >
                 <GatsbyImage 
@@ -38,7 +38,7 @@ const CasaMayaPage = ({data}) => {
                 />
                 <p 
                     className="sm:max-w-2xl mx-auto text-justify 
-                        mt-12 text-beke"
+                        sm:mt-12 text-beke"
                 >
                     Ubicado en la primera línea de playa de la encantadora isla de Holbox, hotel Casa Maya es un acogedor donde disfrutarás de las mejores vistas del amanecer y atardecer del Caribe mexicano.  Podrás relajarte en nuestro club de playa mientras tomas un delicioso cóctel o recorrer la isla en bicicleta con el mar color turquesa de fondo.
                     Si vacacionas en Holbox, no puedes perderte el característico tour de bioluminiscencia, un encuentro con la naturaleza que convertirá tu visita en una experiencia mágica.
@@ -59,7 +59,7 @@ const CasaMayaPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center items-center flex-col w-4/5"
+                            justify-center items-center flex-col sm:w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -75,14 +75,15 @@ const CasaMayaPage = ({data}) => {
                         <Link 
                             to="/hotel-casa-maya-holbox/rooms/bungalow-frente-al-mar/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center ml-auto items-center flex-col w-4/5"
+                            justify-center ml-auto items-center 
+                            flex-col sm:w-4/5 order-2 sm:order-none"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -98,13 +99,13 @@ const CasaMayaPage = ({data}) => {
                         <Link 
                             to="/hotel-casa-maya-holbox/rooms/bungalow-superior/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
                     </div>
                     <div 
-                        className="sm:h-96"
+                        className="sm:h-96 order-1 sm:order-none"
                     >
                         <GatsbyImage 
                             className="h-full w-full"
@@ -123,11 +124,11 @@ const CasaMayaPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center items-center flex-col w-4/5"
+                            justify-center items-center flex-col sm:w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
-                                text-center mb-4 "
+                                text-center mb-4"
                         >
                             BUNGALOW CON VISTA AL MAR 
                         </h2>
@@ -139,14 +140,15 @@ const CasaMayaPage = ({data}) => {
                         <Link 
                             to="/hotel-casa-maya-holbox/rooms/bungalow-con-vista-al-mar/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex 
-                            justify-center ml-auto items-center flex-col w-4/5"
+                            justify-center ml-auto items-center 
+                            flex-col sm:w-4/5 order-4 sm:order-none"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -162,13 +164,13 @@ const CasaMayaPage = ({data}) => {
                         <Link 
                             to="/hotel-casa-maya-holbox/rooms/bungalow/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
                     </div>
                     <div 
-                        className="sm:h-96"
+                        className="sm:h-96 order-3 sm:order-none"
                     >
                         <GatsbyImage 
                             className="h-full w-full"
@@ -186,8 +188,8 @@ const CasaMayaPage = ({data}) => {
                         />
                     </div>
                     <div 
-                        className="p-4 sm:p-10 flex 
-                            justify-center items-center flex-col w-4/5"
+                        className="p-4 sm:p-10 flex
+                            justify-center items-center flex-col sm:w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -203,7 +205,7 @@ const CasaMayaPage = ({data}) => {
                         <Link 
                             to="/hotel-casa-maya-holbox/rooms/bungalow-estándar/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
@@ -223,7 +225,7 @@ const CasaMayaPage = ({data}) => {
                             alt="Bacalar" 
                         />
                     </div>
-                    <div className="sm:p-16">
+                    <div className="p-4 sm:p-16">
                         <h2
                             className="text-beke sm:text-xl xl:text-3xl
                                 mb-4 text-center"

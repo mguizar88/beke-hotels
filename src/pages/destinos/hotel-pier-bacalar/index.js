@@ -10,12 +10,12 @@ const PierPage = ({data}) => {
     const logo = getImage(data.logo)
     const terraza = getImage(data.terraza)
     const panoramica = getImage(data.panoramica)
-    const cabana = getImage(data.panoramica)
+    const cabana = getImage(data.cabana)
     const bacalar = getImage(data.bacalar)
 
     return (
         <Layout>
-            <div style={{height: '600px'}} className="relative overflow-hidden">
+            <div className="sm:h-screen relative overflow-hidden">
             <video  
                 src={video} 
                 muted 
@@ -67,7 +67,7 @@ const PierPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex items-center 
-                            justify-center flex-col w-4/5"
+                            justify-center flex-col sm:w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -88,14 +88,15 @@ const PierPage = ({data}) => {
                         <Link 
                             to="/hotel-pier-bacalar/rooms/suite-terraza/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex ml-auto 
-                            justify-center flex-col w-4/5 items-center"
+                            justify-center flex-col sm:w-4/5 
+                            items-center order-2 sm:order-none"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -118,13 +119,13 @@ const PierPage = ({data}) => {
                         <Link 
                             to="/hotel-pier-bacalar/rooms/suite-panorámica-con-vista-parcial-a-la-laguna/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
                     </div>
                     <div 
-                        className="sm:h-96"
+                        className="sm:h-96 order-1 sm:order-none"
                     >
                         <GatsbyImage 
                             className="h-full w-full"
@@ -143,7 +144,7 @@ const PierPage = ({data}) => {
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex items-center
-                            justify-center flex-col w-4/5"
+                            justify-center flex-col sm:w-4/5"
                     >
                         <h2 
                             className="text-beke text-3xl 
@@ -167,7 +168,7 @@ const PierPage = ({data}) => {
                         <Link 
                             to="/hotel-pier-bacalar/rooms/cabaña-panorámica/"
                             className="p-2 text-white bg-beke
-                                rounded-md w-1/6 text-center mt-4"
+                                rounded-md sm:w-1/6 text-center mt-4"
                         >
                             Ver más
                         </Link>
@@ -187,7 +188,7 @@ const PierPage = ({data}) => {
                             alt="Bacalar" 
                         />
                     </div>
-                    <div className="sm:p-16">
+                    <div className="p-4 sm:p-16">
                         <h2
                             className="text-beke text-3xl
                                 mb-4 text-center"

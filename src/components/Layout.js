@@ -1,9 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Reservation from '../components/Reservation'
 import PromoModal from '../components/PromoModal'
+import MobileNav from '../components/MobileNav'
 
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
@@ -12,9 +14,44 @@ export default class Layout extends React.Component {
   constructor() {
     super()
     this.state = {
-      modalIsActive: false,
+      modalIsActive: true,
+      windowWidth: window.innerWidth,
+      reservationBarActive: false,
+      reservationBarActiveClass: 'max-h-0'
     }
     this.modalHandler = this.modalHandler.bind(this)
+    this.resizeHandler = this.resizeHandler.bind(this)
+    this.reservationBarHandler = this.reservationBarHandler.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resizeHandler)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeHandler)
+  }
+
+  reservationBarHandler() {
+    this.setState({
+      reservationBarActive: !this.state.reservationBarActive
+    }, 
+      () => {
+        this.state.reservationBarActive
+        ? this.setState({
+          reservationBarActiveClass: 'max-h-72'
+        })
+        : this.setState({
+          reservationBarActiveClass: 'max-h-0'
+        })
+      }
+    )
+  }
+
+  resizeHandler() {
+    this.setState({
+      windowWidth: window.innerWidth
+    })
   }
 
   modalHandler(event) {
@@ -27,23 +64,37 @@ export default class Layout extends React.Component {
 
   render() {
 
+    console.log(this.state)
     const children = this.props.children
-
+  
     return (
-      <TemplateWrapper modalIsActive={this.state.modalIsActive} modalHandler={this.modalHandler} children={children}/>
+      <TemplateWrapper 
+        windowWidth={this.state.windowWidth}
+        modalIsActive={this.state.modalIsActive} 
+        modalHandler={this.modalHandler} 
+        children={children}
+        reservationClass={this.state.reservationBarActiveClass}
+        reservationBarHandler={this.reservationBarHandler}
+      />
     )
   }
 
 }
 
-const TemplateWrapper = ({children, modalHandler, modalIsActive}) => {
+const TemplateWrapper = ({
+  windowWidth, 
+  children, 
+  modalHandler, 
+  modalIsActive, 
+  reservationClass,
+  reservationBarHandler,
+}) => {
   
   const { title, description } = useSiteMetadata()
 
   return (
     <div className="relative">
       {
-        
         modalIsActive
         ? <PromoModal handler={modalHandler} />
         : ''
@@ -90,11 +141,22 @@ const TemplateWrapper = ({children, modalHandler, modalIsActive}) => {
       
       <div 
 
-        className="bg-gray-100 relative z-10 mb-96 2xl:mb-0 mx-auto"
+        className="bg-gray-100 sm:mb-96 relative z-10 2xl:mb-0 mx-auto"
       >
         {children}
       </div>
-      <Reservation />
+      
+      <Reservation 
+        class={reservationClass}
+      />
+      {
+        windowWidth <= 640
+        ? <MobileNav 
+            reservationBarHandler={reservationBarHandler} 
+          />
+        : ''
+      }
+      
       <Footer />
     </div>
   )

@@ -57,16 +57,13 @@ const Navbar = class extends React.Component {
   render() {
     
     return (
-      <header className="flex justify-center text-white shadow-xl bg-gray-900">
-        <div className="flex-col sm:flex-row items-center flex justify-center sm:justify-between w-full sm:w-4/5 p-5">
-          <div className="flex w-full md:w-auto justify-center sm:justify-start relative">
-            <button id="nav-btn" className="sm:hidden absolute left-3 inset-y-0 p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset">
-              <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            <Link className="w-40" to="/" >
+      <header 
+        className="flex justify-center text-white shadow-xl 
+        bg-gray-900 relative z-40"
+      >
+        <div className="flex-row items-center flex justify-center sm:justify-between w-full lg:w-4/5 p-5">
+          <div className="w-6/12 md:w-auto justify-center sm:justify-start relative">
+            <Link className="w-full sm:w-40" to="/" >
               <StaticImage 
                 src="../img/logo-beke-horizontal.png"
                 alt="Logo"
@@ -139,18 +136,18 @@ const Navbar = class extends React.Component {
               </button>
             </nav>
           </div>
-          <div className="hidden sm:inline-flex items-center">
+          <div className="w-6/12 sm:w-auto inline-flex justify-end">
             <button 
               onClick={this.props.modalHandler}
               type="button" 
-              className="mx-2 rounded-md p-2 inline-flex 
-                items-center justify-center 
+              className="mx-2 rounded-md sm:inline-flex 
+                items-center justify-center block
                 hover:text-gray-900 hover:bg-white 
                 focus:outline-none focus:ring-2 
                 focus:ring-inset focus:ring-white"
             >
               <img className="w-8 fill-current hover:text-black" src={flex} alt="Tarifa Flex" />
-              <span>Tarifa flex</span>
+              <span className="leading-none hidden sm:block">Tarifa flex</span>
             </button>
             <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.instagram.com/bekehotels/">
               <img src={instagram} className="fill-current text-white w-8" alt="Instagram logo" />
