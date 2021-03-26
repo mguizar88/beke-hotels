@@ -31,7 +31,10 @@ const IndexPageTemplate = ({ data }) => {
 
   return(
     <Layout>
-      <Carousel>
+      <Carousel
+        nextLabel={null}
+        prevLabel={null}
+      >
         <Carousel.Item className="h-screen" >
           <div 
             className="h-full"

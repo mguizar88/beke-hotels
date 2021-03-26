@@ -32,6 +32,24 @@ collections:
         }
       - {label: "Hotel", name: "hotel", widget: string}
 
+  - name: "destinations"
+    label: "Destinations"
+    folder: src/pages/destinations
+    create: true
+    fields:
+      - {label: "Destination name", name: "title", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Image", name: "image", widget: "image"}
+
+  - name: "hotels"
+    label: "Hotels"
+    folder: src/pages/hotels
+    create: true
+    fields: 
+      - {label: "Template Key", name: "templatekey", widget: "hidden", default: "hotel-page" }
+      - {label: "Hotel Name", name: "title", widget: "string"}
+
+
   - name: "pages"
     label: "Pages"
     files:

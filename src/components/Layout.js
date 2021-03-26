@@ -11,8 +11,8 @@ import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
 export default class Layout extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       modalIsActive: true,
       windowWidth: null,

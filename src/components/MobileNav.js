@@ -21,24 +21,21 @@ const MobileNav = class extends React.Component {
     }
 
     subLinksHandler (event) {
-        
-        switch(event.target.id) {
-            case 'destinations':
                 
-                this.setState({
-                    destinationsActive: !this.state.destinationsActive
-                },
-                    () => {
-                        this.state.destinationsActive
-                        ? this.setState({
-                            destinationsActiveClass: 'h-full'
-                        })
-                        : this.setState({
-                            destinationsActiveClass: 'h-0'
-                        })
-                    }
-                )
-        }
+        this.setState({
+            destinationsActive: !this.state.destinationsActive
+        },
+            () => {
+                this.state.destinationsActive
+                ? this.setState({
+                    destinationsActiveClass: 'h-full'
+                })
+                : this.setState({
+                    destinationsActiveClass: 'h-0'
+                })
+            }
+        )
+       
     }
 
     render() {
