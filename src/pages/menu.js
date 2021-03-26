@@ -113,21 +113,33 @@ const Menu = class extends React.Component {
 				        </a>
                     </div>
                     <div className="flex justify-center mt-8">
-                        <GatsbyImage
-                            className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                            image={alimentos}
-                            alt="Alimentos"
-                        />
-                        <GatsbyImage
-                            className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                            image={bebidas}
-                            alt="Alimentos"
-                        />
-                        <GatsbyImage
-                            className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                            image={desayunos}
-                            alt="Alimentos"
-                        />
+                        {
+                            this.state.alimentos
+                            ?<GatsbyImage
+                                className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                image={alimentos}
+                                alt="Alimentos"
+                            />
+                            : ''
+                        }
+                        {
+                            this.state.bebidas
+                            ?<GatsbyImage
+                                className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                image={bebidas}
+                                alt="Alimentos"
+                            />
+                            : ''
+                        }
+                        {
+                            this.state.desayunos
+                            ?<GatsbyImage
+                                className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                image={desayunos}
+                                alt="Alimentos"
+                            />
+                            : ''
+                        }
                     </div>
                 </div>
                 <div id="en" className={this.state.en? 'block' : 'hidden'}>
@@ -143,21 +155,35 @@ const Menu = class extends React.Component {
 				        </a>
                     </div>
                     <div className="flex justify-center mt-8">
-                        <GatsbyImage
-                            className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                            image={food}
-                            alt="Alimentos"
-                        />
-                        <GatsbyImage
-                            className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                            image={drinks}
-                            alt="Alimentos"
-                        />
-                        <GatsbyImage
-                            className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                            image={breakfast}
-                            alt="Alimentos"
-                        />
+                        {
+                            this.state.alimentos
+                                ?<GatsbyImage
+                                    className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={food}
+                                    alt="Alimentos"
+                                />
+                                : ''
+                        }
+                        {
+                            this.state.bebidas
+                            ?<GatsbyImage
+                                className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                image={drinks}
+                                alt="Alimentos"
+                            />
+                            :''
+                        }
+                        
+                        {
+                            this.state.desayunos
+                            ? <GatsbyImage
+                                className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                image={breakfast}
+                                alt="Alimentos"
+                            />
+                            :''
+                        }
+                        
                     </div>
                 </div>
             </Layout>
