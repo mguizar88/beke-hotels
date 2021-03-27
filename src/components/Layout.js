@@ -69,8 +69,7 @@ export default class Layout extends React.Component {
   }
 
   render() {
-
-    console.log(this.state)
+    
     const children = this.props.children
   
     return (
@@ -81,6 +80,7 @@ export default class Layout extends React.Component {
         children={children}
         reservationClass={this.state.reservationBarActiveClass}
         reservationBarHandler={this.reservationBarHandler}
+        path={this.props.path}
       />
     )
   }
@@ -94,6 +94,7 @@ const TemplateWrapper = ({
   modalIsActive, 
   reservationClass,
   reservationBarHandler,
+  path,
 }) => {
   
   const { title, description } = useSiteMetadata()
@@ -102,7 +103,7 @@ const TemplateWrapper = ({
     <div className="relative">
       {
         modalIsActive
-        ? <PromoModal handler={modalHandler} />
+        ? path !== '/menu/'?<PromoModal handler={modalHandler} /> : ''
         : ''
       }
       <Helmet>

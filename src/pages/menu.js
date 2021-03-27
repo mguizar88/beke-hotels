@@ -61,7 +61,7 @@ const Menu = class extends React.Component {
     }
 
     render() {
-
+        
         const data = this.props.data
         const hero = getImage(data.cupon)
         const alimentos = getImage(data.alimentos)
@@ -72,7 +72,7 @@ const Menu = class extends React.Component {
         const breakfast = getImage(data.breakfast)
 
         return (
-            <Layout>
+            <Layout path={this.props.path}>
                 <div className="relative">
                     <GatsbyImage
                         className="w-full"
