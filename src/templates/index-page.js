@@ -28,6 +28,11 @@ const IndexPageTemplate = ({ data }) => {
   const xoReview = getImage(data.xoReview)
   const flamencosSrc = getSrc(data.flamencos)
   const bekeAzul = getImage(data.bekeAzul)
+  const xo = getImage(data.xo)
+  const xoLakeByNight = getImage(data.xolakebynight)
+  const xoLake = getImage(data.xolake)
+  const xoRoom = getImage(data.xoroom)
+  const xoBar = getImage(data.xobar)
 
   return(
     <Layout>
@@ -85,7 +90,7 @@ const IndexPageTemplate = ({ data }) => {
           BEKE HOTELS
         </h1>
         
-        <div className="grid grid-cols-1 grid-rows-none sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-1 grid-rows-none sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
           <div className="sm:col-span-2 row-span-2">
             <GatsbyImage className="max-w-full rounded-sm" image={laguna} alt="Bacalar" />
             <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
@@ -114,7 +119,7 @@ const IndexPageTemplate = ({ data }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
           <div className="sm:col-span-2 row-span-2 flex flex-col">
             <GatsbyImage className="max-w-full rounded-sm" image={second} alt="Bacalar" />
             <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
@@ -143,6 +148,39 @@ const IndexPageTemplate = ({ data }) => {
           </div>
           <div className=" flex row-span-1 col-span-1">
             <GatsbyImage className="max-w-full rounded-sm" image={cmSecond} alt="Bacalar" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
+          <div className="sm:col-span-2 row-span-2 flex flex-col">
+            <GatsbyImage className="max-w-full rounded-sm" image={xo} alt="Bacalar" />
+            <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
+              <h2 className="text-2xl font-bold mb-4">
+                XO LAKEFRONT HOTEL
+              </h2>
+              <p>
+                Hotel situado a orilla de la hermosa
+                laguna de los 7 colores, rodeado de una
+                atmósfera que
+                transmite tranquilidad, relajación y
+                conexión con la naturaleza. Destino
+                petfriendly para aquellos
+                viajeros que disfrutan de la compañía
+                de sus mascotas.
+              </p>
+            </div>
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoLakeByNight} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoLake} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoRoom} alt="Bacalar" />
+          </div>
+          <div className=" flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoBar} alt="Bacalar" />
           </div>
         </div>
       </section>
@@ -439,6 +477,72 @@ export const pageQuery = graphql`query IndexPageTemplate {
       gatsbyImageData(
         layout: CONSTRAINED
         width: 300
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xo: file(relativePath: {eq: "XO.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 800
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xobyday: file(relativePath: {eq: "XO-5.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xolakebynight: file(relativePath: {eq: "XO-9.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xolake: file(relativePath: {eq: "XO-6.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xoroom: file(relativePath: {eq: "XO-17.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xobar: file(relativePath: {eq: "XO-8.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
         placeholder: BLURRED 
         formats: [WEBP]
         quality: 100

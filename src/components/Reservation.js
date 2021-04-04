@@ -30,13 +30,24 @@ const Reservation = class extends React.Component {
 
     callBookingEngine(event) {
         event.preventDefault()
+        if(this.state.hotel === 'xo') {
+            const daysBetween = this.getDaysBetween(this.state.checkin, this.state.checkout)
+            window.open(`https://portal.freetobook.com/reservations?w_id=41469&w_tkn=2PaI8yGsXA5jLBS7S9TwDgX5se9b8GQ0Clb2zSxMcQNw0NJ6fWHwOfwXfpnRn&check_in_date=${this.state.checkin}&check_out_date=${this.state.checkout}&stay_length=${daysBetween}`, "_BLANK")
+            return 
+        }
         window.open( `https://hotels.cloudbeds.com/reservation/${this.state.hotel}#${this.state.checkin}&${this.state.checkout}` , "_BLANK" )
         
     }
 
-    render() {
+    getDaysBetween(checkin, checkout) {
+        const checkinDate = new Date(checkin)
+        const checkoutDate = new Date(checkout)
+        const timeDifference = checkoutDate.getTime() - checkinDate.getTime()
+        const daysDifference = timeDifference / (1000 * 3600 * 24)
+        return daysDifference
+    }
 
-        console.log(this.props.class)
+    render() {
 
         return (
             <div 
@@ -64,7 +75,18 @@ const Reservation = class extends React.Component {
                                 >
                                 HOTEL PIER BACALAR - ALL INCLUSIVE
                             </option>
-                            <option className="text-beke" value="wastbU">HOTEL CASA MAYA HOLBOX</option>
+                            <option 
+                                className="text-beke" 
+                                value="wastbU"
+                            >
+                                HOTEL CASA MAYA HOLBOX
+                            </option>
+                            <option 
+                                className="text-beke" 
+                                value="xo"
+                            >
+                                HOTEL XO BACALAR
+                            </option>
                         </select>
                     </div>
                     <div className="sm:h-20 flex flex-col justify-center">

@@ -49,7 +49,7 @@ const MobileNav = class extends React.Component {
                     z-30 bottom-0 left-0 justify-center`}
                 >   
                     <Link 
-                        className="relative flex h-40
+                        className="relative flex h-28
                             items-center justify-center my-4"
                         to="/destinos/hotel-pier-bacalar/"
                     >
@@ -70,7 +70,7 @@ const MobileNav = class extends React.Component {
                     </Link>
                     
                     <Link
-                        className="relative flex h-40
+                        className="relative flex h-28
                         items-center justify-center my-4"
                         to="/destinos/hotel-casa-maya-holbox/"
                     >
@@ -87,6 +87,27 @@ const MobileNav = class extends React.Component {
                             "
                         >
                             Casa Maya Holbox
+                        </h2>
+                    </Link>
+
+                    <Link
+                        className="relative flex h-28
+                        items-center justify-center my-4"
+                        to="/destinos/hotel-xo-bacalar/"
+                    >
+                        <StaticImage 
+                            className="rounded-xl w-full h-full"
+                            src="../img/XO-5.jpg"
+                            alt="Hotel Casa Maya"
+                            placeholder="blurred"
+                            layout="constrained"
+                        />
+                        <h2 
+                            className="text-white absolute
+                            bg-black opacity-70 p-4 rounded-xl
+                            "
+                        >
+                            Xo Bacalar
                         </h2>
                     </Link>
                     

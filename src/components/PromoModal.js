@@ -31,17 +31,30 @@ const PromoModal = class extends React.Component {
         return (
             <div 
                 className="fixed inset-0 bg-black bg-opacity-75
-                    flex justify-center  
-                    content-center z-50"
+                    z-50 flex justify-between"
             > 
-                <div ref={this.modalRef} className="flex flex-col justify-center relative w-4/5 sm:max-w-4xl">
+                <div 
+                    ref={this.modalRef} 
+                    className="relative w-4/5 sm:max-w-4xl 
+                        m-auto"
+                >
+                    <button 
+                        onClick={this.props.handler}
+                        className="absolute top-0 sm:-right-0.5
+                            rounded-full bg-yellow-400
+                            text-white sm:h-12 sm:w-12 h-8 w-8
+                            flex items-center justify-center
+                            -right-2"
+                    >
+                        &times;
+                    </button>
                     <img className="w-full " src={promo} alt="Promoción Marzo" />
                     <a 
                         href="https://hotels.cloudbeds.com/es/reservation/a5nfpq?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
                         target="_Blank" 
                         rel="noreferrer" 
                         className="hover:text-yellow-500 p-2 rounded-md
-                          text-white font-bold sm:absolute lg:bottom-40 
+                          text-white font-bold sm:absolute lg:bottom-28 
                             lg:right-72 sm:bottom-52 sm:right-52
                             text-sm lg:text-base my-4 sm:my-0 text-center
                             shadow-lg"
@@ -56,7 +69,7 @@ const PromoModal = class extends React.Component {
                         target="_Blank" 
                         rel="noreferrer" 
                         className="hover:text-yellow-500 p-2 rounded-md
-                          text-white font-bold sm:absolute lg:bottom-40 
+                          text-white font-bold sm:absolute lg:bottom-28 
                             lg:right-32 sm:bottom-52 sm:right-16
                             text-sm lg:text-base sm:my-0 text-center
                             shadow-lg"

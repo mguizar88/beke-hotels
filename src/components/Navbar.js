@@ -88,7 +88,7 @@ const Navbar = class extends React.Component {
                     focus:ring-white" 
                   aria-expanded="false"
                 >
-                  <span>Destinos</span>
+                  <span>Hoteles</span>
                   <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
@@ -114,6 +114,16 @@ const Navbar = class extends React.Component {
                         <div className="ml-4">
                           <p className="text-base font-medium text-gray-900">
                             Casa Maya Holbox
+                          </p>
+                        </div>
+                      </Link>
+                      <Link
+                        to="/destinos/hotel-xo-bacalar/"
+                        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                      >
+                        <div className="ml-4">
+                          <p className="text-base font-medium text-gray-900">
+                            Xo Bacalar
                           </p>
                         </div>
                       </Link>

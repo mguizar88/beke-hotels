@@ -48,7 +48,11 @@ collections:
     fields: 
       - {label: "Template Key", name: "templatekey", widget: "hidden", default: "hotel-page" }
       - {label: "Hotel Name", name: "title", widget: "string"}
-
+      - {label: "Hotel Logo", name: "logo", widget: "image"}
+      - {label: "Hotel Description", name: "description", widget: "text"}
+      - {label: "Hotel Hero Image", name: "hero", widget: "image", required: false}
+      - {label: "Hotel Video", name: "video", widget: "file", required: false }
+      - {label: "Destination", name: "destination", widget: "relation", collection: "destinations", value_field: "title"}
 
   - name: "pages"
     label: "Pages"
