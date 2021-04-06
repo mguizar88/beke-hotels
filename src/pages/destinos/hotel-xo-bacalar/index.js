@@ -206,7 +206,7 @@ export const pageQuery = graphql `
                 )
             }
         }
-        hero: file(relativePath: {eq: "xo-hero.jpg"}) {
+        hero: file(relativePath: {eq: "1XO-15.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
@@ -239,7 +239,7 @@ export const pageQuery = graphql `
                 )
             }
         }
-        bungalowmar: file(relativePath: {eq: "21.jpg"}) {
+        bungalowmar: file(relativePath: {eq: "xo-21.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED

@@ -107,7 +107,7 @@ const MobileNav = class extends React.Component {
                             bg-black opacity-70 p-4 rounded-xl
                             "
                         >
-                            Xo Bacalar
+                            XO Bacalar
                         </h2>
                     </Link>
                     

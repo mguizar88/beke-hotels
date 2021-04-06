@@ -7,6 +7,8 @@ import Reservation from '../components/Reservation'
 import PromoModal from '../components/PromoModal'
 import MobileNav from '../components/MobileNav'
 
+import whatsappIcon from '../img/whatsapp-icon.svg'
+
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
@@ -163,7 +165,9 @@ const TemplateWrapper = ({
           />
         : ''
       }
-      
+      <a className="fixed bottom-24 right-3 z-50" href="https://wa.me/9981098729" target="_BLANK" rel="noreferrer">
+        <img className="w-16" src={whatsappIcon} />
+      </a>
       <Footer />
     </div>
   )

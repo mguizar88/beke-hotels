@@ -123,7 +123,7 @@ const Navbar = class extends React.Component {
                       >
                         <div className="ml-4">
                           <p className="text-base font-medium text-gray-900">
-                            Xo Bacalar
+                            XO Bacalar
                           </p>
                         </div>
                       </Link>
