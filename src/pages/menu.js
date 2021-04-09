@@ -63,7 +63,6 @@ const Menu = class extends React.Component {
     render() {
         
         const data = this.props.data
-        const hero = getImage(data.cupon)
         const alimentos = getImage(data.alimentos)
         const bebidas = getImage(data.bebidas)
         const desayunos = getImage(data.desayunos)
@@ -72,17 +71,10 @@ const Menu = class extends React.Component {
         const breakfast = getImage(data.breakfast)
 
         return (
-            <Layout path={this.props.path}>
-                <div className="relative">
-                    <GatsbyImage
-                        className="w-full"
-                        image={hero}
-                        alt="Promocion 2x1"
-                        objectPosition="50% top"
-                    />
+            <>
+                <div>
                     <div
-                        className="absolute right-8 bottom-8 
-                        text-beke"
+                        className="flex justify-center my-4"
                     >
                         <button
                             onClick={this.esHandler}
@@ -186,7 +178,7 @@ const Menu = class extends React.Component {
                         
                     </div>
                 </div>
-            </Layout>
+            </>
         )
     }
 
@@ -196,17 +188,6 @@ export default Menu
 
 export const query = graphql`
     query{
-        cupon: file(relativePath: {eq: "cupon-desayunos.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 1440
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
         alimentos: file(relativePath: {eq: "menu-alimentos-esp.jpg"}) {
             childImageSharp {
                 gatsbyImageData(

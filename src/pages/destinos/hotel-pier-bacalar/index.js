@@ -2,6 +2,8 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+import VideoPlayer from '../../../components/VideoPlayer'
+
 import Layout from '../../../components/Layout'
 import video from '../../../img/pier-video.mp4'
 
@@ -13,17 +15,27 @@ const PierPage = ({data}) => {
     const cabana = getImage(data.cabana)
     const bacalar = getImage(data.bacalar)
 
+    const videoJsOptions = {
+        autoPlay: true,
+        controls: false,
+        loop: true,
+        sources: [{
+            src: video,
+            type: 'video/mp4'
+        }]
+    }
+
     return (
         <Layout>
             <div className="sm:h-screen relative overflow-hidden">
-            <video  
-                src={video} 
-                muted 
-                autoPlay
-                loop
-            >
-                Tu navegador no admite el elemento <code>video</code>.
-            </video>
+                <video  
+                    src={video} 
+                    muted 
+                    autoPlay
+                    loop
+                >
+                    Tu navegador no admite el elemento <code>video</code>.
+                </video>
             </div>
             <section 
                 className="container mx-auto text-center p-4

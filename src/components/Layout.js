@@ -103,11 +103,6 @@ const TemplateWrapper = ({
 
   return (
     <div className="relative">
-      {
-        modalIsActive
-        ? path !== '/menu/'?<PromoModal handler={modalHandler} /> : ''
-        : ''
-      }
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -147,7 +142,12 @@ const TemplateWrapper = ({
         />
       </Helmet>
       <Navbar modalHandler={modalHandler} />
-      
+      {
+        path !== '/menu/'
+        ? 
+          modalIsActive?<PromoModal handler={modalHandler} /> : ''
+        : ''
+      }
       <div 
 
         className="bg-gray-100 sm:mb-96 relative z-10 2xl:mb-0 mx-auto"
