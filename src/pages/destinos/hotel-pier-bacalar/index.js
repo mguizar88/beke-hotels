@@ -27,7 +27,7 @@ const PierPage = ({data}) => {
 
     return (
         <Layout>
-            <div className="sm:h-screen relative overflow-hidden">
+            <div className="sm:h-screen relative z-0 overflow-hidden">
                 <video  
                     src={video} 
                     muted 
@@ -38,8 +38,10 @@ const PierPage = ({data}) => {
                 </video>
             </div>
             <section 
-                className="container mx-auto text-center p-4
-                    sm:py-32"
+                className="container shadow-2xl sm:shadow-none mx-auto text-center p-6
+                    sm:py-32 w-11/12 sm:w-full mb-12 sm:mt-0 -mt-12 
+                    rounded-2xl bg-white sm:bg-transparent relative
+                    sm:rounded-none"
             >
                 <GatsbyImage 
                     image={logo} 
@@ -65,25 +67,29 @@ const PierPage = ({data}) => {
                 </p>
             </section>
 
-            <section>
+            <section className="w-11/12 mx-auto sm:w-full sm:mx-0">
                 <div 
                     className="grid grid-cols-1 
                         sm:grid-cols-2"
+
                 >
                     <div className="sm:h-96">
                         <GatsbyImage
-                            className="sm:h-full w-full"
+                            className="sm:h-full w-full rounded-t-2xl
+                                sm:rounded-none"
                             image={terraza} 
                             alt="Suite Terraza" 
                         />
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex items-center 
-                            justify-center flex-col sm:w-4/5"
+                            justify-center flex-col sm:w-4/5
+                            shadow-2xl rounded-b-2xl sm:shadow-none
+                            sm:rounded-none mb-8 sm:mb-0"
                     >
                         <h2 
-                            className="text-beke text-3xl 
-                                mb-4 text-center "
+                            className="text-beke sm:text-3xl 
+                                mb-4 text-center text-2xl"
                         >
                             SUITE TERRAZA
                         </h2>
@@ -108,11 +114,13 @@ const PierPage = ({data}) => {
                     <div 
                         className="p-4 sm:p-10 flex ml-auto 
                             justify-center flex-col sm:w-4/5 
-                            items-center order-2 sm:order-none"
+                            items-center order-2 sm:order-none 
+                            shadow-2xl rounded-b-2xl sm:shadow-none
+                            sm:rounded-none mb-8 sm:mb-0"
                     >
                         <h2 
-                            className="text-beke text-3xl 
-                                mb-4 text-center"
+                            className="text-beke sm:text-3xl 
+                                mb-4 text-center text-2xl"
                         >
                             SUITE PANORÁMICA
                         </h2>
@@ -140,7 +148,8 @@ const PierPage = ({data}) => {
                         className="sm:h-96 order-1 sm:order-none"
                     >
                         <GatsbyImage 
-                            className="h-full w-full"
+                            className="h-full w-full rounded-t-2xl
+                                sm:rounded-none"
                             image={panoramica} 
                             alt="Suite Terraza" 
                         />
@@ -149,18 +158,21 @@ const PierPage = ({data}) => {
                         className="sm:h-96"
                     >
                         <GatsbyImage
-                            className="h-full w-full" 
+                            className="h-full w-full rounded-t-2xl
+                                sm:rounded-none" 
                             image={cabana} 
                             alt="Suite Terraza" 
                         />
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex items-center
-                            justify-center flex-col sm:w-4/5"
+                            justify-center flex-col sm:w-4/5 sm:rounded-none
+                            rounded-b-2xl shadow-2xl sm:shadow-none
+                            mb-8 sm:mb-0"
                     >
                         <h2 
-                            className="text-beke text-3xl 
-                                text-center mb-4 "
+                            className="text-beke sm:text-3xl 
+                                text-center mb-4 text-2xl"
                         >
                             CABAÑA PANORÁMICA 
                         </h2>
@@ -188,22 +200,26 @@ const PierPage = ({data}) => {
                 </div>
             </section>
 
-            <section>
+            <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
                 <div 
                     className="grid grid-cols-1 
                         sm:grid-cols-2"
                 >
                     <div>
                         <GatsbyImage 
-                            className="w-full h-full"
+                            className="w-full h-full rounded-t-2xl"
                             image={bacalar} 
                             alt="Bacalar" 
                         />
                     </div>
-                    <div className="p-4 sm:p-16">
+                    <div   
+                        className="p-4 sm:p-16 bg-white rounded-b-2xl
+                            shadow-2xl mb-8 sm:mb-0 sm:shadow-none sm:bg-none
+                            sm:rounded-none"
+                    >
                         <h2
-                            className="text-beke text-3xl
-                                mb-4 text-center"
+                            className="text-beke sm:text-3xl
+                                mb-4 text-center text-2xl font-gotham"
                         >
                             Bacalar
                         </h2>

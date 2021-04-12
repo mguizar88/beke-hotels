@@ -5,6 +5,9 @@ module.exports = {
       extend: {
         colors: {
           'beke': '#004660'
+        },
+        fontFamily: {
+          'gotham': 'gotham',
         }
       },
     },

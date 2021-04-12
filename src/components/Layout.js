@@ -102,7 +102,7 @@ const TemplateWrapper = ({
   const { title, description } = useSiteMetadata()
 
   return (
-    <div className="relative">
+    <div className="relative font-gotham">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
