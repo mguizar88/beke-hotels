@@ -35,7 +35,7 @@ const Reservation = class extends React.Component {
             window.open(`https://portal.freetobook.com/reservations?w_id=41469&w_tkn=2PaI8yGsXA5jLBS7S9TwDgX5se9b8GQ0Clb2zSxMcQNw0NJ6fWHwOfwXfpnRn&check_in_date=${this.state.checkin}&check_out_date=${this.state.checkout}&stay_length=${daysBetween}`, "_BLANK")
             return 
         }
-        window.open( `https://hotels.cloudbeds.com/es/reservation/${this.state.hotel}?currency=MXN#${this.state.checkin}&${this.state.checkout}` , "_BLANK" )
+        window.open( `https://hotels.cloudbeds.com/es/reservation/${this.state.hotel}?currency=MXN#checkin=${this.state.checkin}&checkout=${this.state.checkout}` , "_BLANK" )
         
     }
 

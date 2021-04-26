@@ -21,26 +21,35 @@ collections:
         file: "src/config/navconfig.yml"
         fields:
           - {label: "Logo", name: "logo", widget: "image"}
-          - {label: "Nav parents", name: "parents", widget: "list",
-              fields:
-                [ 
-                  {label: "Parent Name", name: "name", widget: "string"}
-                ]
-            }
           - {label: "Right items", name: "rightitems", widget: "list",
               fields: 
                 [
                   {label: "logo", name: logo, widget: image},
-                  {label: "title", name: "title", widget: "string"},
+                  {label: "title", name: "title", widget: "string", required: false},
                   {label: "URL", name: "url", widget: "string"}
                 ]
             }
+
       - label: "Booking bar"
         name: "booking"
         file: "src/config/booking.yml"
         fields: 
           - {label: "Hotel", name: "hotel", widget: "relation", collection: "hotels", value_field: "title", search_fields: ["title", "destination"]}
-          - {label: "Booking engine", name: "engine", widget: "string"}
+          - {label: "Booking engine url", name: "engine", widget: "string"}
+          - {label: "Url parameters", name: "urlParameters", widget: "list",
+              fields:
+                [
+                  {label: "Parameter", name: "parameter", widget: "string"}
+                ]
+            }
+
+  - name: "Nav Parents"
+    label: "navParents"
+    folder: "src/config/nav-parents"
+    create: true
+    fields: 
+      - {label: "Title", name: title, widget: "string"}
+      - {label: "URL", name: url, widget: "string"}
 
   - name: "rooms"
     label: "Rooms"
@@ -49,7 +58,6 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "room-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
       - {label: "Room Images", name: "roomimages", widget: list,
           fields: 
           [
@@ -62,20 +70,56 @@ collections:
           fields: 
             [
               {label: "Amenity", name: "amenity", widget: "string"},
-              {label: "Amenity image", name: "image", widget: "image"},
+              {label: "Amenity image", name: "image", widget: "image"}, 
               {label: "SVG", name: "svg", widget: "code", required: false}
             ]
         }
       - {label: "Hotel", name: "hotel", widget: "relation", collection: "hotels", value_field: "title", search_fields: ["title", "destination"]}
 
+  - name: "tours"
+    label: "Tours"
+    folder: "src/tours"
+    create: true
+    fields: 
+      - {label: "Is Package", name: "package", widget: "boolean"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "object",
+          fields: 
+            [
+              {label: "Image", name: "image", widget: "image"},
+              {label: "Alt", name: "alt", widget: "string"}
+            ]
+        }
+      - {label: "Duration", name: "duration", widget: string}
+      - {label: "Perks", name: "perks", widget: "list",
+          fields: 
+            [
+              {label: "Title", name: "title", widget: "string"}
+            ]
+        }
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Policys", name: "policys", widget: list,
+          fields:
+            [
+              {label: "Policy", name: "policy", widget: "Text"}
+            ]
+        }
+
   - name: "destinations"
     label: "Destinations"
-    folder: src/pages/destinations
+    folder: "src/pages/destinations"
     create: true
     fields:
       - {label: "Destination name", name: "title", widget: "string"}
-      - {label: "Description", name: "body", widget: "markdown"}
       - {label: "Image", name: "image", widget: "image"}
+      - {label: "Badge object", name: "badge", widget: "object",
+          fields: 
+            [
+              {label: "Title", name: "title", widget: "string"},
+              {label: "Image", name: "image", widget: image},
+              {label: "Alt", name: "alt", widget: "string"},
+            ]
+        }
 
   - name: "hotels"
     label: "Hotels"
@@ -85,10 +129,17 @@ collections:
       - {label: "Template Key", name: "templatekey", widget: "hidden", default: "hotel-page" }
       - {label: "Hotel Name", name: "title", widget: "string"}
       - {label: "Hotel Logo", name: "logo", widget: "image"}
-      - {label: "Hotel Description", name: "description", widget: "text"}
+      - {label: "Hotel Description", name: "description", widget: "text", pattern: ['.{0, 100}', "100 characters limit"], required: false}
+      - {label: "Badges", name: "badges", widget: "object",
+          fields: 
+          [
+            {label: "Title", name: "title", widget: "string"},
+            {label: "Image", name: "image", widget: image}
+          ]
+        }
       - {label: "Hotel Hero Image", name: "hero", widget: "image"}
       - {label: "Hotel Video", name: "video", widget: "file", required: false }
-      - {label: "Destination", name: "destination", widget: "relation", collection: "destinations", value_field: "title"}
+      - {label: "Destination", name: "destination", widget: "relation", collection: "destinations", value_field: "title", search_fields: ["title"]}
       - {label: "Gallery", name: "gallery", widget: list, 
           fields: 
           [
@@ -96,8 +147,8 @@ collections:
             {label: "Alt", name: "alt", widget: "string"}
           ]
         }
-      - {label: "Show on navbar", name: "onnav", widget: "boolean"}
-      - {label: "Navbar parent", name: "navparent", widget: "collection"}
+      - {label: "Show on navbar", name: "onnav", widget: "boolean", required: false}
+      - {label: "Navbar parent", name: "navparent", widget: "relation", collection: "navParents", value_field: "title", search_fields: ["title", "url"], required: false}
 
   - name: "pages"
     label: "Pages"
@@ -108,19 +159,60 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
-          - {label: "Carousel Images", name: "carousel", widget: list, 
+          - {label: "Carousel", name: "carousel", widget: list, 
               fields:
                 [
-                  {label: "Image", name: "image", widget: "image"},
-                  {label: "Alt", name: "alt", widget: "string"}
+                  {label: "Cover image", name: "cover", widget: "object", 
+                    fields:
+                    [
+                      {label: "Image", name: "image", widget: "image"},
+                      {label: "Alt", name: "alt", widget: "string"},
+                    ]
+                  },
+                  {label: "Logo", name: "logo", widget: "object", required: false, 
+                    fields:
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"},
+                      ]
+                  },
+                  {label: "Sticker", name: "sticker", widget: "object", required: false, 
+                    fields:
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"},
+                      ]
+                  },
                 ]
             }
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - {label: "Perks", name: "perks", widget: "object",
+              fields:
+                [
+                  {label: "Cover", name: "cover", widget: "object",
+                    fields:
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"}
+                      ]
+                  },
+                  {label: "Logo", name: "logo", widget: "object",
+                    fields:
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"},
+                      ]
+                  },
+                  {label: "Perk", name: "perk", widget: list,
+                    fields: 
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"},
+                        {label: "Title", name: "title", widget: "string"}
+                      ]
+                  }
+                ]
+            }
+          - {label: Description, name: description, widget: string, required: false}
           - {label: Show on Navbar, name: onnav, widget: boolean, default: true}
       - file: "src/pages/reviews/index.md"
         label: "Reviews"
@@ -128,5 +220,26 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Review", name: "review", widget: "list",
+              fields:
+                [
+                  {label: "Image", name: "image", widget: "object",
+                    fields: 
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"},
+                      ]
+                  },
+                  {label: "Name", name: "name", widget: "string"},
+                  {label: "Date", name: "date", widget: "string"},
+                  {label: "Comment", name: "comment", widget: "text"},
+                  {label: "Platform logo", name: "platform", widget: "object",
+                    fields: 
+                      [
+                        {label: "Image", name: "image", widget: "image"},
+                        {label: "Alt", name: "alt", widget: "string"},
+                      ]
+                  },
+                ]
+            }
       
