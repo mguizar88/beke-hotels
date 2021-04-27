@@ -179,8 +179,8 @@ collections:
                   {label: "Sticker", name: "sticker", widget: "object", required: false, 
                     fields:
                       [
-                        {label: "Image", name: "image", widget: "image"},
-                        {label: "Alt", name: "alt", widget: "string"},
+                        {label: "Image", name: "image", widget: "image", required: false},
+                        {label: "Alt", name: "alt", widget: "string", required: false},
                       ]
                   },
                 ]
