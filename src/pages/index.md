@@ -1,9 +1,51 @@
 ---
-templateKey: index-page
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
+carousel:
+  - cover:
+      image: /img/2.jpg
+      alt: Muelle
+    logo:
+      image: /img/pier.png
+      alt: Pier Logo
+    sticker:
+      image: /img/all-inclusive.png
+      alt: All inclusive
+  - cover:
+      image: /img/14.jpg
+      alt: Playa casa maya
+    logo:
+      image: /img/logo-casa-maya.png
+      alt: Casa maya logo
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
+templateKey: index-page
+title: Beke Hotels
+perks:
+  cover:
+    image: /img/flamencos.jpg
+    alt: Flamencos
+  logo:
+    image: /img/logo-beke-azul.png
+    alt: Beke hotels logo
+  perk:
+    - image: /img/flex.svg
+      alt: Tarifa Flex
+      title: Tarifa Flex
+    - image: /img/leaf.svg
+      title: Rodeados de naturaleza
+      alt: Leaf
+    - image: /img/pawprint.svg
+      alt: Pet friendly
+      title: Pet friendly
+    - image: /img/sun-umbrella.svg
+      alt: Playa
+      title: Frente a la playa
+    - image: /img/sea.svg
+      alt: Sea
+      title: Frente a la laguna
+    - image: /img/flag.svg
+      alt: Tours
+      title: Tours
+onnav: true
 mainpitch:
   title: Why Kaldi
   description: >
@@ -11,11 +53,6 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -67,4 +104,6 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+image: /img/home-jumbotron.jpg
+description: ""
 ---
