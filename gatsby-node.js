@@ -32,18 +32,20 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach((edge) => {
-      const id = edge.node.id
-      const hotel = edge.node.frontmatter.hotel
-      createPage({
-        path: hotel !== null? hotel + edge.node.fields.slug : edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      })
+      if( edge.node.frontmatter.templateKey !== null ) {
+        const id = edge.node.id
+        const hotel = edge.node.frontmatter.hotel
+        createPage({
+          path: hotel !== null? hotel + edge.node.fields.slug : edge.node.fields.slug,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+        })
+      }
     })
 
     /* Tag pages:
