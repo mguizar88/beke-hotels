@@ -112,7 +112,7 @@ collections:
     fields:
       - {label: "Destination name", name: "title", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
-      - {label: "Badge object", name: "badge", widget: "object",
+      - {label: "Badge list", name: "badge", widget: "list",
           fields: 
             [
               {label: "Title", name: "title", widget: "string"},
@@ -130,7 +130,7 @@ collections:
       - {label: "Hotel Name", name: "title", widget: "string"}
       - {label: "Hotel Logo", name: "logo", widget: "image"}
       - {label: "Hotel Description", name: "description", widget: "text", pattern: ['.{0, 100}', "100 characters limit"], required: false}
-      - {label: "Badges", name: "badges", widget: "object",
+      - {label: "Badges", name: "badges", widget: "list",
           fields: 
           [
             {label: "Title", name: "title", widget: "string"},
