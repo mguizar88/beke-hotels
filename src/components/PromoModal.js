@@ -31,11 +31,11 @@ const PromoModal = class extends React.Component {
         return (
             <div 
                 className="fixed inset-0 bg-black bg-opacity-75
-                    z-50 flex justify-between"
+                    z-50 flex justify-between px-4 sm:px-0"
             > 
                 <div 
                     ref={this.modalRef} 
-                    className="relative w-4/5 sm:max-w-4xl 
+                    className="relative md:w-4/5 lg:w-3/5 sm:max-w-4xl 
                         m-auto"
                 >
                     <button 
@@ -48,37 +48,51 @@ const PromoModal = class extends React.Component {
                     >
                         &times;
                     </button>
-                    <img className="w-full " src={promo} alt="Promoción Marzo" />
-                    <a 
-                        href="https://hotels.cloudbeds.com/es/reservation/a5nfpq?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
-                        target="_Blank" 
-                        rel="noreferrer" 
-                        className="hover:text-yellow-500 p-2 rounded-md
-                          text-white font-bold sm:absolute lg:bottom-28 
-                            lg:right-72 sm:bottom-52 sm:right-52
-                            text-sm lg:text-base my-4 sm:my-0 text-center
-                            shadow-lg"
-                        style = {{
-                            backgroundColor: '#588518',
-                        }}
+                    <img className="w-full" src={promo} alt="Promoción Marzo" />
+                    <div 
+                        className="flex justify-between my-2 p-2 rounded-xl flex-col sm:flex-row" 
+                        style={{backgroundColor: '#fff1db'}}
                     >
-                        Reserva Bacalar
-                    </a>
-                    <a 
-                        href="https://hotels.cloudbeds.com/reservation/wastbU?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
-                        target="_Blank" 
-                        rel="noreferrer" 
-                        className="hover:text-yellow-500 p-2 rounded-md
-                          text-white font-bold sm:absolute lg:bottom-28 
-                            lg:right-32 sm:bottom-52 sm:right-16
-                            text-sm lg:text-base sm:my-0 text-center
-                            shadow-lg"
-                        style = {{
-                            backgroundColor: '#588518',
-                        }}
-                    >
-                        Reserva Holbox
-                    </a>
+                        <a 
+                            href="https://hotels.cloudbeds.com/es/reservation/a5nfpq?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
+                            target="_Blank" 
+                            rel="noreferrer" 
+                            className="hover:text-yellow-500 p-2 rounded-md
+                              text-white font-bold text-sm lg:text-base my-1 
+                                sm:my-0 text-center shadow-lg"
+                            style = {{
+                                backgroundColor: '#588518',
+                            }}
+                        >
+                            Reserva Pier Bacalar
+                        </a>
+                        <a 
+                            href="https://hotels.cloudbeds.com/reservation/wastbU?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
+                            target="_Blank" 
+                            rel="noreferrer" 
+                            className="hover:text-yellow-500 p-2 rounded-md
+                              text-white font-bold text-sm lg:text-base my-1 
+                                sm:my-0 text-center shadow-lg"
+                            style = {{
+                                backgroundColor: '#588518',
+                            }}
+                        >
+                            Reserva Casa Maya Holbox
+                        </a>
+                        <a 
+                            href="https://portal.freetobook.com/reservations?w_id=41469&w_tkn=2PaI8yGsXA5jLBS7S9TwDgX5se9b8GQ0Clb2zSxMcQNw0NJ6fWHwOfwXfpnRn&check_in_date=&check_out_date=&stay_length=NaN"
+                            target="_Blank" 
+                            rel="noreferrer" 
+                            className="hover:text-yellow-500 p-2 rounded-md
+                                font-bold text-sm lg:text-base text-white
+                                sm:my-0 my-1 text-center shadow-lg"
+                            style = {{
+                                backgroundColor: '#588518',
+                            }}
+                        >
+                            Reserva XO Bacalar
+                        </a>
+                    </div>
                 </div>
             </div> 
         )
