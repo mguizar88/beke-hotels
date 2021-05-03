@@ -128,7 +128,7 @@ collections:
     folder: src/pages/hotels
     create: true
     fields: 
-      - {label: "Template Key", name: "templatekey", widget: "hidden", default: "hotel-page" }
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "hotel-page" }
       - {label: "Hotel Name", name: "title", widget: "string"}
       - {label: "Hotel Logo", name: "logo", widget: "image"}
       - {label: "Hotel Description", name: "description", widget: "text", pattern: ['.{0, 100}', "100 characters limit"], required: false}
