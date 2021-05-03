@@ -1,6 +1,7 @@
 ---
+onnav: true
 templatekey: hotel-page
-title: XO Bacalar
+title: "XO Bacalar "
 logo: /img/xo-logo.png
 description: ""
 hero: /img/1xo-15.jpg
@@ -16,6 +17,5 @@ gallery:
     alt: Habitación XO
   - image: /img/xo-8.jpg
     alt: XO Bar
-onnav: true
 navparent: Hoteles
 ---
