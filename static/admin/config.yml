@@ -71,7 +71,7 @@ collections:
             [
               {label: "Amenity", name: "amenity", widget: "string"},
               {label: "Amenity image", name: "image", widget: "image"}, 
-              {label: "SVG", name: "svg", widget: "code", required: false}
+              {label: "SVG", name: "svg", widget: "code",['.{0, 100}', "100 characters limit"], required: false}
             ]
         }
       - {label: "Hotel", name: "hotel", widget: "relation", collection: "hotels", value_field: "title", search_fields: ["title", "destination"]}
@@ -81,8 +81,10 @@ collections:
     folder: "src/tours"
     create: true
     fields: 
-      - {label: "Is Package", name: "package", widget: "boolean"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Is Package", name: "package", widget: "boolean"}
+      - {label: "Destination", name: "destination", widget: "relation", collection: "destinations", value_field: "title", search_fields: ["title"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Image", name: "image", widget: "object",
           fields: 
             [
