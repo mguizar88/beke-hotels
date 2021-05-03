@@ -103,7 +103,7 @@ collections:
       - {label: "Policys", name: "policys", widget: list,
           fields:
             [
-              {label: "Policy", name: "policy", widget: "Text"}
+              {label: "Policy", name: "policy", widget: "text"}
             ]
         }
 
