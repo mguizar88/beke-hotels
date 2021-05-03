@@ -1,6 +1,7 @@
 ---
+onnav: true
 templatekey: hotel-page
-title: Pier Bacalar - All Inclusive
+title: "Pier Bacalar - All Inclusive "
 logo: /img/pier-green.png
 badges: []
 hero: /img/muelle.jpg
@@ -24,6 +25,5 @@ gallery:
     alt: Room view
   - image: /img/camastros.jpg
     alt: Camastros
-onnav: true
 navparent: Hoteles
 ---
