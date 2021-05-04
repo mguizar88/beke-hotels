@@ -18,7 +18,7 @@ collections:
     files: 
       - label: "Navbar configuration"
         name: "navconfig"
-        file: "src/config/navconfig.yml"
+        file: "src/config/navconfig.md"
         fields:
           - {label: "Logo", name: "logo", widget: "image"}
           - {label: "Right items", name: "rightitems", widget: "list",

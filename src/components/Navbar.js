@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
 import flex from '../img/icono-tarifa-flex.svg'
+import { useNavigationData } from '../hooks/NavigationData'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -138,7 +139,13 @@ const Navbar = class extends React.Component {
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
-              <button type="button" className="rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+              <button
+                onClick={this.props.packageHandler}
+                type="button" 
+                className="rounded-md p-2 inline-flex items-center justify-center hover:text-gray-900 hover:bg-white 
+                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" 
+                aria-expanded="false"
+              >
                 <span>Paquetes</span>
                 <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />

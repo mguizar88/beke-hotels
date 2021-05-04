@@ -1,6 +1,6 @@
 ---
 onnav: true
-templatekey: hotel-page
+templateKey: hotel-page
 title: Casa Maya Holbox
 logo: /img/logo-casa-maya.png
 description: ""

@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Reservation from '../components/Reservation'
 import PromoModal from '../components/PromoModal'
+import Packages from '../components/Packages'
 import MobileNav from '../components/MobileNav'
 
 import whatsappIcon from '../img/whatsapp-icon.svg'
@@ -17,11 +18,13 @@ export default class Layout extends React.Component {
     super(props)
     this.state = {
       modalIsActive: true,
+      packagesAreActive: false,
       windowWidth: null,
       reservationBarActive: false,
       reservationBarActiveClass: 'max-h-0'
     }
     this.modalHandler = this.modalHandler.bind(this)
+    this.packageHandler = this.packageHandler.bind(this)
     this.resizeHandler = this.resizeHandler.bind(this)
     this.reservationBarHandler = this.reservationBarHandler.bind(this)
   }
@@ -70,6 +73,14 @@ export default class Layout extends React.Component {
     )
   }
 
+  packageHandler() {
+    this.setState(
+      {
+        packagesAreActive: !this.state.packagesAreActive
+      }
+    )
+  }
+
   render() {
     
     const children = this.props.children
@@ -78,7 +89,9 @@ export default class Layout extends React.Component {
       <TemplateWrapper 
         windowWidth={this.state.windowWidth}
         modalIsActive={this.state.modalIsActive} 
-        modalHandler={this.modalHandler} 
+        packagesAreActive={this.state.packagesAreActive}
+        modalHandler={this.modalHandler}
+        packageHandler={this.packageHandler} 
         children={children}
         reservationClass={this.state.reservationBarActiveClass}
         reservationBarHandler={this.reservationBarHandler}
@@ -92,8 +105,10 @@ export default class Layout extends React.Component {
 const TemplateWrapper = ({
   windowWidth, 
   children, 
-  modalHandler, 
-  modalIsActive, 
+  modalHandler,
+  packageHandler,
+  modalIsActive,
+  packagesAreActive, 
   reservationClass,
   reservationBarHandler,
   path,
@@ -141,7 +156,10 @@ const TemplateWrapper = ({
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar modalHandler={modalHandler} />
+      <Navbar modalHandler={modalHandler} packageHandler={packageHandler} />
+      {
+        packagesAreActive? <Packages handler={packageHandler} /> : ''
+      }
       {
         path !== '/menu/'
         ? 

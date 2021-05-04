@@ -1,6 +1,6 @@
 ---
 onnav: true
-templatekey: hotel-page
+templateKey: hotel-page
 title: XO Bacalar
 logo: /img/xo-logo.png
 description: ""

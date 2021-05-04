@@ -1,6 +1,6 @@
 ---
 onnav: true
-templatekey: hotel-page
+templateKey: hotel-page
 title: Pier Bacalar - All Inclusive
 logo: /img/pier-green.png
 badges: []
