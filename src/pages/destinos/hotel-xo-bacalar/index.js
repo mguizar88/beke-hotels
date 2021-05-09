@@ -4,6 +4,13 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../../../components/Layout'
 
+import chef from '../../../img/chef.svg'
+import iron from '../../../img/ironing.svg'
+import dryer from '../../../img/hair-dryer.svg'
+import wifi from '../../../img/wi-fi.svg'
+import bath from '../../../img/bathtub.svg'
+import tv from '../../../img/tv-screen.svg'
+import ac from '../../../img/freezer.svg'
 
 const XoPage = ({data}) => {
 
@@ -81,6 +88,37 @@ const XoPage = ({data}) => {
                         <p className="text-beke text-lg text-justify ">
                         Habitación con dos camas matrimoniales.
                         </p>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex sm:ml-auto 
@@ -99,6 +137,37 @@ const XoPage = ({data}) => {
                         <p className=" sm:ml-auto text-beke text-lg text-justify">
                         Habitación con una cama matrimonial.
                         </p>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     <div 
                         className="sm:h-96 order-1 sm:order-none"
@@ -135,6 +204,37 @@ const XoPage = ({data}) => {
                         <p className="text-beke text-lg text-justify ">
                             Habitación con dos camas matrimoniales.
                         </p>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex ml-auto 
@@ -155,6 +255,37 @@ const XoPage = ({data}) => {
                             matrimoniales y una cama
                             individual.
                         </p>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     <div 
                         className="sm:h-96 order-3 sm:order-none"

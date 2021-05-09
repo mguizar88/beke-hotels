@@ -7,6 +7,14 @@ import VideoPlayer from '../../../components/VideoPlayer'
 import Layout from '../../../components/Layout'
 import video from '../../../img/pier-video.mp4'
 
+import chef from '../../../img/chef.svg'
+import iron from '../../../img/ironing.svg'
+import dryer from '../../../img/hair-dryer.svg'
+import wifi from '../../../img/wi-fi.svg'
+import bath from '../../../img/bathtub.svg'
+import tv from '../../../img/tv-screen.svg'
+import ac from '../../../img/freezer.svg'
+
 const PierPage = ({data}) => {
 
     const logo = getImage(data.logo)
@@ -103,13 +111,37 @@ const PierPage = ({data}) => {
                             refrigerador, microondas y lo mejor de todo, están a unos cuantos metros de la laguna de
                             Bacalar.
                         </p>
-                        <Link 
-                            to="/hotel-pier-bacalar/rooms/suite-terraza/"
-                            className="p-2 text-white bg-beke
-                                rounded-md sm:w-1/6 text-center mt-4"
-                        >
-                            Ver más
-                        </Link>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     <div 
                         className="p-4 sm:p-10 flex ml-auto 
@@ -136,13 +168,37 @@ const PierPage = ({data}) => {
                             vista a la laguna de Bacalar. Todas las habitaciones cuentan con una cama king size y un
                             sofá cama matrimonial, televisión, baño completo, cocineta, refrigerador y microondas.
                         </p>
-                        <Link 
-                            to="/hotel-pier-bacalar/rooms/suite-panorámica-con-vista-parcial-a-la-laguna/"
-                            className="p-2 text-white bg-beke
-                                rounded-md sm:w-1/6 text-center mt-4"
-                        >
-                            Ver más
-                        </Link>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     <div 
                         className="sm:h-96 order-1 sm:order-none"
@@ -189,13 +245,37 @@ const PierPage = ({data}) => {
                             cuenta con una cama
                             king size y baño completo.
                         </p>
-                        <Link 
-                            to="/hotel-pier-bacalar/rooms/cabaña-panorámica/"
-                            className="p-2 text-white bg-beke
-                                rounded-md sm:w-1/6 text-center mt-4"
-                        >
-                            Ver más
-                        </Link>
+                        <div className="flex w-full justify-between mt-4">
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={wifi} />
+                                <p>Wifi</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={ac} />
+                                <p>A/C</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={tv} />
+                                <p>TV</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={bath} />
+                                <p>Baño</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={chef} />
+                                <p>Cocineta</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={dryer} />
+                                <p>Secadora</p>
+                            </div>
+                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                <img className="w-8 h-8" src={iron} />
+                                <p>Plancha</p>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </section>

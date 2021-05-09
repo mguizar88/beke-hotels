@@ -1,15 +1,34 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useNavigationData = () => {
+const useNavigationData = () => {
    
-    const { navigationData } = useStaticQuery(
-        graphql `
-            query navigationData{
-                parents: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(nav-parents)/"}}){
+    const { navigation } = useStaticQuery(
+        graphql`
+            query NAVIGATION_DATA{
+                parents: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(config)/"}}){
                     edges {
                         node {
                             frontmatter {
                                 title
+                                url
+                                logo {
+                                    childImageSharp {
+                                        gatsbyImageData(
+                                            layout: CONSTRAINED
+                                            width: 220
+                                            placeholder: BLURRED 
+                                            formats: [WEBP]
+                                            quality: 100
+                                        )
+                                    }
+                                }
+                                rightitems {
+                                    title
+                                    url
+                                    logo {
+                                        publicURL
+                                    }
+                                }
                             }
                         }
                     }
@@ -31,4 +50,7 @@ export const useNavigationData = () => {
             }
         `
     )
+    return navigation
 }
+
+export default useNavigationData
