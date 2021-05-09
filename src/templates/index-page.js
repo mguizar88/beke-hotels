@@ -118,7 +118,7 @@ const IndexPageTemplate = ({ data }) => {
             <GatsbyImage className="max-w-full rounded-sm" image={duck} alt="Bacalar" />
           </div>
         </div>
-
+                        
         <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
           <div className="sm:col-span-2 row-span-2 flex flex-col">
             <GatsbyImage className="max-w-full rounded-sm" image={second} alt="Bacalar" />
