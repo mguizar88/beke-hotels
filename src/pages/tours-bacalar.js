@@ -21,6 +21,9 @@ const Tours = () => (
               <p>
                 ¡El favorito de todos! Descubre la laguna de los 7 colores a bordo de una cómoda embarcación con la tripulación más amigable y profesional de la zona. Recorre los sitios con mayor relevancia y belleza de la laguna, mientras conoces la historia y misterios de Bacalar.
               </p>
+              <a href="">
+                Más información
+              </a>
             </div>
           </div>
           <div className="flex row-span-1 col-span-1">
