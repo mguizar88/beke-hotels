@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const useNavigationData = () => {
    
-    const { navigation } = useStaticQuery(
+    const { parents, navItems } = useStaticQuery(
         graphql`
             query NAVIGATION_DATA{
                 parents: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(config)/"}}){
@@ -50,7 +50,7 @@ const useNavigationData = () => {
             }
         `
     )
-    return navigation
+    return { parents, navItems }
 }
 
 export default useNavigationData

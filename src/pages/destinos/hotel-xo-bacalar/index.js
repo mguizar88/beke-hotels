@@ -1,5 +1,5 @@
 import { graphql, Link } from 'gatsby'
-import React from 'react'
+import React, { useState } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../../../components/Layout'
@@ -300,6 +300,23 @@ const XoPage = ({data}) => {
                 </div>
             </section>
 
+            <section className="max-w-screen-sm mx-auto my-10 flex justify-center">
+                
+                <a 
+                    href="/destinos/hotel-xo-bacalar/payment/"
+                    target="_BLANK"
+                    className="p-4 bg-beke text-white rounded-2xl inline-flex"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="white">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    Ver formas de pago
+                    
+                </a>
+
+            </section>
+
             <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
                 <div 
                     className="grid grid-cols-1 
@@ -414,6 +431,17 @@ export const pageQuery = graphql `
                 gatsbyImageData(
                     layout: CONSTRAINED
                     width: 700
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        payment: file(relativePath: {eq: "formas-de-pago.png"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 1024
                     placeholder: BLURRED 
                     formats: [WEBP]
                     quality: 100

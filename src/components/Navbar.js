@@ -4,9 +4,14 @@ import { StaticImage } from 'gatsby-plugin-image'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
 import flex from '../img/icono-tarifa-flex.svg'
-import { useNavigationData } from '../hooks/NavigationData'
+import useNavigationData from '../hooks/NavigationData'
+import useSiteMetadata from './SiteMetadata'
 
-
+const NavData = () => {
+  const { parents, navItems }  = useNavigationData()
+  console.log(parents)
+  return <p></p>
+}
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -84,7 +89,7 @@ const Navbar = class extends React.Component {
         className="flex justify-center text-white shadow-xl 
         bg-gray-900 relative z-40"
       >
-        
+        <NavData />
         <div className="flex-row items-center flex justify-center sm:justify-between w-full lg:w-4/5 p-5">
           <div className="w-6/12 md:w-auto justify-center sm:justify-start relative">
             <Link className="w-full sm:w-40" to="/" >
