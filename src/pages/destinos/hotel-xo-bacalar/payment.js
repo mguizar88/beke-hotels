@@ -1,7 +1,11 @@
 import React from 'react'
-import { getImage } from 'gatsby-plugin-image'
+import { GatsbyImage,getImage } from 'gatsby-plugin-image'
 
-import image from '../../../img/payment.png' 
+import image from '../../../img/payment.png'
+import visa from '../../../img/visa-logo.png'
+import mastercard from '../../../img/mastercard-logo.webp'
+import paypal from '../../../img/paypal-logo.png'
+import clip from '../../../img/logo-clip.svg' 
 
 const PaymentMethod = class extends React.Component {
 
@@ -53,6 +57,36 @@ const PaymentMethod = class extends React.Component {
                                 <p className="my-4">
                                     Clabe: <span className="font-extrabold">072691002965490077</span>
                                 </p>
+                            </div>
+                            <div className="flex justify-between pt-4 items-center">
+                                <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                    <img 
+                                        className="h-8"
+                                        src={visa} 
+                                        placeholder="blurred"
+                                        alt="visa"
+                                    />
+                                </div>
+                                <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                    <img
+                                        className="h-8"
+                                        src={mastercard} 
+                                        placeholder="blurred"
+                                        alt="mastercard"
+                                        objectFit="contain"
+                                    />
+                                </div>
+                                <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                    <img className="h-8" src={clip} />
+                                </div>
+                                <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                    <img 
+                                        className="h-8"
+                                        src={paypal} 
+                                        placeholder="blurred"
+                                        alt="paypal"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

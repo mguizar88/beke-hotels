@@ -364,29 +364,29 @@ const XoPage = ({data}) => {
                             </p>
                         </div>
                         <div className="flex justify-between pt-4 items-center">
-                            <div className="h-8 w-24">
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
                                 <GatsbyImage 
-                                    className="h-full w-full"
+                                    className="h-8"
                                     image={visa} 
                                     placeholder="blurred"
                                     alt="visa"
                                 />
                             </div>
-                            <div className="h-8 w-24">
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
                                 <GatsbyImage
-                                    className="h-full w-full"
+                                    className="h-8"
                                     image={mastercard} 
                                     placeholder="blurred"
                                     alt="mastercard"
                                     objectFit="contain"
                                 />
                             </div>
-                            <div className="h-8 w-24">
-                                <img className="h-full w-full" src={clip} />
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                <img className="h-8" src={clip} />
                             </div>
-                            <div className="h-8 w-24">
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
                                 <GatsbyImage 
-                                    className="h-full w-full"
+                                    className="h-8"
                                     image={paypal} 
                                     placeholder="blurred"
                                     alt="paypal"
