@@ -71,7 +71,7 @@ const Menu = class extends React.Component {
         const breakfast = getImage(data.breakfast)
 
         return (
-            <>
+            <Layout>
                 <div>
                     <div
                         className="flex justify-center my-4"
@@ -178,7 +178,7 @@ const Menu = class extends React.Component {
                         
                     </div>
                 </div>
-            </>
+            </Layout>
         )
     }
 

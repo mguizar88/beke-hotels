@@ -337,13 +337,10 @@ const XoPage = ({data}) => {
                         style={{borderColor: "#7ad5d4"}}
                     >
                         <div>
-                            <h1 className="flex justify-center sm:flex-col text-3xl sm:text-7xl">
-                                <span className="font-extrabold sm:font-medium mr-3 sm:mr-0">
-                                    Formas 
-                                </span>
-                                <span className="font-extrabold self-end sm:text-8xl">
-                                    de pago
-                                </span>
+                            <h1 className="flex justify-center sm:flex-col text-3xl sm:text-5xl
+                                font-extrabold sm:font-medium"
+                            >
+                                Formas de pago
                             </h1>
                             <p className="text-center my-6 text-base sm:text-xl tracking-widest">
                                 Cuenta en pesos mexicanos
