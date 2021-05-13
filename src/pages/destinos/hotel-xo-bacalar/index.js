@@ -344,7 +344,7 @@ const XoPage = ({data}) => {
             <section className="w-11/12 mx-auto sm:w-full sm:mx-0 flex flex-col sm:flex-row justify-center">
                 
                 <div 
-                    className="sm:w-1/2 w-full flex flex-col items-center justify-center p-8 bg-white rounded-t-2xl
+                    className="sm:w-1/2 w-full flex flex-col items-center justify-center p-4 bg-white rounded-t-2xl
                         sm:rounded-none"
                 >
                     <GatsbyImage  
@@ -360,7 +360,7 @@ const XoPage = ({data}) => {
 
                 </div>
                 <div 
-                    className="sm:w-1/2 w-full text-white p-2 sm:p-8 mb-8 sm:mb-0 sm:order-none 
+                    className="sm:w-1/2 w-full text-white p-4 sm:p-4 mb-8 sm:mb-0 sm:order-none 
                             shadow-2xl rounded-b-2xl sm:shadow-none
                             sm:rounded-none"
                     style={{
@@ -377,21 +377,21 @@ const XoPage = ({data}) => {
                             >
                                 Formas de pago
                             </h1>
-                            <p className="text-center my-6 text-base sm:text-xl tracking-widest">
+                            <p className="text-center my-3 text-base sm:text-xl tracking-widest">
                                 Cuenta en pesos mexicanos
                             </p>
                         </div>
-                        <div className="text-2xl flex-grow flex flex-col justify-center">
-                            <p className="my-2 font-semibold">
+                        <div className="text-lg flex-grow flex flex-col justify-center">
+                            <p className="my-1 font-semibold">
                                 Banorte México
                             </p>
-                            <p className="my-2 font-semibold">
+                            <p className="my-1 font-semibold">
                                 René Gámez Handal
                             </p>
-                            <p className="my-2">
+                            <p className="my-1">
                                 Cuenta: <span className="font-extrabold">0296549007</span>
                             </p>
-                            <p className="my-2">
+                            <p className="my-1">
                                 Clabe: <span className="font-extrabold">072691002965490077</span>
                             </p>
                         </div>
