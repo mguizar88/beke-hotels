@@ -306,6 +306,41 @@ const XoPage = ({data}) => {
                 </div>
             </section>
 
+            <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
+                <div 
+                    className="grid grid-cols-1 
+                        sm:grid-cols-2"
+                >
+                    <div>
+                        <GatsbyImage 
+                            className="h-full w-full rounded-t-2xl
+                                sm:rounded-none"
+                            image={bacalar} 
+                            alt="Bacalar" 
+                        />
+                    </div>
+                    <div className="p-4 sm:p-16 bg-white rounded-b-2xl
+                            shadow-2xl mb-8 sm:mb-0 sm:shadow-none sm:bg-none
+                            sm:rounded-none">
+                        <h2
+                            className="text-beke text-xl xl:text-3xl
+                                mb-4 text-center"
+                        >
+                            BACALAR
+                        </h2>
+                        <p
+                            className="text-beke 
+                                text-xl text-justify"
+                        >
+                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
+                            <br/>
+                            <br/>
+                            Bacalar es simplemente un poblado paradisiaco que te enamorará con sus pequeñas casas de pescadores donde se encuentra una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        
             <section className="w-11/12 mx-auto sm:w-full sm:mx-0 flex flex-col sm:flex-row justify-center">
                 
                 <div 
@@ -395,40 +430,7 @@ const XoPage = ({data}) => {
 
             </section>
 
-            <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
-                <div 
-                    className="grid grid-cols-1 
-                        sm:grid-cols-2"
-                >
-                    <div>
-                        <GatsbyImage 
-                            className="h-full w-full rounded-t-2xl
-                                sm:rounded-none"
-                            image={bacalar} 
-                            alt="Bacalar" 
-                        />
-                    </div>
-                    <div className="p-4 sm:p-16 bg-white rounded-b-2xl
-                            shadow-2xl mb-8 sm:mb-0 sm:shadow-none sm:bg-none
-                            sm:rounded-none">
-                        <h2
-                            className="text-beke text-xl xl:text-3xl
-                                mb-4 text-center"
-                        >
-                            BACALAR
-                        </h2>
-                        <p
-                            className="text-beke 
-                                text-xl text-justify"
-                        >
-                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
-                            <br/>
-                            <br/>
-                            Bacalar es simplemente un poblado paradisiaco que te enamorará con sus pequeñas casas de pescadores donde se encuentra una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
-                        </p>
-                    </div>
-                </div>
-            </section>
+        
         </Layout>
     )
 
