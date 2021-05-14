@@ -14,6 +14,7 @@ import wifi from '../../../img/wi-fi.svg'
 import bath from '../../../img/bathtub.svg'
 import tv from '../../../img/tv-screen.svg'
 import ac from '../../../img/freezer.svg'
+import clip from '../../../img/logo-clip.svg'
 
 const PierPage = ({data}) => {
 
@@ -22,6 +23,10 @@ const PierPage = ({data}) => {
     const panoramica = getImage(data.panoramica)
     const cabana = getImage(data.cabana)
     const bacalar = getImage(data.bacalar)
+    const banorte = getImage(data.banorte)
+    const visa = getImage(data.visa)
+    const mastercard = getImage(data.mastercard)
+    const paypal = getImage(data.paypal)
 
     const videoJsOptions = {
         autoPlay: true,
@@ -315,6 +320,96 @@ const PierPage = ({data}) => {
                     </div>
                 </div>
             </section>
+
+            <section className="w-11/12 mx-auto sm:w-full sm:mx-0 flex flex-col sm:flex-row justify-center">
+                
+                <div 
+                    className="sm:w-1/2 w-full flex flex-col items-center justify-center p-4 bg-white rounded-t-2xl
+                        sm:rounded-none"
+                >
+                    <GatsbyImage  
+                        className="sm:mb-12"
+                        image={logo}
+                        alt="xo logo"
+                    />
+
+                    <GatsbyImage  
+                        image={banorte}
+                        alt="banorte logo"
+                    />
+
+                </div>
+                <div 
+                    className="sm:w-1/2 w-full text-white p-4 sm:p-4 mb-8 sm:mb-0 sm:order-none 
+                            shadow-2xl rounded-b-2xl sm:shadow-none
+                            sm:rounded-none"
+                    style={{
+                        backgroundColor: "#4e8a89"
+                    }}    
+                >
+                    <div 
+                        className="sm:w-4/5 divide-y-2 flex flex-col h-full divide-current"
+                        style={{borderColor: "#7ad5d4"}}
+                    >
+                        <div>
+                            <h1 className="flex justify-center sm:flex-col text-3xl sm:text-5xl
+                                font-extrabold sm:font-medium"
+                            >
+                                Formas de pago
+                            </h1>
+                            <p className="text-center my-3 text-base sm:text-xl tracking-widest">
+                                Cuenta en pesos mexicanos
+                            </p>
+                        </div>
+                        <div className="text-lg flex-grow flex flex-col justify-center">
+                            <p className="my-1 font-semibold">
+                                Banorte México
+                            </p>
+                            <p className="my-1 font-semibold">
+                                René Gámez Handal
+                            </p>
+                            <p className="my-1">
+                                Cuenta: <span className="font-extrabold">0296549007</span>
+                            </p>
+                            <p className="my-1">
+                                Clabe: <span className="font-extrabold">072691002965490077</span>
+                            </p>
+                        </div>
+                        <div className="flex justify-between pt-4 items-center">
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                <GatsbyImage 
+                                    className="h-8"
+                                    image={visa} 
+                                    placeholder="blurred"
+                                    alt="visa"
+                                />
+                            </div>
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                <GatsbyImage
+                                    className="h-8"
+                                    image={mastercard} 
+                                    placeholder="blurred"
+                                    alt="mastercard"
+                                    objectFit="contain"
+                                />
+                            </div>
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                <img className="h-8" src={clip} />
+                            </div>
+                            <div className="w-28 p-4 border-2 border-white rounded-lg flex justify-center items-center">
+                                <GatsbyImage 
+                                    className="h-8"
+                                    image={paypal} 
+                                    placeholder="blurred"
+                                    alt="paypal"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
         </Layout>
     )
 
@@ -373,6 +468,50 @@ export const pageQuery = graphql `
                 gatsbyImageData(
                     layout: CONSTRAINED
                     width: 700
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        banorte: file(relativePath: {eq: "banorte-logo.png"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 500
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        visa: file(relativePath: {eq: "visa-logo.png"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 100
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        mastercard: file(relativePath: {eq: "mastercard-logo.webp"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 128
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        paypal: file(relativePath: {eq: "paypal-logo.png"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 100
                     placeholder: BLURRED 
                     formats: [WEBP]
                     quality: 100
