@@ -14,7 +14,7 @@ const PaymentMethod = class extends React.Component {
     render() {
     
         return (
-            <Layout>
+            <Layout path={this.props.path}>
                 <div 
                     className="bg-black bg-opacity-75
                         flex justify-between px-4 sm:px-0"

@@ -71,7 +71,7 @@ const Menu = class extends React.Component {
         const breakfast = getImage(data.breakfast)
 
         return (
-            <Layout>
+            <Layout path={this.props.path}>
                 <div>
                     <div
                         className="flex justify-center my-4"

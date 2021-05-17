@@ -35,7 +35,7 @@ const IndexPageTemplate = ({ data }) => {
   const xoBar = getImage(data.xobar)
 
   return(
-    <Layout>
+    <Layout path="/">
       <Carousel
         nextLabel={null}
         prevLabel={null}

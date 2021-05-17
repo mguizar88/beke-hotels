@@ -37,6 +37,12 @@ export default class Layout extends React.Component {
     }
     
     window.addEventListener("resize", this.resizeHandler)
+    console.log(this.props.path)
+    if(this.props.path !== "/"){
+      this.setState({
+        modalIsActive: false
+      })
+    }
   }
 
   componentWillUnmount() {
@@ -117,6 +123,12 @@ const TemplateWrapper = ({
   const { title, description } = useSiteMetadata()
 
   function DisplayBookingBar(props) {
+
+    const path = props.path
+    
+    if( path === "/menu/" || path === "/destinos/hotel-pier-bacalar/payment/" || path === "/destinos/hotel-casa-maya-holbox/payment/" || path === "/destinos/hotel-xo-bacalar/payment/" ) {
+      return null
+    }
     
     return <Reservation class={reservationClass} />
   }
@@ -166,10 +178,7 @@ const TemplateWrapper = ({
         packagesAreActive? <Packages handler={packageHandler} /> : ''
       }
       {
-        path !== '/menu/'
-        ? 
-          modalIsActive?<PromoModal handler={modalHandler} /> : ''
-        : ''
+        modalIsActive?<PromoModal handler={modalHandler} /> : ''
       }
       <div 
 

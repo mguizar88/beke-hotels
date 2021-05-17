@@ -14,7 +14,7 @@ const PaymentMethod = class extends React.Component {
     render() {
     
         return (
-            <Layout>
+            <Layout path={this.props.path}>
                 <div 
                     className="bg-black bg-opacity-75
                         flex justify-between px-4 sm:px-0"
@@ -48,16 +48,16 @@ const PaymentMethod = class extends React.Component {
                                 </div>
                                 <div className="text-2xl flex-grow flex flex-col justify-center">
                                     <p className="my-4 font-semibold">
-                                        Banorte México
+                                        BBVA México
                                     </p>
                                     <p className="my-4 font-semibold">
-                                        René Gámez Handal
+                                        OP HOTELERA Y TURISTICA S.A DE C.V.
                                     </p>
                                     <p className="my-4">
-                                        Cuenta: <span className="font-extrabold">0296549007</span>
+                                        Cuenta: <span className="font-extrabold">0114187318</span>
                                     </p>
                                     <p className="my-4">
-                                        Clabe: <span className="font-extrabold">072691002965490077</span>
+                                        Clabe: <span className="font-extrabold">012691001141873181</span>
                                     </p>
                                 </div>
                                 <div className="flex justify-between pt-4 items-center">
