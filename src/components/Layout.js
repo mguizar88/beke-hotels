@@ -116,6 +116,11 @@ const TemplateWrapper = ({
   
   const { title, description } = useSiteMetadata()
 
+  function DisplayBookingBar(props) {
+    
+    return <Reservation class={reservationClass} />
+  }
+
   return (
     <div className="relative font-gotham">
       <Helmet>
@@ -173,9 +178,7 @@ const TemplateWrapper = ({
         {children}
       </div>
       
-      <Reservation 
-        class={reservationClass}
-      />
+      <DisplayBookingBar path={path} />
       {
         windowWidth <= 640
         ? <MobileNav 

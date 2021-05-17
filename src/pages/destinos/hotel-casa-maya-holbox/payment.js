@@ -20,11 +20,11 @@ const PaymentMethod = class extends React.Component {
                         flex justify-between px-4 sm:px-0"
                 > 
                     <div 
-                        className="flex m-auto w-2/3 my-8"
+                        className="flex flex-col sm:flex-row m-auto sm:w-2/3 w-full my-8"
                     >
-                        <img className="w-1/2 h-full" src={image} alt="Metodo de pago" />
+                        <img className="sm:w-1/2 hidden sm:block w-full h-full" src={image} alt="Metodo de pago" />
                         <div 
-                            className="w-1/2 text-white rounded-r-3xl p-2 sm:p-8"
+                            className="sm:w-1/2 w-full text-white rounded-3xl sm:rounded-l-none sm:rounded-r-3xl p-2 sm:p-8"
                             style={{
                                 backgroundColor: "#4e8a89"
                             }}    

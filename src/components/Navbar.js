@@ -9,7 +9,6 @@ import useSiteMetadata from './SiteMetadata'
 
 const NavData = () => {
   const { parents, navItems }  = useNavigationData()
-  console.log(parents)
   return <p></p>
 }
 
