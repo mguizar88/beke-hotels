@@ -2,8 +2,6 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-import VideoPlayer from '../../../components/VideoPlayer'
-
 import Layout from '../../../components/Layout'
 import video from '../../../img/pier-video.mp4'
 
