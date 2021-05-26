@@ -1,4 +1,5 @@
-const stripe = require('stripe')('sk_test_51IsAMWE8SYEYoR9cr5tdkrgDgW2VdHIH8eIujE9ZS6npWrlHvIf30y4uCclSuKF3eyctMwD25QXjv6KD51Jw5aro006jr55wSy')
+const env = require('dotenv').config()
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 let message
 const statusCode = 200
@@ -7,32 +8,12 @@ const headers = {
   "Access-Control-Allow-Headers": "Content-Type"
 };
 
-const validateHttpMethod = (method) => {
-    if( method !== "POST" ) {
-        message = "The request must be a GET request"
-        return res(message)
-    }
-}
-
-const validateBodyParams = ( bodyObject ) => {
-    if ( !bodyObject.amount ) {
-        message = "Amount is not defined"
-        return res(message)
-    }
-}
-
-const createPaymentIntent = async (event) => {
-    validateHttpMethod( event.httpMethod )
-
-    const body = JSON.parse( event.body )
-
-    validateBodyParams( body )
-
+const createPaymentIntent = async (amount) => {
+    const publishableKey = process.env.STRIPE_PUBLISHABLE_KEY
     let paymentIntent
-
     try{
         paymentIntent = await stripe.paymentIntents.create({
-            amount: body.amount,
+            amount: amount,
             currency: 'mxn',
             payment_method_types: ['oxxo']
         })
@@ -42,7 +23,7 @@ const createPaymentIntent = async (event) => {
     }
     message = "Pago procesado correctamente"
     
-    return res( message, paymentIntent )
+    return res( message, paymentIntent, publishableKey )
     
 }
 
@@ -56,13 +37,26 @@ const res = (message = '', paymentIntent = null, publishableKey = null) => {
         headers,
         body: JSON.stringify({
             message,
-            clientSecret: clientSecret
+            clientSecret: clientSecret,
+            publishableKey
         })
     }
 }
 
 module.exports.handler = async function(event, context) {
 
-    return createPaymentIntent( event )
+    if( event.httpMethod !== "POST" ) {
+        message = "The request must be a GET request"
+        return res(message)
+    }
+
+    const body = JSON.parse( event.body )
+
+    if ( !body.amount ) {
+        message = "Amount is not defined"
+        return res(message)
+    }
+
+    return createPaymentIntent( body.amount )
 
 }

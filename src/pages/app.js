@@ -44,10 +44,6 @@ const App = (props) => {
 
     })
 
-    if (!user) {
-        navigate(`/login/`)
-    }
-
     return(
         <div className="grid grid-cols-5 grid-rows-1 grid-flow-col min-h-screen text-white">
             <div 
