@@ -21,7 +21,7 @@ const createPaymentIntent = async (amount) => {
         console.error(error.message)
         res(error.message)
     }
-    message = "Pago procesado correctamente"
+    message = "Pago creado correctamente"
     
     return res( message, paymentIntent, publishableKey )
     
