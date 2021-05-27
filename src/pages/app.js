@@ -1,35 +1,102 @@
 import { navigate } from "gatsby-link"
 import React, { useContext, useEffect, useState } from "react"
 import { IdentityContext } from "../context/identity-context"
-import { Elements } from "@stripe/react-stripe-js"
-import { loadStripe } from "@stripe/stripe-js"
+import {Elements, ElementsConsumer} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
+const stripePromise = loadStripe("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
 
 const App = (props) => {
+    console.log(props)
+    const stripe = props.stripe
+    const [customerName, setCustomerName] = useState()
+    const [customerEmail, setCustomerEmail] = useState()
 
     const [userOptionsIsActive, setUserOptions] = useState()
 
+    const [clientSecret, setClientSecret] = useState()
+
+    const [publishableKey, setPublishableKey] = useState()
+
+    const [message, setMessage] = useState()
+
+    const [amount, setAmount] = useState('')
+
     const { user, identity: netlifyIdentity } = useContext(IdentityContext)
 
-    const createPaymentIntent = async () => {
-        let response, data
+    const onChangeInputHandler = (event) => {
+        
+        switch (event.target.name) {
+            case 'amount':
+                const realAmount = event.target.value * 100
+                setAmount( realAmount )
+                break;
+            case 'name':
+                setCustomerName( event.target.value )
+                break;
+            case 'email':
+                setCustomerEmail( event.target.value )
+                break;
+            default:
+                break;
+        }
+    }
 
+    const createPaymentIntent = async (event) => {
+        event.preventDefault()
+
+        let response, data
+        
         try{
             response = await fetch('http://localhost:8888/payment/api/create-payment-intent', {
                 method: "POST",
                 body: JSON.stringify({
-                    amount: 1000
+                    amount: amount
                 }),
                 headers: new Headers({
                     "Content-Type": "application/json"
                 })
             })
             data = await response.json()
-            console.log(data)
+            
+            setIntentData( data )
+            
         } catch (error) {
             console.error(error.message)
             return
         }
         
+    }
+
+    const completeOxxoPayment = async (event) => {
+        event.preventDefault()
+        let result
+        const name = customerName
+        const email = customerEmail
+        
+        try {
+            result = await stripe.confirmOxxoPayment(
+                clientSecret,
+                {
+                    payment_method: {
+                        billing_details: {
+                            name,
+                            email
+                        }
+                    }
+                }
+            )
+        } catch (error) {
+            console.error(error.message)
+            return
+        }
+
+    }
+
+    const setIntentData = ( data ) => {
+        setClientSecret( data.clientSecret )
+        setPublishableKey( data.publishableKey )
+        setMessage( data.message )
     }
 
     const logout = () => {
@@ -40,8 +107,6 @@ const App = (props) => {
         if(!user) {
             navigate(`/login/`)
         }
-        createPaymentIntent()
-
     })
 
     return(
@@ -92,12 +157,53 @@ const App = (props) => {
                 <div className="p-8 grid grid-cols-3">
                     <div className="col-span-1 p-8 bg-gray-900 border-2 border-black rounded-2xl shadow-xl">
                         <h2 className="text-center text-2xl mb-4">Oxxo Payments</h2>
-                        <form className="flex flex-col">
-                            <input className="mb-4 p-4 rounded-lg text-gray-900" placeholder="Monto" />
-                            <button className="bg-gray-700 ring-4 ring-gray-500 p-1 rounded-lg">
-                                Generar pago
-                            </button>
-                        </form>
+                        {
+                           !clientSecret && 
+                           <>
+                                <form onSubmit={createPaymentIntent} className="flex flex-col">
+                                    <input 
+                                        value={amount}
+                                        onChange={onChangeInputHandler}
+                                        name="amount"
+                                        type="text"
+                                        className="mb-4 p-4 rounded-lg 
+                                            text-gray-900" 
+                                        placeholder="Monto" 
+                                    />
+                                    <button className="bg-gray-700 ring-4 ring-gray-500 p-1 rounded-lg">
+                                        Generar pago
+                                    </button>
+                                </form>
+                            </>
+                        }
+                        {
+                            clientSecret &&
+                                <>
+                                    <form onSubmit={completeOxxoPayment} className="flex flex-col">
+                                        <input 
+                                            value={customerName}
+                                            onChange={onChangeInputHandler}
+                                            name="name"
+                                            type="text"
+                                            className="mb-4 p-4 rounded-lg 
+                                                text-gray-900" 
+                                            placeholder="Nombre completo" 
+                                        />
+                                        <input 
+                                            value={customerEmail}
+                                            onChange={onChangeInputHandler}
+                                            name="email"
+                                            type="text"
+                                            className="mb-4 p-4 rounded-lg 
+                                                text-gray-900" 
+                                            placeholder="E-mail" 
+                                        />
+                                        <button className="bg-gray-700 ring-4 ring-gray-500 p-1 rounded-lg">
+                                            Enviar pago
+                                        </button>
+                                    </form>
+                                </>
+                        }
                     </div>
                 </div>
             </div>
@@ -106,4 +212,16 @@ const App = (props) => {
 
 }
 
-export default App
+const AppWrapper = () => {
+    return (
+        <Elements stripe={stripePromise}>
+            <ElementsConsumer>
+                {({elements, stripe}) => (
+                    <App stripe={stripe} elements={elements} />
+                )}
+            </ElementsConsumer>    
+        </Elements>
+    )
+}
+
+export default AppWrapper
