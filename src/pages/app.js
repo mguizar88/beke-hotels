@@ -4,13 +4,17 @@ import { IdentityContext } from "../context/identity-context"
 import {Elements, ElementsConsumer} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
-const stripePromise = loadStripe("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
+import Loader from "../components/loader"
+
+const stripePromise = loadStripe("pk_live_7umxkvCn6gWmJzp1b0Fqf6ce")
 
 const App = (props) => {
-    console.log(props)
+    
     const stripe = props.stripe
-    const [customerName, setCustomerName] = useState()
-    const [customerEmail, setCustomerEmail] = useState()
+
+    const [customerName, setCustomerName] = useState('')
+    
+    const [customerEmail, setCustomerEmail] = useState('')
 
     const [userOptionsIsActive, setUserOptions] = useState()
 
@@ -28,8 +32,7 @@ const App = (props) => {
         
         switch (event.target.name) {
             case 'amount':
-                const realAmount = event.target.value * 100
-                setAmount( realAmount )
+                setAmount( event.target.value )
                 break;
             case 'name':
                 setCustomerName( event.target.value )
@@ -86,6 +89,7 @@ const App = (props) => {
                     }
                 }
             )
+            console.log(result)
         } catch (error) {
             console.error(error.message)
             return
@@ -107,6 +111,7 @@ const App = (props) => {
         if(!user) {
             navigate(`/login/`)
         }
+        
     })
 
     return(

@@ -11,9 +11,10 @@ const headers = {
 const createPaymentIntent = async (amount) => {
     const publishableKey = process.env.STRIPE_PUBLISHABLE_KEY
     let paymentIntent
+    const convertedAmount = amount * 100
     try{
         paymentIntent = await stripe.paymentIntents.create({
-            amount: amount,
+            amount: convertedAmount.toString(),
             currency: 'mxn',
             payment_method_types: ['oxxo']
         })
@@ -44,6 +45,8 @@ const res = (message = '', paymentIntent = null, publishableKey = null) => {
 }
 
 module.exports.handler = async function(event, context) {
+
+    
 
     if( event.httpMethod !== "POST" ) {
         message = "The request must be a GET request"
