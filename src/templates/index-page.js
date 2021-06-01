@@ -10,9 +10,11 @@ import Carousel from 'react-bootstrap/Carousel'
 const IndexPageTemplate = ({ data }) => {
   const firstSliderImageSrc = getSrc(data.first)
   const secondSliderImageSrc = getSrc(data.second)
+  const thirdSliderImageSrc = getSrc(data.third)
   const second = getImage(data.secondSmall)
   const logoPier = getImage(data.pier)
   const logoCasaMaya = getImage(data.casamaya)
+  const logoXo = getImage(data.logoXoBlanco)
   const allinclusive = getImage(data.allinclusive)
   const laguna = getImage(data.laguna)
   const pierMuelle = getImage(data.pierMuelle)
@@ -79,6 +81,23 @@ const IndexPageTemplate = ({ data }) => {
                 items-center justify-center px-4"
             >
               <GatsbyImage className="max-w-full sm:max-w-none" image={logoCasaMaya} alt="Casa Maya logo" />
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item className="h-screen" >
+          <div 
+            className="h-full"
+            style={{
+              backgroundImage: `url(${thirdSliderImageSrc})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div 
+              className="bg-gray-900 bg-opacity-50 w-full h-full flex 
+                items-center justify-center px-4"
+            >
+              <GatsbyImage className="max-w-full sm:max-w-none" image={logoXo} alt="Casa Maya logo" />
             </div>
           </div>
         </Carousel.Item>
@@ -211,7 +230,7 @@ const IndexPageTemplate = ({ data }) => {
               <iframe 
                 title="map"
                 className="w-full"
-                src="https://www.google.com/maps/d/embed?mid=1S1U0PHEcD-T41WIKnLXQBS-0j5n_c5-t"
+                src="https://www.google.com/maps/d/embed?mid=1OlFJI80we341EfI9Ve9uDCHAmMXyfchJ"
                 height="400px"
               >
               </iframe>
@@ -275,6 +294,17 @@ export const pageQuery = graphql`query IndexPageTemplate {
     }
   }
   second: file(relativePath: {eq: "14.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: FULL_WIDTH
+        width: 1920
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  third: file(relativePath: {eq: "1XO-15.jpg"}) {
     childImageSharp {
       gatsbyImageData(
         layout: FULL_WIDTH
@@ -451,6 +481,17 @@ export const pageQuery = graphql`query IndexPageTemplate {
     }
   }
   casamaya: file(relativePath: {eq: "logo-casa-maya.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 334
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  logoXoBlanco: file(relativePath: {eq: "logo-xo-blanco.png"}) {
     childImageSharp {
       gatsbyImageData(
         layout: CONSTRAINED

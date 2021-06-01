@@ -114,7 +114,7 @@ const PierPage = ({data}) => {
                             refrigerador, microondas y lo mejor de todo, están a unos cuantos metros de la laguna de
                             Bacalar.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -171,7 +171,7 @@ const PierPage = ({data}) => {
                             vista a la laguna de Bacalar. Todas las habitaciones cuentan con una cama king size y un
                             sofá cama matrimonial, televisión, baño completo, cocineta, refrigerador y microondas.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -248,7 +248,7 @@ const PierPage = ({data}) => {
                             cuenta con una cama
                             king size y baño completo.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>

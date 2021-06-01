@@ -91,7 +91,7 @@ const CasaMayaPage = ({data}) => {
                             Con cama king size, un sofá cama individual, baño privado y vista
                             parcial al mar.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -141,7 +141,7 @@ const CasaMayaPage = ({data}) => {
                             Ideales para familias grandes, con dos camas matrimoniales, una cama
                             individual y baño privado.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -210,7 +210,7 @@ const CasaMayaPage = ({data}) => {
                             cuenta con una cama king size, sofá cama individual, baño privado y vista parcial al
                             mar.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -260,7 +260,7 @@ const CasaMayaPage = ({data}) => {
                             Bungalow con una cama matrimonial y una cama individual, baño
                             privado y vista al jardín.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -329,7 +329,7 @@ const CasaMayaPage = ({data}) => {
                             y aprovechar al máximo la isla. La habitación cuenta con una cama matrimonial, baño privado
                             y televisión con cable.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>

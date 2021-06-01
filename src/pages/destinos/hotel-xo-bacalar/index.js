@@ -94,7 +94,7 @@ const XoPage = ({data}) => {
                         <p className="text-beke text-lg text-justify ">
                         Habitación con dos camas matrimoniales.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -143,7 +143,7 @@ const XoPage = ({data}) => {
                         <p className=" sm:ml-auto text-beke text-lg text-justify">
                         Habitación con una cama matrimonial.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -210,7 +210,7 @@ const XoPage = ({data}) => {
                         <p className="text-beke text-lg text-justify ">
                             Habitación con dos camas matrimoniales.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
@@ -261,7 +261,7 @@ const XoPage = ({data}) => {
                             matrimoniales y una cama
                             individual.
                         </p>
-                        <div className="flex w-full justify-between mt-4">
+                        <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                 <img className="w-8 h-8" src={wifi} />
                                 <p>Wifi</p>
