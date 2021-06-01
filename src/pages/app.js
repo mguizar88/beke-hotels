@@ -51,7 +51,7 @@ const App = (props) => {
         let response, data
         
         try{
-            response = await fetch('http://localhost:8888/payment/api/create-payment-intent', {
+            response = await fetch('https://bekehotels.com/payment/api/create-payment-intent', {
                 method: "POST",
                 body: JSON.stringify({
                     amount: amount
