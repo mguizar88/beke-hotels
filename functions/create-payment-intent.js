@@ -46,8 +46,6 @@ const res = (message = '', paymentIntent = null, publishableKey = null) => {
 
 module.exports.handler = async function(event, context) {
 
-    
-
     if( event.httpMethod !== "POST" ) {
         message = "The request must be a GET request"
         return res(message)
