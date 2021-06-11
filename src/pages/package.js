@@ -122,7 +122,7 @@ const Bacalar = ({data}) => {
                             Cena temática. (mar & tierra)
                         </li>
                         <p className="text-sm my-4">
-                            Total $24,000 MXN
+                            Total $24,000 MXN 
                         </p>
                         <p className="text-xs">
                             **Tarifa Flex: flexible en cambio de fechas hasta con 5 días anticipación.
