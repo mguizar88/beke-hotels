@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 
@@ -154,7 +154,7 @@ const Package = (props) => {
     
     const destiny = props.location.state.destination
     const data = props.data
-
+    
     return (
         <Layout>
             <div className="bg-gray-800">
