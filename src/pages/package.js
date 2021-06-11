@@ -150,10 +150,9 @@ const destinationRender = (destiny, data) => {
     }
 }
 
-const Package = (props) => {
+const Package = ({data, location}) => {
     
-    const destiny = props.location.state.destination
-    const data = props.data
+    const destiny = location.state.destination
     
     return (
         <Layout>
