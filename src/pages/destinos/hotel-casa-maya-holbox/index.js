@@ -56,8 +56,7 @@ const CasaMayaPage = ({data}) => {
                     className="sm:max-w-2xl mx-auto text-justify 
                         sm:mt-12 text-beke"
                 >
-                    Ubicado en la primera línea de playa de la encantadora isla de Holbox, hotel Casa Maya es un acogedor donde disfrutarás de las mejores vistas del amanecer y atardecer del Caribe mexicano.  Podrás relajarte en nuestro club de playa mientras tomas un delicioso cóctel o recorrer la isla en bicicleta con el mar color turquesa de fondo.
-                    Si vacacionas en Holbox, no puedes perderte el característico tour de bioluminiscencia, un encuentro con la naturaleza que convertirá tu visita en una experiencia mágica.
+                    Ubicado en la primera línea de playa de la encantadora isla de Holbox, hotel Casa Maya es un espacio acogedor donde disfrutarás de las mejores vistas del amanecer y atardecer del Caribe mexicano. Podrás relajarte en el club de playa mientras tomas un delicioso cóctel o después de recorrer la isla en bicicleta con el mar color turquesa de fondo. Si vacacionas en Holbox, no puedes perderte el característico tour de bioluminiscencia, un encuentro con la naturaleza que convertirá tu visita en una experiencia mágica.
                 </p>
             </section>
 
@@ -390,8 +389,7 @@ const CasaMayaPage = ({data}) => {
                             className="text-beke 
                                 text-xl text-justify"
                         >
-                            La isla, ubicada dentro de la Reserva Natural Yum Balam, posee una extensión de tan solo 42 km de largo y 2 km de ancho y está situado al norte de la Pinsula de Yucatán. Sus playas vírgenes y ecosistema son el hábitat de especies silvestres como delfines, pelícanos, flamencos, tortugas, entre otras.
-                            Sus aguas cristalinas la hacen un deleite para los bañistas y uno de los destinos ideales para practicar deportes como windsurf, el kitesurf, el buceo con snorkel, el velerismo y la navegación en kayak.
+                            La isla, ubicada dentro de la Reserva Natural Yum Balam, posee una extensión de tan solo 42 km de largo y 2 km de ancho y está situada al norte de la Península de Yucatán. Sus playas vírgenes y ecosistema son el hábitat de especies silvestres como delfines, pelícanos, flamencos, tortugas, entre otras. Sus aguas cristalinas la hacen un deleite para los bañistas y uno de los destinos ideales para practicar deportes como windsurf, kitesurf, buceo con snorkel, velerismo y navegación en kayak.
                         </p>
                     </div>
                 </div>

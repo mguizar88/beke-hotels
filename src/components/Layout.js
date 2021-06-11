@@ -5,7 +5,6 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Reservation from '../components/Reservation'
 import PromoModal from '../components/PromoModal'
-import Packages from '../components/Packages'
 import MobileNav from '../components/MobileNav'
 
 import whatsappIcon from '../img/whatsapp-icon.svg'
@@ -95,9 +94,7 @@ export default class Layout extends React.Component {
       <TemplateWrapper 
         windowWidth={this.state.windowWidth}
         modalIsActive={this.state.modalIsActive} 
-        packagesAreActive={this.state.packagesAreActive}
         modalHandler={this.modalHandler}
-        packageHandler={this.packageHandler} 
         children={children}
         reservationClass={this.state.reservationBarActiveClass}
         reservationBarHandler={this.reservationBarHandler}
@@ -112,9 +109,7 @@ const TemplateWrapper = ({
   windowWidth, 
   children, 
   modalHandler,
-  packageHandler,
   modalIsActive,
-  packagesAreActive, 
   reservationClass,
   reservationBarHandler,
   path,
@@ -173,10 +168,7 @@ const TemplateWrapper = ({
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar modalHandler={modalHandler} packageHandler={packageHandler} />
-      {
-        packagesAreActive? <Packages handler={packageHandler} /> : ''
-      }
+      <Navbar modalHandler={modalHandler} />
       {
         modalIsActive?<PromoModal handler={modalHandler} /> : ''
       }

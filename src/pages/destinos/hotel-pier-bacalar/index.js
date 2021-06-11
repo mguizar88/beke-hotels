@@ -63,18 +63,7 @@ const PierPage = ({data}) => {
                     className="sm:max-w-2xl mx-auto text-justify 
                         mt-12 text-beke"
                 >
-                    Pier Hotel Bacalar – Todo Incluido, al 
-                    estar rodeado de naturaleza crea un entorno 
-                    de exclusividad lejos de todo lo cotidiano. 
-                    Podrás disfrutar de la increíble laguna de 
-                    Bacalar a unos cuantos pasos de tu 
-                    habitación. Además, por nuestra ubicación 
-                    y su arena blanca, no podrás diferenciarla 
-                    del mar, por la noche disfrutarás del cielo 
-                    estrellado como nunca antes lo habías 
-                    visto, tu habitación, nuestro personal 
-                    y el ambiente te harán experimentar las 
-                    mejores vacaciones en pareja o en familia.
+                    Pier Hotel Bacalar – Todo Incluido, al estar rodeado de naturaleza, crea un entorno de exclusividad lejos de todo lo cotidiano. Podrás disfrutar de la increíble laguna de Bacalar a unos cuantos pasos de tu habitación. Además, por nuestra ubicación y su arena blanca, no podrás diferenciarla del mar. Por la noche disfrutarás del cielo estrellado como nunca antes lo habías visto y, tu habitación, nuestro personal y el ambiente, te harán experimentar las mejores vacaciones en pareja o en familia.
                 </p>
             </section>
 
@@ -105,14 +94,10 @@ const PierPage = ({data}) => {
                             SUITE TERRAZA
                         </h2>
                         <p className="text-beke text-xl text-justify">
-                            suite con dos camas queen size 
-                            y vista al jardín.
+                            Suite con dos camas queen size y vista al jardín.
                         </p>
                         <p className="text-beke text-lg text-justify ">
-                            Habitación perfecta para familias que buscan comodidad. Todas las
-                            habitaciones cuentan con dos camas queen size, televisión, baño completo, cocineta,
-                            refrigerador, microondas y lo mejor de todo, están a unos cuantos metros de la laguna de
-                            Bacalar.
+                            Habitación perfecta para familias que buscan comodidad. Todas las habitaciones cuentan con dos camas queen size, televisión, baño completo, cocineta, refrigerador y microondas. Lo mejor, es que está a solo unos cuantos metros de la laguna.
                         </p>
                         <div className="flex w-full justify-between mt-4 flex-wrap">
                             <div className="w-14 mx-2 text-xs flex flex-col items-center">
@@ -310,10 +295,10 @@ const PierPage = ({data}) => {
                             className="text-beke 
                                 text-xl text-justify"
                         >
-                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
+                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores, que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y de los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
                             <br/>
                             <br/>
-                            Bacalar es simplemente un poblado paradisiaco que te enamorará con sus pequeñas casas de pescadores donde se encuentra una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
+                            Bacalar es simplemente un poblado paradisíaco que te enamorará con sus pequeñas casas de pescadores, una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
                         </p>
                     </div>
                 </div>

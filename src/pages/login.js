@@ -8,7 +8,11 @@ const LoginPage = props => {
     
     useEffect(() => {
         netlifyIdentity.open()
-    }, [props.uri])
+        return () => {
+            netlifyIdentity.close()
+            console.log("desmontado")
+        }
+    })
 
     if ( user ) {
         navigate(`/app/`)

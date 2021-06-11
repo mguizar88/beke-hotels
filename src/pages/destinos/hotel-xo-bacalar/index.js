@@ -54,14 +54,7 @@ const XoPage = ({data}) => {
                     className="sm:max-w-2xl mx-auto text-justify 
                         mt-12 text-beke"
                 >
-                    Hotel situado a orilla de la hermosa
-                    laguna de los 7 colores, rodeado de una
-                    atmósfera que
-                    transmite tranquilidad, relajación y
-                    conexión con la naturaleza. Destino
-                    petfriendly para aquellos
-                    viajeros que disfrutan de la compañía
-                    de sus mascotas.
+                    Hotel situado a orilla de la hermosa Laguna de los 7 colores, rodeado de una atmósfera que transmite tranquilidad, relajación y conexión con la naturaleza. Destino petfriendly para aquellos viajeros que disfrutan de la compañía de sus mascotas.
                 </p>
             </section>
 
@@ -332,10 +325,10 @@ const XoPage = ({data}) => {
                             className="text-beke 
                                 text-xl text-justify"
                         >
-                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
-                            <br/>
-                            <br/>
-                            Bacalar es simplemente un poblado paradisiaco que te enamorará con sus pequeñas casas de pescadores donde se encuentra una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
+                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores, que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y de los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
+                        </p>
+                        <p>
+                        Bacalar es simplemente un poblado paradisíaco que te enamorará con sus pequeñas casas de pescadores, una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
                         </p>
                     </div>
                 </div>

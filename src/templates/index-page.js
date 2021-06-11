@@ -115,12 +115,9 @@ const IndexPageTemplate = ({ data }) => {
             <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
               <h2 className="text-2xl font-bold mb-4">PIER HOTEL BACALAR – TODO INCLUIDO</h2>
               <p>
-                Ubicado en el hermoso Pueblo Mágico de Bacalar, 
-                hotel Pier es un encantador hotel familiar estilo 
-                minimalista con acceso directo a la emblemática 
-                laguna de los 7 Colores, donde podrás nadar en sus 
-                cristalinas aguas o recorrerla en kayak con una 
-                inolvidable puesta de sol de fondo.
+                Ubicado en el hermoso Pueblo Mágico de Bacalar, hotel Pier es un encantador hotel familiar estilo
+                minimalista con acceso directo a la emblemática Laguna de los 7 Colores, donde podrás nadar en sus 
+                cristalinas aguas o recorrerla en kayak con una inolvidable puesta de sol de fondo.
               </p>
             </div>
           </div>
@@ -146,13 +143,10 @@ const IndexPageTemplate = ({ data }) => {
                 HOTEL CASA MAYA HOLBOX
               </h2>
               <p>
-                Ubicado en la primera línea de playa de la encantadora
-                isla de Holbox, hotel Casa Maya es un acogedor donde
-                disfrutarás de las mejores vistas del amanecer y
-                atardecer del Caribe mexicano. Podrás relajarte en
-                nuestro club de playa mientras tomas un delicioso 
-                cóctel o recorrer la isla en bicicleta con el mar
-                color turquesa de fondo.
+                Ubicado en la primera línea de playa de la encantadora isla de Holbox, hotel Casa Maya es un 
+                espacio acogedor donde disfrutarás de las mejores vistas del amanecer y atardecer del Caribe mexicano. 
+                Podrás relajarte en el club de playa mientras tomas un delicioso cóctel o después de recorrer la isla 
+                en bicicleta con el mar color turquesa de fondo.
               </p>
             </div>
           </div>
@@ -178,14 +172,9 @@ const IndexPageTemplate = ({ data }) => {
                 XO LAKEFRONT HOTEL
               </h2>
               <p>
-                Hotel situado a orilla de la hermosa
-                laguna de los 7 colores, rodeado de una
-                atmósfera que
-                transmite tranquilidad, relajación y
-                conexión con la naturaleza. Destino
-                petfriendly para aquellos
-                viajeros que disfrutan de la compañía
-                de sus mascotas.
+                Hotel situado a orilla de la hermosa Laguna de los 7 colores, rodeado de una atmósfera que 
+                transmite tranquilidad, relajación y conexión con la naturaleza. Destino petfriendly para 
+                aquellos viajeros que disfrutan de la compañía de sus mascotas.
               </p>
             </div>
           </div>
@@ -240,8 +229,8 @@ const IndexPageTemplate = ({ data }) => {
               <p>
                 Disfruta los destinos más increíbles de la
                 península de Yucatán y el estado de Quintana Roo
-                  en los hoteles que Béke Hotels tiene a tu
-                  disposición para que puedas relajarte.
+                en los hoteles que Béke Hotels tiene a tu
+                disposición para que puedas relajarte.
               </p>
             </div>
         </div>

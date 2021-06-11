@@ -11,6 +11,7 @@
     "gatsby": "^3.1.1",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-create-client-paths": "^3.5.0",
+    "gatsby-plugin-google-gtag": "^3.7.0",
     "gatsby-plugin-image": "^1.0.1",
     "gatsby-plugin-netlify": "^3.0.0",
     "gatsby-plugin-netlify-cms": "^5.0.0",

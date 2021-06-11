@@ -7,10 +7,8 @@ const IdentityProvider = props => {
 
     const [user, setUser] = useState()
 
-    useEffect(() => {
-        netlifyIdentity.init({})
-    })
-
+    netlifyIdentity.init({})
+    
     netlifyIdentity.on("login", user => {
         netlifyIdentity.close()
         setUser(user)
