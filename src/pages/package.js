@@ -11,25 +11,21 @@ const Bacalar = ({data}) => {
 
     return (
         <>
-            <h1 className="text-center mb-12 text-white text-5xl font-bold">Paquetes en Bacalar</h1>
+            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en Bacalar</h1>
             <div 
-                className="p-6 rounded-2xl mb-16"
+                className="sm:p-6 p-3 rounded-2xl mb-16 package-container"
                 style={{
-                    height: '500px',
                     backgroundImage: `url(${dockSrc})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
             >
-                <div className="h-full rounded-2xl shadow-2xl text-white p-10 grid sm:grid-cols-2 gap-4 cristal-container">
-                    <div className="h-full">
-                        <GatsbyImage className="rounded-2xl h-full overflow-hidden" image={adventure} alt="Imagen del paquete" />
+                <div className="sm:h-full rounded-2xl shadow-2xl text-white sm:p-10 p-2 grid sm:grid-cols-2 gap-4 cristal-container">
+                    <div className="sm:h-full">
+                        <GatsbyImage className="rounded-2xl sm:h-full sm:overflow-hidden" image={adventure} alt="Imagen del paquete" />
                     </div>
                     <div 
                         className="overflow-y-scroll px-2"
-                        style={{
-                            maxHeight: '500px',
-                        }}
                     >
                         <h3 className="bg-beke bg-opacity-80 rounded-2xl p-4 text-lg text-center">
                             AVENTURA TOTAL 4 DÍAS 3 NOCHES
@@ -75,23 +71,19 @@ const Bacalar = ({data}) => {
                 </div>
             </div>         
             <div 
-            className="p-6 rounded-2xl"
+            className="sm:p-6 p-3 rounded-2xl package-container"
             style={{
-                height: '500px',
                 backgroundImage: `url(${dockSrc})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
         >
-            <div className="h-full rounded-2xl shadow-2xl text-white p-10 grid sm:grid-cols-2 gap-4 cristal-container">
+            <div className="h-full rounded-2xl shadow-2xl text-white sm:p-10 p-2 grid sm:grid-cols-2 gap-4 cristal-container">
                 <div className="h-full">
                     <GatsbyImage className="rounded-2xl h-full overflow-hidden" image={romance} alt="Imagen del paquete" />
                 </div>
                 <div 
                     className="overflow-y-scroll px-2"
-                    style={{
-                        maxHeight: '500px',
-                    }}
                 >
                     <h3 className="bg-beke bg-opacity-80 rounded-2xl p-4 text-lg text-center">
                         ESCAPADA ROMÁNTICA 3 DÍAS 2 NOCHES
@@ -151,14 +143,16 @@ const destinationRender = (destiny, data) => {
 }
 
 const Package = ({data, location}) => {
+
+    const { state = {} } = location
     
-    const destiny = location.state.destination
+    const {destination} = state
     
     return (
         <Layout>
             <div className="bg-gray-800">
-                <div className="max-w-screen-lg mx-auto py-12">
-                    {destinationRender(destiny, data)}
+                <div className="max-w-screen-lg mx-auto py-12 px-4 sm:px-0">
+                    {destinationRender(destination, data)}
                 </div>
             </div>
         </Layout>
