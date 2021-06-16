@@ -1,131 +1,55 @@
 import React, { useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
+import { StarIcon } from '@heroicons/react/solid'
 
 import Layout from '../components/Layout'
+import PackageCard from '../components/PackageCard'
 
-const Bacalar = ({data}) => {
+const Pier = ({data}) => {
     const adventure = getImage(data.adventure)
     const romance = getImage(data.romance)
-    const dockSrc = getSrc(data.dock)
 
     return (
         <>
-            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en Bacalar</h1>
-            <div 
-                className="sm:p-6 p-3 rounded-2xl mb-16 package-container"
-                style={{
-                    backgroundImage: `url(${dockSrc})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-            >
-                <div className="sm:h-full rounded-2xl shadow-2xl text-white sm:p-10 p-2 grid sm:grid-cols-2 gap-4 cristal-container">
-                    <div className="sm:h-full">
-                        <GatsbyImage className="rounded-2xl sm:h-full sm:overflow-hidden" image={adventure} alt="Imagen del paquete" />
-                    </div>
-                    <div 
-                        className="overflow-y-scroll px-2"
-                    >
-                        <h3 className="bg-beke bg-opacity-80 rounded-2xl p-4 text-lg text-center">
-                            AVENTURA TOTAL 4 DÍAS 3 NOCHES
-                        </h3>
-                        <p className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                            Aventúrate en el pueblo mágico de Bacalar, explora lugares impresionantes y disfruta de muchísimas actividades. 
-                            Un paquete con experiencias, tours, alimentos y bebidas.
-                        </p>
-                        <ul>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Hospedaje a orilla de laguna.
-                            </li>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Habitación con cama king size.
-                            </li>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Alimentos y Bebidas incluidas.
-                                <Link to="/menu/">Ver menú</Link>
-                            </li>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Cena temática. (mar & tierra)
-                            </li>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Aventura total: visita a Kohunlich, rápidos de Bacalar y cenote azul.
-                            </li>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Tour rally salvaje con tirolesas, bicicletas y kayaks.
-                            </li>
-                            <li className="text-sm ring-2 bg-beke bg-opacity-50 ring-beke rounded-2xl p-2 my-4 text-justify">
-                                Transportación redonda: Chetumal – Bacalar 
-                            </li>
-                            <p className="text-sm my-4">
-                                Total $24,000 MXN
-                            </p>
-                            <p className="text-xs">
-                                **Tarifa Flex: flexible en cambio de fechas hasta con 5 días anticipación.
-                            </p>
-                            <p className="text-xs">
-                                **Métodos de pago: transferencia, deposito, tarjeta débito y tarjeta de crédito hasta 6 MSI.
-                            </p>
-                        </ul>
-                    </div>
-                </div>
-            </div>         
-            <div 
-            className="sm:p-6 p-3 rounded-2xl package-container"
-            style={{
-                backgroundImage: `url(${dockSrc})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-            }}
-        >
-            <div className="h-full rounded-2xl shadow-2xl text-white sm:p-10 p-2 grid sm:grid-cols-2 gap-4 cristal-container">
-                <div className="h-full">
-                    <GatsbyImage className="rounded-2xl h-full overflow-hidden" image={romance} alt="Imagen del paquete" />
-                </div>
-                <div 
-                    className="overflow-y-scroll px-2"
-                >
-                    <h3 className="bg-beke bg-opacity-80 rounded-2xl p-4 text-lg text-center">
-                        ESCAPADA ROMÁNTICA 3 DÍAS 2 NOCHES
-                    </h3>
-                    <p className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                        Nada como una escapada romántica para reavivar la pasión y dejar de lado el estrés
-                        de la vida cotidiana. Celebra tu aniversario,  o simplemente regálale a esa persona tan especial
-                        una estancia romántica con una deliciosa cena a la luz de las velas.
-                    </p>
-                    <ul>
-                        <li className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                            Hospedaje a orilla de laguna.
-                        </li>
-                        <li className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                            Habitación con cama king size.
-                        </li>
-                        <li className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                            Alimentos y Bebidas incluidas.
-                            <Link to="/menu/">Ver menú</Link>
-                        </li>
-                        <li className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                            Montaje romántico: pétalos de rosa, velas aromáticas, fresas con chocolate derretido y botella de vino espumoso.
-                        </li>
-                        <li className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                            Experiencia en velero.
-                        </li>
-                        <li className="text-sm ring-2 ring-beke bg-beke bg-opacity-50 rounded-2xl p-2 my-4 text-justify">
-                            Cena temática. (mar & tierra)
-                        </li>
-                        <p className="text-sm my-4">
-                            Total $24,000 MXN 
-                        </p>
-                        <p className="text-xs">
-                            **Tarifa Flex: flexible en cambio de fechas hasta con 5 días anticipación.
-                        </p>
-                        <p className="text-xs">
-                            **Métodos de pago: transferencia, deposito, tarjeta débito y tarjeta de crédito hasta 6 MSI.
-                        </p>
-                    </ul>
-                </div>
+            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en Pier Bacalar</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <PackageCard cover={romance} title="ESCAPADA ROMÁNTICA 4 DÍAS 3 NOCHES" />
+                <PackageCard cover={adventure} title="AVENTURA TOTAL 4 DÍAS 3 NOCHES" />
             </div>
-        </div>         
+        </>
+    )
+}
+
+const CasaMaya = ({ data }) => {
+    const adventure = getImage(data.adventure)
+    const cm = getImage(data.cm)
+    const bc = getImage(data.bc)
+
+    return (
+        <>
+            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en Casa Maya Holbox</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <PackageCard cover={adventure} title="Aventura total 5 DÍAS 4 NOCHES" />
+                <PackageCard cover={cm} title="Relax - Isla Paradisíaca" />
+                <PackageCard cover={bc} title="Experiencia Total" />
+            </div>
+        </>
+    )
+}
+
+const Xo = ({ data }) => {
+    
+    const bc = getImage(data.bc)
+    const xo = getImage(data.xo)
+
+    return (
+        <>
+            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en XO Bacalar</h1>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <PackageCard cover={xo} title="Chill- Relax - Vive" />
+            </div>
         </>
     )
 }
@@ -133,9 +57,17 @@ const Bacalar = ({data}) => {
 const destinationRender = (destiny, data) => {
     switch (destiny) {
         case 'bacalar':
-            return <Bacalar data={data} />
+            return <Pier data={data} />
             break;
     
+        case 'cm':
+            return <CasaMaya data={data} />
+            break;
+
+        case 'xo':
+            return <Xo data={data} />
+            break;
+
         default:
             return
             break;
@@ -186,11 +118,33 @@ export const pageQuery = graphql `
                 )
             }
         }
-        dock: file(relativePath: {eq: "2.jpg"}) {
+        cm: file(relativePath: {eq: "casamaya6.png"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
-                    width: 1024
+                    width: 900
+                    placeholder: BLURRED
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        bc: file(relativePath: {eq: "casa-maya-portafolio.png"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 900
+                    placeholder: BLURRED
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        xo: file(relativePath: {eq: "xo-laguna.png"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 900
                     placeholder: BLURRED
                     formats: [WEBP]
                     quality: 100

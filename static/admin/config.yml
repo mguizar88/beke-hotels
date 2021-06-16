@@ -107,6 +107,42 @@ collections:
             ]
         }
 
+  - name: "packages"
+    label: "Packages"
+    folder: src/packages
+    create: true
+    fields:
+      - {label: "Package name", name: "title", widget: "string"}
+      - {label: "Duration", name: "duration", widget: "string"}
+      - {label: "Hotel", name: "hotel", widget: "relation",  collection: "hotels", value_field: "title", search_fields: ["title", "destination"]}
+      - {label: "Cover image", name: "cover", widget: "object",
+          fields: 
+            [
+              {label: "Image", name: "image", widget: "image"},
+              {label: "Alt", name: "alt", widget: "string"},
+            ]
+        }
+      - {label: "Include", name: "include", widget: "list",
+          fields: 
+            [
+              {label: "Title", name: "title", widget: "string"},
+              {label: "Image object", name: "imageObject", widget: "object",
+                fields: 
+                  [
+                    {label: "Image", name: "image", widget: "image"},
+                    {label: "Alt", name: "alt", widget: "string"},
+                  ]
+              }
+            ]
+        }
+      - {label: "Policys", name: "policys", widget: list,
+          fields:
+            [
+              {label: "Policy", name: "policy", widget: "text"}
+            ]
+        }
+      
+
   - name: "destinations"
     label: "Destinations"
     folder: "src/pages/destinations"

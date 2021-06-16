@@ -239,7 +239,7 @@ const Navbar = class extends React.Component {
                       </Link>
                       <Link
                         to="/package/"
-                        state={{ destination: "bacalar" }}
+                        state={{ destination: "cm" }}
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <div className="ml-4">
@@ -250,7 +250,7 @@ const Navbar = class extends React.Component {
                       </Link>
                       <Link
                         to="/package/"
-                        state={{ destination: "bacalar" }}
+                        state={{ destination: "xo" }}
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <div className="ml-4">
