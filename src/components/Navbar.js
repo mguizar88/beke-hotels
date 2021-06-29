@@ -228,7 +228,7 @@ const Navbar = class extends React.Component {
                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       <Link
                         to="/package/"
-                        state={{ destination: "bacalar" }}
+                        state={{ destination: "Pier Bacalar - All Inclusive" }}
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <div className="ml-4">
@@ -239,7 +239,7 @@ const Navbar = class extends React.Component {
                       </Link>
                       <Link
                         to="/package/"
-                        state={{ destination: "cm" }}
+                        state={{ destination: "Casa Maya Holbox" }}
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <div className="ml-4">
@@ -250,7 +250,7 @@ const Navbar = class extends React.Component {
                       </Link>
                       <Link
                         to="/package/"
-                        state={{ destination: "xo" }}
+                        state={{ destination: "XO Bacalar" }}
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <div className="ml-4">

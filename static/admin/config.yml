@@ -115,6 +115,13 @@ collections:
       - {label: "Package name", name: "title", widget: "string"}
       - {label: "Duration", name: "duration", widget: "string"}
       - {label: "Hotel", name: "hotel", widget: "relation",  collection: "hotels", value_field: "title", search_fields: ["title", "destination"]}
+      - {label: "Price", name: "price", widget: "object", 
+          fields: 
+            [
+              {label: "Amount", name: "amount", widget: "string"},
+              {label: "People", name: "people", widget: "string"}
+            ]
+        }
       - {label: "Cover image", name: "cover", widget: "object",
           fields: 
             [

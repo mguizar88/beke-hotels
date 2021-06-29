@@ -1,6 +1,3 @@
-const { resolve } = require(`path`)
-const { platform } = require(`os`)
-
 module.exports = {
   siteMetadata: {
     title: 'Beke Hotels',
@@ -38,6 +35,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/config`,
         name: 'configuration',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/packages`,
+        name: 'packages',
       },
     },
     'gatsby-plugin-image',

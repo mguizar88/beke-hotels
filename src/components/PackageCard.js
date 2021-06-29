@@ -1,16 +1,40 @@
-import React, { useRef, useState } from "react"
-import { GatsbyImage } from 'gatsby-plugin-image'
+import React, { useEffect, useRef, useState } from "react"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StarIcon } from '@heroicons/react/solid'
 
-import getElementPosition from "../hooks/getElementPosition"
+const UnfoldedCard = () => {
+    return <div className="fixed inset-0 bg-black z-50">
 
-const Card = ({cover, title}) => {
+    </div>
+}
+
+const PackageCard = React.forwardRef(({ cover, title, slides, price, disclaimers }, ref) => {
+    console.log(ref)
+    const [offsetWidth, setOffsetWidth] = useState(null)
+    const [ isUnfold, setIsUnfolded ] = useState(false)
+    const image = getImage(cover.image)
+    const alt = cover.alt
+    const parentRef = React.createRef()
+    
+    const setParentOffsetWidth = () => {
+        const offsetWidth = parentRef.current.offsetWidth 
+        setOffsetWidth(offsetWidth)
+    }
+
+    const unfoldCard = (parentSize) => {
+        
+        setIsUnfolded(!isUnfold)
+    }
     
     return (
         <>
-            <div className="flex flex-col rounded-md overflow-hidden">
+            <div 
+                ref={parentRef} 
+                style={{width: offsetWidth? offsetWidth : 'inherit'}}
+                className="transition-all"
+            >
                 <div>
-                    <GatsbyImage className="h-60" image={cover} alt="Paquete Aventura" />
+                    <GatsbyImage className="h-60" image={image} alt={alt} />
                     <div className="relative z-10 h-12 bg-gradient-to-t from-white via-white -mt-8">
                     </div>
                 </div>
@@ -25,37 +49,11 @@ const Card = ({cover, title}) => {
                         </div>
                         <h3 className="text-center font-black uppercase">{ title }</h3>
                     </div>
-                    <button className="bg-yellow-400 text-center text-white w-full py-2 rounded-md">
+                    <button onClick={setParentOffsetWidth} className="bg-yellow-400 text-center text-white w-full py-2 rounded-md">
                         Ver más.
                     </button>
                 </div>
             </div>
-        
-        </>
-    )
-
-}
-
-const UnfoldedCard = () => {
-    return <div className="fixed inset-0 bg-black z-50">
-
-    </div>
-}
-
-const PackageCard = React.forwardRef( ({ cover, title, slides, price, disclaimers }, ref ) => {
-
-    const [ isUnfold, setIsUnfolded ] = useState(false)
-    
-    return (
-        <>
-            <Card 
-                ref={ref}
-                cover={cover} 
-                title={title} 
-            />
-            {
-                isUnfold ? <UnfoldedCard /> : null
-            }
         </>
     )
 })

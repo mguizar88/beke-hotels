@@ -9,3 +9,10 @@
         height: auto;
     }
 }
+
+.card {
+    transition: all 3s;
+    &:hover {
+        width: 800px;
+    }
+}
