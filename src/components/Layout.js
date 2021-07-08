@@ -36,7 +36,6 @@ export default class Layout extends React.Component {
     }
     
     window.addEventListener("resize", this.resizeHandler)
-    console.log(this.props.path)
     if(this.props.path !== "/"){
       this.setState({
         modalIsActive: false

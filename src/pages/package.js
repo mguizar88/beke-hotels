@@ -1,27 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
-import { StarIcon } from '@heroicons/react/solid'
 
 import Layout from '../components/Layout'
 import PackageCard from '../components/PackageCard'
+import transitionPromise from '../hooks/transitionPromise'
 
-const HotelPackages = ({ hotel, packages, data }) => {
+const HotelPackages = ({ hotel, packages }) => {
+    const [elements, setElements] = useState(
+        Array(packages.length)
+        .fill(0)
+        .map(() => React.createRef())
+    )
 
-    const ad = getImage(data.adventure)
-    let packageRef = null
-    const setRef = ref => packageRef = ref 
-    
+    const [packagesAreDismissed, setPackagesDismissedState] = useState(false)
+
+    const dismissPackages = (index) => {
+        return new Promise (  async resolve => {
+                for(let i = 0; i < elements.length; i++) {
+                    if(elements[i] !== elements[index] && elements[i].current !== null){
+                        try {
+                            const elementTransition = await transitionPromise(elements[i].current, 'transform', 'scale(0.5)')
+                            const elementfullOpacity = await transitionPromise(elements[i].current, 'opacity', '0')
+                            const displayNone = elements[i].current.style.display = 'none'
+                        } catch (error) {
+                            console.log(error)
+                        }
+                    }
+                }
+                setPackagesDismissedState(!packagesAreDismissed)
+                resolve() 
+            } 
+        ) 
+    }
+
     return (
         <>
             <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en {hotel}</h1>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className={`${packagesAreDismissed? `flex` : `grid grid-cols-1 sm:grid-cols-3`} gap-6`}>
                 {
                     packages.map(({ node: hotelPackage }, index) => {
                         const cover = hotelPackage.frontmatter.cover
+                        const include = hotelPackage.frontmatter.include
                         if (hotelPackage.frontmatter.hotel === hotel) {
-                            return <PackageCard key={index} ref={setRef} cover={cover} title={hotelPackage.frontmatter.title} />
+
+                            return <PackageCard key={index} elementIndex={index} parentOnClick={dismissPackages} ref={elements[index]} cover={cover} title={hotelPackage.frontmatter.title} includes={include} />
                         }   
                     })
                 }
@@ -43,7 +66,7 @@ const Package = ({data, location}) => {
         <Layout>
             <div className="bg-gray-800">
                 <div className="max-w-screen-lg mx-auto py-12 px-4 sm:px-0">
-                    <HotelPackages hotel={destination} packages={packages} data={data} />
+                    <HotelPackages hotel={destination} packages={packages} />
                 </div>
             </div>
         </Layout>
@@ -104,61 +127,6 @@ export const pageQuery = graphql `
                         }
                     }
                 }
-            }
-        }
-        adventure: file(relativePath: {eq: "aventura.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 900
-                    placeholder: BLURRED
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        romance: file(relativePath: {eq: "cena-romantica.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 900
-                    placeholder: BLURRED
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        cm: file(relativePath: {eq: "casamaya6.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 900
-                    placeholder: BLURRED
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        bc: file(relativePath: {eq: "casa-maya-portafolio.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 900
-                    placeholder: BLURRED
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        xo: file(relativePath: {eq: "xo-laguna.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 900
-                    placeholder: BLURRED
-                    formats: [WEBP]
-                    quality: 100
-                )
             }
         }
     }
