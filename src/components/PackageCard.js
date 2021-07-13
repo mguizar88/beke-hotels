@@ -5,10 +5,10 @@ import { StarIcon } from '@heroicons/react/solid'
 import transitionPromise from "../hooks/transitionPromise"
 import Carousel from 'react-bootstrap/Carousel'
 
-const PackageCard = React.forwardRef(({ cover, title, includes, parentOnClick, elementIndex }, ref) => {
+const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, ref) => {
     
     const [offsetWidth, setOffsetWidth] = useState(null)
-    const [ isUnfolded, setIsUnfolded ] = useState(false)
+    const [ isUnfold, setIsUnfold ] = useState(false)
     const image = getImage(cover.image)
     const alt = cover.alt
     
@@ -18,24 +18,26 @@ const PackageCard = React.forwardRef(({ cover, title, includes, parentOnClick, e
         
     }
 
-    const childFillParentWidht = () => {
+    const childFillParentWidth = () => {
         setParentOffsetWidth()
         transitionPromise(ref.current, 'width', '600px')
     }
 
     const unfoldCard = async(parentSize) => {
-        const onClick = await parentOnClick(elementIndex)
-        //const fillParent = childFillParentWidht()
-        setIsUnfolded(!isUnfolded)
+        //const onClick = await parentOnClick(elementIndex)
+        //const fillParent = childFillParentWidth()
+        console.log(ref.onresize)
+        setIsUnfold(!isUnfold)
+        console.log(ref.onresize)
     }
     
     return (
         <>
             <div 
                 ref={ref}
-                className="transition-all duration-200 h-full bg-gray-600"
+                className={`${isUnfold? `w-2/3` : `w-1/3`} transition-all duration-300`}
             >   
-                { !isUnfolded
+                { !isUnfold
                     ?<>
                         <div>
                             <GatsbyImage className="h-60" image={image} alt={alt} />
