@@ -14,37 +14,36 @@ const HotelPackages = ({ hotel, packages }) => {
 
     const [packagesAreDismissed, setPackagesDismissedState] = useState(false)
 
-    const dismissPackages = (index) => {
-        return new Promise (  async resolve => {
-                for(let i = 0; i < elements.length; i++) {
-                    if(elements[i] !== elements[index] && elements[i].current !== null){
-                        try {
-                            const elementTransition = await transitionPromise(elements[i].current, 'transform', 'scale(0.5)')
-                            const elementfullOpacity = await transitionPromise(elements[i].current, 'opacity', '0')
-                            const displayNone = elements[i].current.style.display = 'none'
-                        } catch (error) {
-                            console.log(error)
-                        }
-                    }
-                }
-                setPackagesDismissedState(!packagesAreDismissed)
-                resolve() 
-            } 
-        ) 
-    }
+    // const dismissPackages = (index) => {
+    //     return new Promise (  async resolve => {
+    //             for(let i = 0; i < elements.length; i++) {
+    //                 if(elements[i] !== elements[index] && elements[i].current !== null){
+    //                     try {
+    //                         const elementTransition = await transitionPromise(elements[i].current, 'transform', 'scale(0.5)')
+    //                         const elementfullOpacity = await transitionPromise(elements[i].current, 'opacity', '0')
+    //                         const displayNone = elements[i].current.style.display = 'none'
+    //                     } catch (error) {
+    //                         console.log(error)
+    //                     }
+    //                 }
+    //             }
+    //             setPackagesDismissedState(!packagesAreDismissed)
+    //             resolve() 
+    //         } 
+    //     ) 
+    // }
 
     return (
         <>
             <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en {hotel}</h1>
             
-            <div className={`${packagesAreDismissed? `flex` : `grid grid-cols-1 sm:grid-cols-3`} gap-6`}>
+            <div className={`flex w-full gap-6`}>
                 {
                     packages.map(({ node: hotelPackage }, index) => {
                         const cover = hotelPackage.frontmatter.cover
                         const include = hotelPackage.frontmatter.include
                         if (hotelPackage.frontmatter.hotel === hotel) {
-
-                            return <PackageCard key={index} elementIndex={index} parentOnClick={dismissPackages} ref={elements[index]} cover={cover} title={hotelPackage.frontmatter.title} includes={include} />
+                            return <PackageCard key={index} elementIndex={index} ref={elements[index]} cover={cover} title={hotelPackage.frontmatter.title} includes={include} />
                         }   
                     })
                 }
