@@ -80,7 +80,7 @@ const PromoModal = class extends React.Component {
                             Reserva Casa Maya Holbox
                         </a>
                         <a 
-                            href="https://portal.freetobook.com/reservations?w_id=41469&w_tkn=2PaI8yGsXA5jLBS7S9TwDgX5se9b8GQ0Clb2zSxMcQNw0NJ6fWHwOfwXfpnRn&check_in_date=&check_out_date=&stay_length=NaN"
+                            href="https://direct-book.com/properties/xohotelbacalardirect?locale=es&currency=MXN"
                             target="_Blank" 
                             rel="noreferrer" 
                             className="hover:text-yellow-500 p-2 rounded-md

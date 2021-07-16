@@ -9,6 +9,7 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
     
     const [offsetWidth, setOffsetWidth] = useState(null)
     const [ isUnfold, setIsUnfold ] = useState(false)
+    const [ renderPackagesIncludes, setRenderPackagesIncludes ] = useState(false)
     const image = getImage(cover.image)
     const alt = cover.alt
     
@@ -24,13 +25,13 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
     }
 
     const unfoldCard = async(parentSize) => {
+        ref.current.addEventListener('transitionend', te())
         //const onClick = await parentOnClick(elementIndex)
         //const fillParent = childFillParentWidth()
-        console.log(ref.onresize)
-        setIsUnfold(!isUnfold)
-        console.log(ref.onresize)
+        
     }
     
+    const te = () => setIsUnfold(!isUnfold)
     return (
         <>
             <div 
@@ -72,12 +73,12 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
                                 const alt = include.imageObject.alt
 
                                 return (
-                                    <Carousel.Item key={title} style={{width: '1024px'}}>
-                                        <div className="mx-auto" style={{width: '600px', height: '400px'}}>
-                                            <GatsbyImage image={image} alt={alt} />
+                                    <Carousel.Item key={title}>
+                                        <div className="mx-auto">
+                                            <GatsbyImage style={{height: '300px'}} image={image} alt={alt} />
                                         </div>
-                                        <Carousel.Caption className="bg-gray-900 opacity-75">
-                                            <h3>{title}</h3>
+                                        <Carousel.Caption className="bg-gray-900 rounded-xl">
+                                            <h3 className="mb-4">{title}</h3>
                                             <a className="bg-yellow-400 p-2 my-4" target="_blank" href="https://hotels.cloudbeds.com/es/reservation/a5nfpq?currency=MXN#checkin=2021-09-15&checkout=2021-09-18">Reservar</a>
                                         </Carousel.Caption>
                                     </Carousel.Item>
