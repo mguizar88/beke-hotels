@@ -15,6 +15,12 @@ carousel:
     logo:
       image: /img/logo-casa-maya.png
       alt: Casa maya logo
+  - cover:
+      image: /img/1xo-15.jpg
+      alt: xo
+    logo:
+      image: /img/logo-xo-blanco.png
+      alt: XO logo
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
