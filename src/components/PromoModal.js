@@ -54,7 +54,7 @@ const PromoModal = class extends React.Component {
                         style={{backgroundColor: '#fff1db'}}
                     >
                         <a 
-                            href="https://hotels.cloudbeds.com/es/reservation/a5nfpq?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
+                            href="https://direct-book.com/properties/pierhotelbacalardirect?locale=es&currency=MXN"
                             target="_Blank" 
                             rel="noreferrer" 
                             className="hover:text-yellow-500 p-2 rounded-md
@@ -67,7 +67,7 @@ const PromoModal = class extends React.Component {
                             Reserva Pier Bacalar
                         </a>
                         <a 
-                            href="https://hotels.cloudbeds.com/reservation/wastbU?currency=MXN#checkin=2021-11-17&checkout=2021-11-18"
+                            href="https://direct-book.com/properties/hotelcasamayaholboxdirect?locale=es&currency=MXN"
                             target="_Blank" 
                             rel="noreferrer" 
                             className="hover:text-yellow-500 p-2 rounded-md

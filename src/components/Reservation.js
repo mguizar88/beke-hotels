@@ -5,7 +5,7 @@ const Reservation = class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hotel: 'a5nfpq',
+            hotel: 'pier',
             checkin: '',
             checkout: '',
         }
@@ -35,7 +35,17 @@ const Reservation = class extends React.Component {
             window.open(`https://direct-book.com/properties/xohotelbacalardirect?locale=es&currency=MXN&checkInDate=${this.state.checkin}&checkOutDate=${this.state.checkout}`, "_BLANK")
             return 
         }
-        window.open( `https://hotels.cloudbeds.com/es/reservation/${this.state.hotel}?currency=MXN#checkin=${this.state.checkin}&checkout=${this.state.checkout}` , "_BLANK" )
+        if(this.state.hotel === 'pier') {
+            const daysBetween = this.getDaysBetween(this.state.checkin, this.state.checkout)
+            window.open(`https://direct-book.com/properties/pierhotelbacalardirect?locale=es&currency=MXN&checkInDate=${this.state.checkin}&checkOutDate=${this.state.checkout}`, "_BLANK")
+            return 
+        }
+        if(this.state.hotel === 'cm') {
+            const daysBetween = this.getDaysBetween(this.state.checkin, this.state.checkout)
+            window.open(`https://direct-book.com/properties/hotelcasamayaholboxdirect?locale=es&currency=MXN&checkInDate=${this.state.checkin}&checkOutDate=${this.state.checkout}`, "_BLANK")
+            return 
+        }
+        
         
     }
 
@@ -71,13 +81,13 @@ const Reservation = class extends React.Component {
                         >
                             <option 
                                 className="text-beke"
-                                value="a5nfpq"
+                                value="pier"
                                 >
                                 HOTEL PIER BACALAR - ALL INCLUSIVE
                             </option>
                             <option 
                                 className="text-beke" 
-                                value="wastbU"
+                                value="cm"
                             >
                                 HOTEL CASA MAYA HOLBOX
                             </option>
