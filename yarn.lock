@@ -6897,6 +6897,11 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"gatsby-plugin-facebook-pixel@^1.0.8":
+  "integrity" "sha512-oJfTMJxAv5AF2sganhtaq3+6GZ2W2s6/RjQxVsRUxUWMxhrtW6YeMsayAh1bVPgVQ8boJ0QyftipXe7fyq4BCA=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-facebook-pixel/-/gatsby-plugin-facebook-pixel-1.0.8.tgz"
+  "version" "1.0.8"
+
 "gatsby-plugin-google-gtag@^3.7.0":
   "integrity" "sha512-FXtdNkJs9S27m+EYbsPdfBkZurfY6fdwYA6lgvk7PJyYmAvmbNfpzv+F212HCMR2jTe/OOJC8mVg0+s77q/I5g=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.7.0.tgz"
