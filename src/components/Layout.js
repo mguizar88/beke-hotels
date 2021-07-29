@@ -166,6 +166,7 @@ const TemplateWrapper = ({
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
+        <meta name="facebook-domain-verification" content="4g1fmm2to3muq70gvq65wtq5dfuy8u" />
       </Helmet>
       <Navbar modalHandler={modalHandler} />
       {
