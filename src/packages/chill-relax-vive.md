@@ -1,7 +1,10 @@
 ---
-title: CHILL- RELAX - VIVE
+title: Chill - Relax - Vive
 duration: 4 días 3 noches
 hotel: XO Bacalar
+price:
+  amount: $12,640 MXN
+  people: por pareja
 cover:
   image: /img/xo-laguna.png
   alt: Bacalar
