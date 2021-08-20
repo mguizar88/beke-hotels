@@ -5,14 +5,14 @@ import { StarIcon } from '@heroicons/react/solid'
 import transitionPromise from "../hooks/transitionPromise"
 import Carousel from 'react-bootstrap/Carousel'
 
-const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, ref) => {
+const PackageCard = React.forwardRef(({ cover, title, includes, price, elementIndex }, ref) => {
     
     const [offsetWidth, setOffsetWidth] = useState(null)
     const [ isUnfold, setIsUnfold ] = useState(false)
     const [ renderPackagesIncludes, setRenderPackagesIncludes ] = useState(false)
     const image = getImage(cover.image)
     const alt = cover.alt
-    console.log(ref)
+    const { amount, people } = price
     
     const setParentOffsetWidth = () => {
         const offsetWidth = ref.current.offsetWidth 
@@ -75,10 +75,13 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
                                 const alt = include.imageObject.alt
 
                                 return (
-                                    <Carousel.Item key={title}>
-                                        <h2 className="absolute top-0 w-full bg-gray-900 z-50 text-white text-center text-xl">{ title }</h2>
+                                    <Carousel.Item key={index}>
+                                        <div className="absolute top-0 w-full bg-gray-900 z-50 text-white text-center">
+                                            <h2 className="text-xl">{ title }</h2>
+                                            <p>{amount}<span className="font-extrabold"> {people}</span></p>
+                                        </div>
                                         <div className="mx-auto">
-                                            <GatsbyImage style={{height: ref.current.clientHeight,}} image={image} alt={alt} />
+                                            <GatsbyImage style={{height: ref.current.clientHeight}} image={image} alt={alt} />
                                         </div>
                                         <Carousel.Caption className="bg-gray-900 rounded-xl">
                                             <h3 className="mb-4">{includeTitle}</h3>

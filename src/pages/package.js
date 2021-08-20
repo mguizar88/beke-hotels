@@ -43,7 +43,7 @@ const HotelPackages = ({ hotel, packages }) => {
                         const cover = hotelPackage.frontmatter.cover
                         const include = hotelPackage.frontmatter.include
                         if (hotelPackage.frontmatter.hotel === hotel) {
-                            return <PackageCard key={index} elementIndex={index} ref={elements[index]} cover={cover} title={hotelPackage.frontmatter.title} includes={include} />
+                            return <PackageCard key={index} price={hotelPackage.frontmatter.price} elementIndex={index} ref={elements[index]} cover={cover} title={hotelPackage.frontmatter.title} includes={include} />
                         }   
                     })
                 }
@@ -93,6 +93,10 @@ export const pageQuery = graphql `
                         title
                         duration
                         hotel
+                        price {
+                            amount
+                            people
+                        }
                         cover{
                             alt
                             image {
