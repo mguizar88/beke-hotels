@@ -1,7 +1,10 @@
 ---
-title: AVENTURA TOTAL
+title: Aventura Total
 duration: 5 DÍAS 4 NOCHES
 hotel: Casa Maya Holbox
+price:
+  amount: $18,600 MXN
+  people: por pareja
 cover:
   image: /img/aventura.png
   alt: Tirolesa
