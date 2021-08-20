@@ -2,6 +2,9 @@
 title: "Aventura Total  "
 duration: 4 días 3 noches
 hotel: Pier Bacalar - All Inclusive
+price:
+  amount: $24,000 MXN
+  people: por pareja
 cover:
   image: /img/aventura.png
   alt: Tirolesa
