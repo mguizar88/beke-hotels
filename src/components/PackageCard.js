@@ -12,6 +12,7 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
     const [ renderPackagesIncludes, setRenderPackagesIncludes ] = useState(false)
     const image = getImage(cover.image)
     const alt = cover.alt
+    console.log(ref)
     
     const setParentOffsetWidth = () => {
         const offsetWidth = ref.current.offsetWidth 
@@ -26,6 +27,7 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
 
     const unfoldCard = async(parentSize) => {
         ref.current.addEventListener('transitionend', te())
+        console.log(ref)
         //const onClick = await parentOnClick(elementIndex)
         //const fillParent = childFillParentWidth()
         
@@ -54,7 +56,7 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
                                     <StarIcon className="h-6 w-6 text-yellow-400" />
                                     <StarIcon className="h-6 w-6 text-yellow-400" />
                                 </div>
-                                <h3 className="text-center font-black uppercase">{ title }</h3>
+                                <h3 className="text-center font-black uppercase w-full overflow-ellipsis whitespace-nowrap overflow-hidden">{ title }</h3>
                             </div>
                             <button onClick={unfoldCard} className="bg-yellow-400 text-center text-white w-full py-2 rounded-md">
                                 Ver más.
@@ -68,17 +70,18 @@ const PackageCard = React.forwardRef(({ cover, title, includes, elementIndex }, 
                         {
                             includes.map((include, index) => {
 
-                                const title = include.title
+                                const includeTitle = include.title
                                 const image = getImage(include.imageObject.image)
                                 const alt = include.imageObject.alt
 
                                 return (
                                     <Carousel.Item key={title}>
+                                        <h2 className="absolute top-0 w-full bg-gray-900 z-50 text-white text-center text-xl">{ title }</h2>
                                         <div className="mx-auto">
-                                            <GatsbyImage style={{height: '300px'}} image={image} alt={alt} />
+                                            <GatsbyImage style={{height: ref.current.clientHeight,}} image={image} alt={alt} />
                                         </div>
                                         <Carousel.Caption className="bg-gray-900 rounded-xl">
-                                            <h3 className="mb-4">{title}</h3>
+                                            <h3 className="mb-4">{includeTitle}</h3>
                                             <a className="bg-yellow-400 p-2 my-4" target="_blank" href="https://hotels.cloudbeds.com/es/reservation/a5nfpq?currency=MXN#checkin=2021-09-15&checkout=2021-09-18">Reservar</a>
                                         </Carousel.Caption>
                                     </Carousel.Item>
