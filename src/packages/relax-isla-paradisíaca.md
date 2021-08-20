@@ -2,6 +2,9 @@
 title: Relax - Isla Paradisíaca
 duration: 4 días 3 noches
 hotel: Casa Maya Holbox
+price:
+  amount: $12,640 MXN
+  people: por pareja
 cover:
   image: /img/3.jpg
   alt: Holbox
