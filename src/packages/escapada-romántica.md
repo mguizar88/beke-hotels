@@ -1,7 +1,10 @@
 ---
-title: ESCAPADA ROMÁNTICA
+title: Escapada Romántica
 duration: 4 DÍAS 3 NOCHES
 hotel: Pier Bacalar - All Inclusive
+price:
+  amount: $24,000 MXN
+  people: por pareja
 cover:
   image: /img/cena-romantica.jpg
   alt: Cena romantica
