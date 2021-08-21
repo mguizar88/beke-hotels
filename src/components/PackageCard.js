@@ -38,7 +38,7 @@ const PackageCard = React.forwardRef(({ cover, title, includes, price, elementIn
         <>
             <div 
                 ref={ref}
-                className={`${isUnfold? `w-2/3` : `w-1/3`} transition-all duration-300`}
+                className={`${isUnfold? `sm:w-2/3` : `sm:w-1/3`} transition-all duration-300 w-full`}
             >   
                 { !isUnfold
                     ?<>

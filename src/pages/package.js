@@ -37,7 +37,7 @@ const HotelPackages = ({ hotel, packages }) => {
         <>
             <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en {hotel}</h1>
             
-            <div className={`flex w-full gap-6`}>
+            <div className={`flex flex-col sm:flex-row w-full gap-6`}>
                 {
                     packages.map(({ node: hotelPackage }, index) => {
                         const cover = hotelPackage.frontmatter.cover
