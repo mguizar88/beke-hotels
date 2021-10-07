@@ -1,5 +1,5 @@
 const env = require('dotenv').config()
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+//const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST_KEY)
 
 let message
 const statusCode = 200
@@ -8,8 +8,20 @@ const headers = {
   "Access-Control-Allow-Headers": "Content-Type"
 };
 
-const createPaymentIntent = async (amount) => {
-    const publishableKey = process.env.STRIPE_PUBLISHABLE_KEY
+const loadStripe = hotel => {
+    if(hotel === "Pier") return require('stripe')(process.env.STRIPE_SECRET_TEST_KEY)
+    if(hotel === "Casa Maya") return require('stripe')(process.env.CM_STRIPE_SECRET_TEST_KEY)
+}
+
+const getPublishableKey = hotel => {
+    if(hotel === "Pier") return process.env.STRIPE_PUBLISHABLE_TEST_KEY
+    if(hotel === "Casa Maya") return process.env.CM_STRIPE_SECRET_TEST_KEY
+}
+
+const createPaymentIntent = async (amount, hotel) => {
+    const stripe = loadStripe(hotel)
+    console.log(stripe)
+    const publishableKey = getPublishableKey(hotel)
     let paymentIntent
     const convertedAmount = amount * 100
     try{
@@ -58,6 +70,6 @@ module.exports.handler = async function(event, context) {
         return res(message)
     }
 
-    return createPaymentIntent( body.amount )
+    return createPaymentIntent( body.amount, body.hotelSelected )
 
 }

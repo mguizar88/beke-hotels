@@ -4,110 +4,53 @@ import { IdentityContext } from "../context/identity-context"
 import {Elements, ElementsConsumer} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
+import transitionPromise from "../hooks/transitionPromise";
+
 import Loader from "../components/loader"
+import ElementsWrapper from "../components/ElementsWrapper";
 
-const stripePromise = loadStripe("pk_live_7umxkvCn6gWmJzp1b0Fqf6ce")
+const pierStripePromise = loadStripe("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
 
-const App = (props) => {
-    
-    const stripe = props.stripe
+const cmStripePromise = loadStripe("pk_test_51JbuRUHHUTVOmDBdJozja5rwaATEOkMCKYUdTpbCZLmlqKrj4VvEqRyQVogeKZ0K1EuWYrY2JvAWBsXfwxs1w17O00SY2x95zC")
 
-    const [customerName, setCustomerName] = useState('')
-    
-    const [customerEmail, setCustomerEmail] = useState('')
+const App = (props) => {  
+
+    const hotelDropdown = React.createRef()
+
+    const ElementsWrapperRef = React.createRef()
 
     const [userOptionsIsActive, setUserOptions] = useState()
 
-    const [clientSecret, setClientSecret] = useState()
+    const [currentUser, setCurrentUser] = useState('')
+
+    const [hotelSelectState, setHotelSelectState] = useState()
+
+    const [hotelSelected, setHotelSelected] = useState('Casa Maya')
 
     const [publishableKey, setPublishableKey] = useState()
 
-    const [message, setMessage] = useState()
-
-    const [amount, setAmount] = useState('')
-
-    const [currentUser, setCurrentUser] = useState('')
-
     const { identity: netlifyIdentity, user } = useContext(IdentityContext)
+
+    const [loadedStripe, setStripe] = useState()
 
     useEffect(() => {
         setCurrentUser(user)
     })
 
-    const onChangeInputHandler = (event) => {
-        
-        switch (event.target.name) {
-            case 'amount':
-                setAmount( event.target.value )
-                break;
-            case 'name':
-                setCustomerName( event.target.value )
-                break;
-            case 'email':
-                setCustomerEmail( event.target.value )
-                break;
-            default:
-                break;
+    useEffect(() => {
+        setHotelSelectState(false)
+        if( hotelSelected === "Pier") {
+            setPublishableKey("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
+            const stripePromise = pierStripePromise
+            setStripe(stripePromise)
+
         }
-    }
-
-    const createPaymentIntent = async (event) => {
-        event.preventDefault()
-
-        let response, data
-        
-        try{
-            response = await fetch('/payment/api/create-payment-intent', {
-                method: "POST",
-                body: JSON.stringify({
-                    amount: amount
-                }),
-                headers: new Headers({
-                    "Content-Type": "application/json"
-                })
-            })
-            data = await response.json()
-            
-            setIntentData( data )
-            
-        } catch (error) {
-            console.error(error.message)
-            return
+        if( hotelSelected === "Casa Maya") {
+            setPublishableKey("pk_test_51JbuRUHHUTVOmDBdJozja5rwaATEOkMCKYUdTpbCZLmlqKrj4VvEqRyQVogeKZ0K1EuWYrY2JvAWBsXfwxs1w17O00SY2x95zC")
+            const stripePromise = cmStripePromise
+            setStripe(stripePromise)
         }
-        
-    }
-
-    const completeOxxoPayment = async (event) => {
-        event.preventDefault()
-        let result
-        const name = customerName
-        const email = customerEmail
-        
-        try {
-            result = await stripe.confirmOxxoPayment(
-                clientSecret,
-                {
-                    payment_method: {
-                        billing_details: {
-                            name,
-                            email
-                        }
-                    }
-                }
-            )
-            console.log(result)
-        } catch (error) {
-            console.error(error.message)
-            return
-        }
-
-    }
-
-    const setIntentData = ( data ) => {
-        setClientSecret( data.clientSecret )
-        setPublishableKey( data.publishableKey )
-        setMessage( data.message )
-    }
+    }, [hotelSelected])
 
     const logout = () => {
         netlifyIdentity.logout();  
@@ -165,57 +108,64 @@ const App = (props) => {
                 <div className="bg-gray-900 p-4 border-2 border-black">
                     <p className="font-extralight text-2xl text-center">Dashboard</p>
                 </div>
-                <div className="p-8 grid grid-cols-3">
+                    
+                <div className="p-8 grid grid-cols-3 gap-4">
+
                     <div className="col-span-1 p-8 bg-gray-900 border-2 border-black rounded-2xl shadow-xl">
-                        <h2 className="text-center text-2xl mb-4">Oxxo Payments</h2>
-                        {
-                           !clientSecret && 
-                           <>
-                                <form onSubmit={createPaymentIntent} className="flex flex-col">
-                                    <input 
-                                        value={amount}
-                                        onChange={onChangeInputHandler}
-                                        name="amount"
-                                        type="text"
-                                        className="mb-4 p-4 rounded-lg 
-                                            text-gray-900" 
-                                        placeholder="Monto" 
-                                    />
-                                    <button className="bg-gray-700 ring-4 ring-gray-500 p-1 rounded-lg">
-                                        Generar pago
-                                    </button>
-                                </form>
-                            </>
-                        }
-                        {
-                            clientSecret &&
-                                <>
-                                    <form onSubmit={completeOxxoPayment} className="flex flex-col">
-                                        <input 
-                                            value={customerName}
-                                            onChange={onChangeInputHandler}
-                                            name="name"
-                                            type="text"
-                                            className="mb-4 p-4 rounded-lg 
-                                                text-gray-900" 
-                                            placeholder="Nombre completo" 
-                                        />
-                                        <input 
-                                            value={customerEmail}
-                                            onChange={onChangeInputHandler}
-                                            name="email"
-                                            type="text"
-                                            className="mb-4 p-4 rounded-lg 
-                                                text-gray-900" 
-                                            placeholder="E-mail" 
-                                        />
-                                        <button className="bg-gray-700 ring-4 ring-gray-500 p-1 rounded-lg">
-                                            Enviar pago
-                                        </button>
-                                    </form>
-                                </>
-                        }
+                        <label id="listbox-label" className="block text-sm font-medium text-white">
+                            Hotel
+                        </label>
+                        <div className="mt-1 relative">
+                            <button name="hotel" onClick={() => setHotelSelectState(!hotelSelectState)} type="button" className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 sm:text-sm mb-2"  aria-expanded="true">
+                            <span className="flex items-center">
+                                <span className="ml-3 block truncate text-gray-900">
+                                    { hotelSelected }
+                                </span>
+                            </span>
+                            <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                
+                                <svg className="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fillRule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </span>
+                            </button>
+                            { 
+                                hotelSelectState&&
+                                    <ul ref={hotelDropdown} className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabIndex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+                                        <li onClick={ () => setHotelSelected( "Pier" ) } className="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                                            <div className="flex items-center">
+                                            <span className="font-normal ml-3 block truncate">
+                                                Pier
+                                            </span>
+                                            </div>
+                                            <span className="text-gray-700 absolute inset-y-0 right-0 flex items-center pr-4">
+                                            
+                                            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            </span>
+                                        </li>
+                                        <li onClick={ () => setHotelSelected( "Casa Maya" ) } className="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                                            <div className="flex items-center">
+                                            <span className="font-normal ml-3 block truncate">
+                                                Casa Maya
+                                            </span>
+                                            </div>
+                                            <span className="text-gray-700 absolute inset-y-0 right-0 flex items-center pr-4">
+                                            
+                                            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            </span>
+                                        </li>
+                                    </ul>
+                            }
+                        </div>
                     </div>
+                    {                
+                        loadedStripe&&     
+                            <ElementsWrapper loadedStripe={loadedStripe} publishableKey={publishableKey} setPublishableKey={setPublishableKey} hotelSelected={hotelSelected} />
+                    }
                 </div>
             </div>
         </div>
@@ -223,16 +173,4 @@ const App = (props) => {
 
 }
 
-const AppWrapper = () => {
-    return (
-        <Elements stripe={stripePromise}>
-            <ElementsConsumer>
-                {({elements, stripe}) => (
-                    <App stripe={stripe} elements={elements} />
-                )}
-            </ElementsConsumer>    
-        </Elements>
-    )
-}
-
-export default AppWrapper
+export default App
