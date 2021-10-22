@@ -169,9 +169,7 @@ const TemplateWrapper = ({
         <meta name="facebook-domain-verification" content="4g1fmm2to3muq70gvq65wtq5dfuy8u" />
       </Helmet>
       <Navbar modalHandler={modalHandler} />
-      {
-        modalIsActive?<PromoModal handler={modalHandler} /> : ''
-      }
+      
       <div 
 
         className="bg-gray-100 sm:mb-96 relative z-10 2xl:mb-0 mx-auto"
