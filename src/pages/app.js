@@ -4,10 +4,7 @@ import { IdentityContext } from "../context/identity-context"
 import {Elements, ElementsConsumer} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
-import transitionPromise from "../hooks/transitionPromise";
-
-import Loader from "../components/loader"
-import ElementsWrapper from "../components/ElementsWrapper";
+import CouponGenerator from "../components/CouponGenerator"
 
 const pierStripePromise = loadStripe("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
 
@@ -31,37 +28,42 @@ const App = (props) => {
 
     const { identity: netlifyIdentity, user } = useContext(IdentityContext)
 
-    const [loadedStripe, setStripe] = useState()
-
     useEffect(() => {
         setCurrentUser(user)
     })
-
-    useEffect(() => {
-        setHotelSelectState(false)
-        if( hotelSelected === "Pier") {
-            setPublishableKey("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
-            const stripePromise = pierStripePromise
-            setStripe(stripePromise)
-
-        }
-        if( hotelSelected === "Casa Maya") {
-            setPublishableKey("pk_test_51JbuRUHHUTVOmDBdJozja5rwaATEOkMCKYUdTpbCZLmlqKrj4VvEqRyQVogeKZ0K1EuWYrY2JvAWBsXfwxs1w17O00SY2x95zC")
-            const stripePromise = cmStripePromise
-            setStripe(stripePromise)
-        }
-    }, [hotelSelected])
 
     const logout = () => {
         netlifyIdentity.logout();  
     }
 
     useEffect(() => {
-        console.log(user)
-        /*if(!user) {
+        if(!user) {
             navigate(`/login/`)
-        }*/
+        }
     })
+
+    const CouponForm = ({hotel}) => {
+        const hotelSelected = hotel
+        if ( hotelSelected === "Pier" ) {
+            return <Elements stripe={pierStripePromise}>
+                <ElementsConsumer>
+                    {({elements, stripe}) => (
+                        <CouponGenerator stripe={stripe} elements={elements} setPublishableKey={setPublishableKey} hotelSelected={hotelSelected} />
+                    )}
+                </ElementsConsumer>    
+            </Elements>
+        }
+        if ( hotelSelected === "Casa Maya" ) {
+            return <Elements stripe={cmStripePromise}>
+                <ElementsConsumer>
+                    {({elements, stripe}) => (
+                        <CouponGenerator stripe={stripe} elements={elements} setPublishableKey={setPublishableKey} hotelSelected={hotelSelected} />
+                    )}
+                </ElementsConsumer>    
+            </Elements>
+        }
+        return null
+    }
 
     return(
         <div className="grid grid-cols-5 grid-rows-1 grid-flow-col min-h-screen text-white">
@@ -163,8 +165,8 @@ const App = (props) => {
                         </div>
                     </div>
                     {                
-                        loadedStripe&&     
-                            <ElementsWrapper loadedStripe={loadedStripe} publishableKey={publishableKey} setPublishableKey={setPublishableKey} hotelSelected={hotelSelected} />
+                        hotelSelected&&     
+                        <CouponForm hotel={hotelSelected} />
                     }
                 </div>
             </div>

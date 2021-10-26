@@ -3,13 +3,11 @@ import React, {useState} from 'react'
 const CouponGenerator = (props) => {
 
     const stripe = props.stripe
-
-    const publishableKey = props.publishableKey
-
+    
     const setPublishableKey = props.setPublishableKey
-
+    
     const hotelSelected = props.hotelSelected
-
+   
     const [clientSecret, setClientSecret] = useState()
 
     const [message, setMessage] = useState()
@@ -72,15 +70,14 @@ const CouponGenerator = (props) => {
     }
 
     const setIntentData = ( data ) => {
-        console.log(data.clientSecret)
         setClientSecret( data.clientSecret )
-        setPublishableKey( data.publishableKey )
+        //setPublishableKey( data.publishableKey )
         setMessage( data.message )
     }
 
     return (
         <div className="col-span-1 p-8 bg-gray-900 border-2 border-black rounded-2xl shadow-xl">
-            <h2 className="text-center text-2xl mb-4">Oxxo Payments</h2>
+            <h2 className="text-center text-2xl mb-4">{ hotelSelected } Oxxo Payments</h2>
             {
                 !clientSecret && 
                 <>
