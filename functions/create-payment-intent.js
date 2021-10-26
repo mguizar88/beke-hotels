@@ -9,16 +9,17 @@ const headers = {
 };
 
 const loadStripe = hotel => {
-    if(hotel === "Pier") return require('stripe')(process.env.STRIPE_SECRET_TEST_KEY)
-    if(hotel === "Casa Maya") return require('stripe')(process.env.CM_STRIPE_SECRET_TEST_KEY)
+    if(hotel === "Pier") return require('stripe')(process.env.PIER_STRIPE_SECRET_KEY)
+    if(hotel === "Casa Maya") return require('stripe')(process.env.CASAMAYA_STRIPE_SECRET_KEY)
 }
 
 const getPublishableKey = hotel => {
-    if(hotel === "Pier") return process.env.STRIPE_PUBLISHABLE_TEST_KEY
-    if(hotel === "Casa Maya") return process.env.CM_STRIPE_SECRET_TEST_KEY
+    if(hotel === "Pier") return process.env.PIER_STRIPE_PUBLISHABLE_KEY
+    if(hotel === "Casa Maya") return process.env.CASAMAYA_STRIPE_PUBLISHABLE_KEY
 }
 
 const createPaymentIntent = async (amount, hotel) => {
+    console.log(hotel)
     const stripe = loadStripe(hotel)
     console.log(stripe)
     const publishableKey = getPublishableKey(hotel)

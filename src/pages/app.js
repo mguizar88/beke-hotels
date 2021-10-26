@@ -6,9 +6,9 @@ import {loadStripe} from '@stripe/stripe-js';
 
 import CouponGenerator from "../components/CouponGenerator"
 
-const pierStripePromise = loadStripe("pk_test_51IsAMWE8SYEYoR9ccLNDzw0Q0IdHk8a0gDvbtmIRKTWITqyT33r9cwGySPak1Eo9Bt5hZxBXgNNkC5z3QmQrOUoK00OtGiE67D")
+const pierStripePromise = loadStripe("pk_live_7umxkvCn6gWmJzp1b0Fqf6ce")
 
-const cmStripePromise = loadStripe("pk_test_51JbuRUHHUTVOmDBdJozja5rwaATEOkMCKYUdTpbCZLmlqKrj4VvEqRyQVogeKZ0K1EuWYrY2JvAWBsXfwxs1w17O00SY2x95zC")
+const cmStripePromise = loadStripe("pk_live_6GGQZdNTLGjjxW5IbMiFFuRA")
 
 const App = (props) => {  
 
