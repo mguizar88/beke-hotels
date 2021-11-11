@@ -146,7 +146,7 @@ const MobileNav = class extends React.Component {
                         </svg>
                         Tours
                     </Link>
-                    <Link
+                    <Link 
                         to="/package/" 
                         state={{ destination: "Pier Bacalar - All Inclusive" }}
                         className="flex flex-col items-center justify-items-center p-2 text-sm">
