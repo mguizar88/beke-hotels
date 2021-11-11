@@ -85,18 +85,6 @@ const Reservation = class extends React.Component {
                                 >
                                 HOTEL PIER BACALAR - ALL INCLUSIVE
                             </option>
-                            <option 
-                                className="text-beke" 
-                                value="cm"
-                            >
-                                HOTEL CASA MAYA HOLBOX
-                            </option>
-                            <option 
-                                className="text-beke" 
-                                value="xo"
-                            >
-                                HOTEL XO BACALAR
-                            </option>
                         </select>
                     </div>
                     <div className="sm:h-20 flex flex-col justify-center">

@@ -137,21 +137,25 @@ const MobileNav = class extends React.Component {
                         </svg>
                         Destinos
                     </button>
-                    <button
+                    <Link
+                        to="/tours-bacalar/"
                         className="flex flex-col items-center justify-items-center p-2 text-sm"
                     >
                         <svg className="fill-current text-white w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
                         </svg>
                         Tours
-                    </button>
-                    <button className="flex flex-col items-center justify-items-center p-2 text-sm">
+                    </Link>
+                    <Link
+                        to="/package/" 
+                        state={{ destination: "Pier Bacalar - All Inclusive" }}
+                        className="flex flex-col items-center justify-items-center p-2 text-sm">
                         <svg className="fill-current text-white w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clipRule="evenodd" />
                             <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
                         </svg>
                         Paquetes
-                    </button>
+                    </Link>
                     <button 
                         onClick={this.props.reservationBarHandler}
                         className="flex flex-col items-center 
