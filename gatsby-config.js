@@ -85,12 +85,33 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
     {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: "524476572214880",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-114874849-1",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**"],
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        // Defers execution of google analytics script after page load
+        defer: true,
+        // defaults to false
+        enableWebVitalsTracking: true,
+      },
+    },
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
