@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import React, { useState } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
+import { Helmet } from 'react-helmet'
 import Layout from '../../../components/Layout'
 
 import chef from '../../../img/chef.svg'
@@ -29,312 +29,317 @@ const XoPage = ({data}) => {
     const paypal = getImage(data.paypal)
 
     return (
-        <Layout>
-            <div className="sm:h-screen">
-                <GatsbyImage 
-                    image={hero}
-                    className="w-full h-full"
-                    alt="Bacalar hero image"
-                    objectPosition="center bottom"
-                />
-            </div>
-            <section 
-                className="container mx-auto text-center p-6
-                    sm:py-32 w-11/12 sm:w-full mb-12 -mt-12 
-                    rounded-2xl sm:rounded-none sm:bg-transparent bg-white 
-                    relative shadow-2xl sm:shadow-none sm:mt-0"
-            >
-                <GatsbyImage 
-                    image={logo} 
-                    className="max-w-md"
-                    placeholder="blurred"
-                    alt="logo"
-                />
-                <p 
-                    className="sm:max-w-2xl mx-auto text-justify 
-                        mt-12 text-beke"
+        <>
+            <Helmet>
+                <script src='https://www.thehotelsnetwork.com/js/hotel_price_widget.js?hotel_id=1721129&property_id=1033476&account_key=13F4DBC854C4C39DFCBD774AF370011B' async></script>
+            </Helmet>
+            <Layout>
+                <div className="sm:h-screen">
+                    <GatsbyImage 
+                        image={hero}
+                        className="w-full h-full"
+                        alt="Bacalar hero image"
+                        objectPosition="center bottom"
+                    />
+                </div>
+                <section 
+                    className="container mx-auto text-center p-6
+                        sm:py-32 w-11/12 sm:w-full mb-12 -mt-12 
+                        rounded-2xl sm:rounded-none sm:bg-transparent bg-white 
+                        relative shadow-2xl sm:shadow-none sm:mt-0"
                 >
-                    Hotel situado a orilla de la hermosa Laguna de los 7 colores, rodeado de una atmósfera que transmite tranquilidad, relajación y conexión con la naturaleza. Destino petfriendly para aquellos viajeros que disfrutan de la compañía de sus mascotas.
-                </p>
-            </section>
+                    <GatsbyImage 
+                        image={logo} 
+                        className="max-w-md"
+                        placeholder="blurred"
+                        alt="logo"
+                    />
+                    <p 
+                        className="sm:max-w-2xl mx-auto text-justify 
+                            mt-12 text-beke"
+                    >
+                        Hotel situado a orilla de la hermosa Laguna de los 7 colores, rodeado de una atmósfera que transmite tranquilidad, relajación y conexión con la naturaleza. Destino petfriendly para aquellos viajeros que disfrutan de la compañía de sus mascotas.
+                    </p>
+                </section>
 
-            <section className="w-11/12 mx-auto sm:w-full sm:mx-0">
-                <div 
-                    className="grid grid-cols-1 
-                        sm:grid-cols-2"
-                >
-                    <div className="sm:h-96">
-                        <GatsbyImage
-                            className="sm:h-full w-full rounded-t-2xl
-                                sm:rounded-none"
-                            image={terraza} 
-                            alt="Suite Terraza" 
-                        />
-                    </div>
+                <section className="w-11/12 mx-auto sm:w-full sm:mx-0">
                     <div 
-                        className="p-4 sm:p-10 flex items-center 
-                            justify-center flex-col sm:w-4/5
-                            shadow-2xl rounded-b-2xl sm:shadow-none
-                            sm:rounded-none mb-8 sm:mb-0"
+                        className="grid grid-cols-1 
+                            sm:grid-cols-2"
                     >
-                        <h2 
-                            className="text-beke sm:text-3xl 
-                                mb-4 text-center text-xl"
-                        >
-                            HABITACIÓN TERRAZA VISTA AL JARDÍN
-                        </h2>
-        
-                        <p className="text-beke text-lg text-justify ">
-                        Habitación con dos camas matrimoniales.
-                        </p>
-                        <div className="flex w-full justify-between mt-4 flex-wrap">
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={wifi} />
-                                <p>Wifi</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={ac} />
-                                <p>A/C</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={tv} />
-                                <p>TV</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={bath} />
-                                <p>Baño</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={chef} />
-                                <p>Cocineta</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={dryer} />
-                                <p>Secadora</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={iron} />
-                                <p>Plancha</p>
-                            </div>
-                            
+                        <div className="sm:h-96">
+                            <GatsbyImage
+                                className="sm:h-full w-full rounded-t-2xl
+                                    sm:rounded-none"
+                                image={terraza} 
+                                alt="Suite Terraza" 
+                            />
                         </div>
-                    </div>
-                    <div 
-                        className="p-4 sm:p-10 flex sm:ml-auto 
-                            justify-center flex-col sm:w-4/5 
-                            items-center order-2 sm:order-none 
-                            shadow-2xl rounded-b-2xl sm:shadow-none
-                            sm:rounded-none mb-8 sm:mb-0"
-                    >
-                        <h2 
-                            className="text-beke sm:text-3xl 
-                                mb-4 text-center text-xl"
+                        <div 
+                            className="p-4 sm:p-10 flex items-center 
+                                justify-center flex-col sm:w-4/5
+                                shadow-2xl rounded-b-2xl sm:shadow-none
+                                sm:rounded-none mb-8 sm:mb-0"
                         >
-                            HABITACIÓN TERRAZA
-                        </h2>
-                        
-                        <p className=" sm:ml-auto text-beke text-lg text-justify">
-                        Habitación con una cama matrimonial.
-                        </p>
-                        <div className="flex w-full justify-between mt-4 flex-wrap">
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={wifi} />
-                                <p>Wifi</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={ac} />
-                                <p>A/C</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={tv} />
-                                <p>TV</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={bath} />
-                                <p>Baño</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={chef} />
-                                <p>Cocineta</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={dryer} />
-                                <p>Secadora</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={iron} />
-                                <p>Plancha</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div 
-                        className="sm:h-96 order-1 sm:order-none"
-                    >
-                        <GatsbyImage 
-                            className="h-full w-full rounded-t-2xl
-                                sm:rounded-none"
-                            image={panoramica} 
-                            alt="Suite Terraza" 
-                        />
-                    </div>
-                    <div
-                        className="sm:h-96"
-                    >
-                        <GatsbyImage
-                            className="h-full w-full rounded-t-2xl
-                                sm:rounded-none" 
-                            image={cabana} 
-                            alt="Suite Terraza" 
-                        />
-                    </div>
-                    <div 
-                        className="p-4 sm:p-10 flex items-center 
-                            justify-center flex-col sm:w-4/5
-                            shadow-2xl rounded-b-2xl sm:shadow-none
-                            sm:rounded-none mb-8 sm:mb-0"
-                    >
-                        <h2 
-                            className="text-beke sm:text-3xl 
-                                text-center mb-4 text-xl"
-                        >
-                            HABITACIÓN TERRAZA VISTA A LA LAGUNA
-                        </h2>
-                        <p className="text-beke text-lg text-justify ">
+                            <h2 
+                                className="text-beke sm:text-3xl 
+                                    mb-4 text-center text-xl"
+                            >
+                                HABITACIÓN TERRAZA VISTA AL JARDÍN
+                            </h2>
+            
+                            <p className="text-beke text-lg text-justify ">
                             Habitación con dos camas matrimoniales.
-                        </p>
-                        <div className="flex w-full justify-between mt-4 flex-wrap">
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={wifi} />
-                                <p>Wifi</p>
+                            </p>
+                            <div className="flex w-full justify-between mt-4 flex-wrap">
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={wifi} />
+                                    <p>Wifi</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={ac} />
+                                    <p>A/C</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={tv} />
+                                    <p>TV</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={bath} />
+                                    <p>Baño</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={chef} />
+                                    <p>Cocineta</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={dryer} />
+                                    <p>Secadora</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={iron} />
+                                    <p>Plancha</p>
+                                </div>
+                                
                             </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={ac} />
-                                <p>A/C</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={tv} />
-                                <p>TV</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={bath} />
-                                <p>Baño</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={chef} />
-                                <p>Cocineta</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={dryer} />
-                                <p>Secadora</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={iron} />
-                                <p>Plancha</p>
-                            </div>
-                            
                         </div>
-                    </div>
-                    <div 
-                        className="p-4 sm:p-10 flex sm:ml-auto 
-                            justify-center flex-col sm:w-4/5 
-                            items-center order-4 sm:order-none 
-                            shadow-2xl rounded-b-2xl sm:shadow-none
-                            sm:rounded-none mb-8 sm:mb-0"
-                    >
-                        <h2 
-                            className="text-beke sm:text-3xl 
-                                mb-4 text-center text-xl"
+                        <div 
+                            className="p-4 sm:p-10 flex sm:ml-auto 
+                                justify-center flex-col sm:w-4/5 
+                                items-center order-2 sm:order-none 
+                                shadow-2xl rounded-b-2xl sm:shadow-none
+                                sm:rounded-none mb-8 sm:mb-0"
                         >
-                            FAMILIAR TERRAZA VISTA A LA LAGUNA
-                        </h2>
-                        
-                        <p className=" ml-auto text-beke text-lg text-justify">
-                            Habitacion con dos camas
-                            matrimoniales y una cama
-                            individual.
-                        </p>
-                        <div className="flex w-full justify-between mt-4 flex-wrap">
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={wifi} />
-                                <p>Wifi</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={ac} />
-                                <p>A/C</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={tv} />
-                                <p>TV</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={bath} />
-                                <p>Baño</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={chef} />
-                                <p>Cocineta</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={dryer} />
-                                <p>Secadora</p>
-                            </div>
-                            <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                <img className="w-8 h-8" src={iron} />
-                                <p>Plancha</p>
-                            </div>
+                            <h2 
+                                className="text-beke sm:text-3xl 
+                                    mb-4 text-center text-xl"
+                            >
+                                HABITACIÓN TERRAZA
+                            </h2>
                             
+                            <p className=" sm:ml-auto text-beke text-lg text-justify">
+                            Habitación con una cama matrimonial.
+                            </p>
+                            <div className="flex w-full justify-between mt-4 flex-wrap">
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={wifi} />
+                                    <p>Wifi</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={ac} />
+                                    <p>A/C</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={tv} />
+                                    <p>TV</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={bath} />
+                                    <p>Baño</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={chef} />
+                                    <p>Cocineta</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={dryer} />
+                                    <p>Secadora</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={iron} />
+                                    <p>Plancha</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div 
+                            className="sm:h-96 order-1 sm:order-none"
+                        >
+                            <GatsbyImage 
+                                className="h-full w-full rounded-t-2xl
+                                    sm:rounded-none"
+                                image={panoramica} 
+                                alt="Suite Terraza" 
+                            />
+                        </div>
+                        <div
+                            className="sm:h-96"
+                        >
+                            <GatsbyImage
+                                className="h-full w-full rounded-t-2xl
+                                    sm:rounded-none" 
+                                image={cabana} 
+                                alt="Suite Terraza" 
+                            />
+                        </div>
+                        <div 
+                            className="p-4 sm:p-10 flex items-center 
+                                justify-center flex-col sm:w-4/5
+                                shadow-2xl rounded-b-2xl sm:shadow-none
+                                sm:rounded-none mb-8 sm:mb-0"
+                        >
+                            <h2 
+                                className="text-beke sm:text-3xl 
+                                    text-center mb-4 text-xl"
+                            >
+                                HABITACIÓN TERRAZA VISTA A LA LAGUNA
+                            </h2>
+                            <p className="text-beke text-lg text-justify ">
+                                Habitación con dos camas matrimoniales.
+                            </p>
+                            <div className="flex w-full justify-between mt-4 flex-wrap">
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={wifi} />
+                                    <p>Wifi</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={ac} />
+                                    <p>A/C</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={tv} />
+                                    <p>TV</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={bath} />
+                                    <p>Baño</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={chef} />
+                                    <p>Cocineta</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={dryer} />
+                                    <p>Secadora</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={iron} />
+                                    <p>Plancha</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div 
+                            className="p-4 sm:p-10 flex sm:ml-auto 
+                                justify-center flex-col sm:w-4/5 
+                                items-center order-4 sm:order-none 
+                                shadow-2xl rounded-b-2xl sm:shadow-none
+                                sm:rounded-none mb-8 sm:mb-0"
+                        >
+                            <h2 
+                                className="text-beke sm:text-3xl 
+                                    mb-4 text-center text-xl"
+                            >
+                                FAMILIAR TERRAZA VISTA A LA LAGUNA
+                            </h2>
+                            
+                            <p className=" ml-auto text-beke text-lg text-justify">
+                                Habitacion con dos camas
+                                matrimoniales y una cama
+                                individual.
+                            </p>
+                            <div className="flex w-full justify-between mt-4 flex-wrap">
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={wifi} />
+                                    <p>Wifi</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={ac} />
+                                    <p>A/C</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={tv} />
+                                    <p>TV</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={bath} />
+                                    <p>Baño</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={chef} />
+                                    <p>Cocineta</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={dryer} />
+                                    <p>Secadora</p>
+                                </div>
+                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
+                                    <img className="w-8 h-8" src={iron} />
+                                    <p>Plancha</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div 
+                            className="sm:h-96 order-3 sm:order-none"
+                        >
+                            <GatsbyImage 
+                                className="h-full w-full rounded-t-2xl
+                                    sm:rounded-none"
+                                image={bungalow} 
+                                alt="Suite Terraza" 
+                            />
                         </div>
                     </div>
-                    <div 
-                        className="sm:h-96 order-3 sm:order-none"
-                    >
-                        <GatsbyImage 
-                            className="h-full w-full rounded-t-2xl
-                                sm:rounded-none"
-                            image={bungalow} 
-                            alt="Suite Terraza" 
-                        />
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
-                <div 
-                    className="grid grid-cols-1 
-                        sm:grid-cols-2"
-                >
-                    <div>
-                        <GatsbyImage 
-                            className="h-full w-full rounded-t-2xl
-                                sm:rounded-none"
-                            image={bacalar} 
-                            alt="Bacalar" 
-                        />
+                <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
+                    <div 
+                        className="grid grid-cols-1 
+                            sm:grid-cols-2"
+                    >
+                        <div>
+                            <GatsbyImage 
+                                className="h-full w-full rounded-t-2xl
+                                    sm:rounded-none"
+                                image={bacalar} 
+                                alt="Bacalar" 
+                            />
+                        </div>
+                        <div className="p-4 sm:p-16 bg-white rounded-b-2xl
+                                shadow-2xl mb-8 sm:mb-0 sm:shadow-none sm:bg-none
+                                sm:rounded-none">
+                            <h2
+                                className="text-beke text-xl xl:text-3xl
+                                    mb-4 text-center"
+                            >
+                                BACALAR
+                            </h2>
+                            <p
+                                className="text-beke 
+                                    text-xl text-justify"
+                            >
+                                Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores, que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y de los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
+                            </p>
+                            <p>
+                            Bacalar es simplemente un poblado paradisíaco que te enamorará con sus pequeñas casas de pescadores, una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
+                            </p>
+                        </div>
                     </div>
-                    <div className="p-4 sm:p-16 bg-white rounded-b-2xl
-                            shadow-2xl mb-8 sm:mb-0 sm:shadow-none sm:bg-none
-                            sm:rounded-none">
-                        <h2
-                            className="text-beke text-xl xl:text-3xl
-                                mb-4 text-center"
-                        >
-                            BACALAR
-                        </h2>
-                        <p
-                            className="text-beke 
-                                text-xl text-justify"
-                        >
-                            Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores, que además de su belleza natural única también guarda otros tesoros sorprendentes. Es hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y de los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
-                        </p>
-                        <p>
-                        Bacalar es simplemente un poblado paradisíaco que te enamorará con sus pequeñas casas de pescadores, una hermosa laguna verde azul y el parque ecoturístico Uchben Kah, donde puedes nadar, hacer snorkel, bucear o realizar tranquilos paseos en lancha.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        
-        </Layout>
+                </section>
+            
+            </Layout>
+        </>
     )
 
 }
