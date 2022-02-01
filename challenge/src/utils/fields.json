@@ -1,0 +1,39 @@
+{
+    "fields": [
+        {
+            "id": "name",
+            "label": "Name",
+            "type": "text"
+        },
+        {
+            "id": "lastname",
+            "label": "Last Name",
+            "type": "text"
+        },
+        {
+            "id": "status",
+            "label": "Status",
+            "type": "select",
+            "options": [
+                "single",
+                "married"
+            ]
+        },
+        {
+            "id": "gender",
+            "label": "Gender",
+            "type": "radio",
+            "options": [
+                "Female",
+                "Male",
+                "Other"
+            ]
+        }
+    ],
+    "types": {
+        "text": "text",
+        "select": "select",
+        "radio": "radio"
+    }
+    
+}

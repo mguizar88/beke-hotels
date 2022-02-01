@@ -1,7 +1,7 @@
 import { navigate } from "gatsby-link"
 import React, { useContext, useEffect, useState } from "react"
 import { IdentityContext } from "../context/identity-context"
-import {Elements, ElementsConsumer} from '@stripe/react-stripe-js';
+import {Elements, ElementsConsumer, useElements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
 import CouponGenerator from "../components/CouponGenerator"
@@ -45,7 +45,7 @@ const App = (props) => {
     const CouponForm = ({hotel}) => {
         const hotelSelected = hotel
         if ( hotelSelected === "Pier" ) {
-            return <Elements stripe={pierStripePromise}>
+            return <Elements stripe={pierStripePromise} onReady={el => el.focus()}>
                 <ElementsConsumer>
                     {({elements, stripe}) => (
                         <CouponGenerator stripe={stripe} elements={elements} setPublishableKey={setPublishableKey} hotelSelected={hotelSelected} />
