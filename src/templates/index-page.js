@@ -370,7 +370,7 @@ export const pageQuery = graphql `
                 )
             }
         }
-        hero: file(relativePath: {eq: "hotel-xo-hero.jpg.jpg"}) {
+        hero: file(relativePath: {eq: "hotel-xo-hero.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
