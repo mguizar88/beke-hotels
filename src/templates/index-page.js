@@ -1,546 +1,590 @@
-import { graphql, Link } from 'gatsby'
 import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Helmet } from 'react-helmet'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 
 import Layout from '../components/Layout'
-import video from '../img/cm-video.mp4'
 
-import chef from '../img/chef.svg'
-import iron from '../img/ironing.svg'
-import dryer from '../img/hair-dryer.svg'
-import wifi from '../img/wi-fi.svg'
-import bath from '../img/bathtub.svg'
-import tv from '../img/tv-screen.svg'
-import ac from '../img/freezer.svg'
-import clip from '../img/logo-clip.svg'
+import Carousel from 'react-bootstrap/Carousel'
 
+const IndexPageTemplate = ({ data }) => {
+  const firstSliderImageSrc = getSrc(data.first)
+  const secondSliderImageSrc = getSrc(data.second)
+  const thirdSliderImageSrc = getSrc(data.third)
+  const second = getImage(data.secondSmall)
+  const logoPier = getImage(data.pier)
+  const logoCasaMaya = getImage(data.casamaya)
+  const logoXo = getImage(data.logoXoBlanco)
+  const allinclusive = getImage(data.allinclusive)
+  const laguna = getImage(data.laguna)
+  const pierMuelle = getImage(data.pierMuelle)
+  const lagunaBacalar = getImage(data.lagunaBacalar)
+  const duck = getImage(data.duck)
+  const muelle = getImage(data.muelle)
+  const cm = getImage(data.cm)
+  const cmSecond = getImage(data.cmSecond)
+  const cmThird = getImage(data.cmThird)
+  const cmPlaya = getImage(data.cmPlaya)
+  const pierReview = getImage(data.pierReview)
+  const cmReview = getImage(data.cmReview)
+  const xoReview = getImage(data.xoReview)
+  const flamencosSrc = getSrc(data.flamencos)
+  const bekeAzul = getImage(data.bekeAzul)
+  const xo = getImage(data.xo)
+  const xoLakeByNight = getImage(data.xolakebynight)
+  const xoLake = getImage(data.xolake)
+  const xoRoom = getImage(data.xoroom)
+  const xoBar = getImage(data.xobar)
 
-const CasaMayaPage = ({data}) => {
+  return(
+    <Layout path="/">
+      <Carousel
+        nextLabel={null}
+        prevLabel={null}
+      >
+        <Carousel.Item className="h-screen" >
+          <div 
+            className="h-full"
+            style={{
+              backgroundImage: `url(${firstSliderImageSrc})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div 
+              className="bg-gray-900 bg-opacity-50 w-full h-full flex 
+                items-center justify-center px-4 relative"
+            >
+              <GatsbyImage className="max-w-full sm:max-w-none" image={logoPier} alt="Pier logo" />
+              <div className="absolute bottom-8 right-8
+                  lg:bottom-24 lg:right-28">
+                <GatsbyImage 
+                  className="w-24 lg:w-52" 
+                  image={allinclusive} 
+                  alt="All inclusive" 
+                /> 
+              </div>
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item className="h-screen" >
+          <div 
+            className="h-full"
+            style={{
+              backgroundImage: `url(${secondSliderImageSrc})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div 
+              className="bg-gray-900 bg-opacity-50 w-full h-full flex 
+                items-center justify-center px-4"
+            >
+              <GatsbyImage className="max-w-full sm:max-w-none" image={logoCasaMaya} alt="Casa Maya logo" />
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item className="h-screen" >
+          <div 
+            className="h-full"
+            style={{
+              backgroundImage: `url(${thirdSliderImageSrc})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div 
+              className="bg-gray-900 bg-opacity-50 w-full h-full flex 
+                items-center justify-center px-4"
+            >
+              <GatsbyImage className="max-w-full sm:max-w-none" image={logoXo} alt="Casa Maya logo" />
+            </div>
+          </div>
+        </Carousel.Item>
+      </Carousel>
 
-    const logo = getImage(data.logo)
-    const terraza = getImage(data.bungalowFrente)
-    const panoramica = getImage(data.superior)
-    const cabana = getImage(data.bungalowmar)
-    const bungalow = getImage(data.bungalow)
-    const estandar = getImage(data.estandar)
-    const holbox = getImage(data.holbox)
-    const bbva = getImage(data.bbva)
-    const visa = getImage(data.visa)
-    const mastercard = getImage(data.mastercard)
-    const paypal = getImage(data.paypal)
+      <section className="container mx-auto">
+        <h1 className="sm:text-6xl text-2xl text-gray-900 my-4
+        font-bold text-center sm:mt-24">
+          BEKE HOTELS
+        </h1>
+        
+        <div className="grid grid-cols-1 grid-rows-none sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
+          <div className="sm:col-span-2 row-span-2">
+            <GatsbyImage className="max-w-full rounded-sm" image={laguna} alt="Bacalar" />
+            <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
+              <h2 className="text-2xl font-bold mb-4">PIER HOTEL BACALAR – TODO INCLUIDO</h2>
+              <p>
+                Ubicado en el hermoso Pueblo Mágico de Bacalar, hotel Pier es un encantador hotel familiar estilo
+                minimalista con acceso directo a la emblemática Laguna de los 7 Colores, donde podrás nadar en sus 
+                cristalinas aguas o recorrerla en kayak con una inolvidable puesta de sol de fondo.
+              </p>
+            </div>
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={lagunaBacalar} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={pierMuelle} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={muelle} alt="Bacalar" />
+          </div>
+          <div className=" flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={duck} alt="Bacalar" />
+          </div>
+        </div>
+                        
+        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
+          <div className="sm:col-span-2 row-span-2 flex flex-col">
+            <GatsbyImage className="max-w-full rounded-sm" image={second} alt="Bacalar" />
+            <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
+              <h2 className="text-2xl font-bold mb-4">
+                HOTEL CASA MAYA HOLBOX
+              </h2>
+              <p>
+                Ubicado en la primera línea de playa de la encantadora isla de Holbox, hotel Casa Maya es un 
+                espacio acogedor donde disfrutarás de las mejores vistas del amanecer y atardecer del Caribe mexicano. 
+                Podrás relajarte en el club de playa mientras tomas un delicioso cóctel o después de recorrer la isla 
+                en bicicleta con el mar color turquesa de fondo.
+              </p>
+            </div>
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={cm} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={cmThird} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={cmPlaya} alt="Bacalar" />
+          </div>
+          <div className=" flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={cmSecond} alt="Bacalar" />
+          </div>
+        </div>
 
-    return (
-        <>
-            <Helmet>
-                <script src='https://www.thehotelsnetwork.com/js/hotel_price_widget.js?hotel_id=1127447&property_id=1033474&account_key=13F4DBC854C4C39DFCBD774AF370011B' async></script>
-            </Helmet>
-            <Layout>
-                <div className="sm:h-screen relative overflow-hidden">
-                <video  
-                    src={video} 
-                    muted 
-                    autoPlay
-                    loop
-                >
-                    Tu navegador no admite el elemento <code>video</code>.
-                </video>
-                </div>
-                <section 
-                    className="container mx-auto text-center p-6
-                        sm:py-32 w-11/12 sm:w-full mb-12 -mt-12 
-                        rounded-2xl sm:rounded-none sm:bg-transparent bg-white 
-                        relative shadow-2xl sm:shadow-none sm:mt-0"
-                >
-                    <GatsbyImage 
-                        image={logo} 
-                        className="max-w-md"
-                        alt="logo"
-                    />
-                    <p 
-                        className="sm:max-w-2xl mx-auto text-justify 
-                            sm:mt-12 text-beke"
-                    >
-                        Ubicado en la primera línea de playa de la encantadora isla de Holbox, hotel Casa Maya es un espacio acogedor donde disfrutarás de las mejores vistas del amanecer y atardecer del Caribe mexicano. Podrás relajarte en el club de playa mientras tomas un delicioso cóctel o después de recorrer la isla en bicicleta con el mar color turquesa de fondo. Si vacacionas en Holbox, no puedes perderte el característico tour de bioluminiscencia, un encuentro con la naturaleza que convertirá tu visita en una experiencia mágica.
-                    </p>
-                </section>
+        <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-4 gap-4 p-4 my-20">
+          <div className="sm:col-span-2 row-span-2 flex flex-col">
+            <GatsbyImage className="max-w-full rounded-sm" image={xo} alt="Bacalar" />
+            <div className="sm:p-12 p-4 rounded-sm bg-gray-900 text-white">
+              <h2 className="text-2xl font-bold mb-4">
+                XO LAKEFRONT HOTEL
+              </h2>
+              <p>
+                Hotel situado a orilla de la hermosa Laguna de los 7 colores, rodeado de una atmósfera que 
+                transmite tranquilidad, relajación y conexión con la naturaleza. Destino petfriendly para 
+                aquellos viajeros que disfrutan de la compañía de sus mascotas.
+              </p>
+            </div>
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoLakeByNight} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoLake} alt="Bacalar" />
+          </div>
+          <div className="flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoRoom} alt="Bacalar" />
+          </div>
+          <div className=" flex row-span-1 col-span-1">
+            <GatsbyImage className="max-w-full rounded-sm" image={xoBar} alt="Bacalar" />
+          </div>
+        </div>
+      </section>
 
-                <section className="w-11/12 mx-auto sm:w-full sm:mx-0">
-                    <div 
-                        className="grid grid-cols-1 
-                            sm:grid-cols-2"
-                    >
-                        <div className="sm:h-96">
-                            <GatsbyImage
-                                className="sm:h-full w-full rounded-t-2xl
-                                    sm:rounded-none"
-                                image={terraza} 
-                                alt="Suite Terraza" 
-                            />
-                        </div>
-                        <div 
-                            className="p-4 sm:p-10 flex items-center 
-                                justify-center flex-col sm:w-4/5
-                                shadow-2xl rounded-b-2xl sm:shadow-none
-                                sm:rounded-none mb-8 sm:mb-0"
-                        >
-                            <h2 
-                                className="text-beke text-3xl 
-                                    mb-4 text-center "
-                            >
-                                BUNGALOW FRENTE AL MAR
-                            </h2>
-            
-                            <p className="text-beke text-lg text-justify ">
-                                Con cama king size, un sofá cama individual, baño privado y vista
-                                parcial al mar.
-                            </p>
-                            <div className="flex w-full justify-between mt-4 flex-wrap">
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={wifi} />
-                                    <p>Wifi</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={ac} />
-                                    <p>A/C</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={tv} />
-                                    <p>TV</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={bath} />
-                                    <p>Baño</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div 
-                            className="p-4 sm:p-10 flex ml-auto 
-                                justify-center flex-col sm:w-4/5 
-                                items-center order-2 sm:order-none 
-                                shadow-2xl rounded-b-2xl sm:shadow-none
-                                sm:rounded-none mb-8 sm:mb-0"
-                        >
-                            <h2 
-                                className="text-beke text-3xl 
-                                    mb-4 text-center"
-                            >
-                                BUNGALOW SUPERIOR
-                            </h2>
-                            
-                            <p className=" ml-auto text-beke text-lg text-justify">
-                                Ideales para familias grandes, con dos camas matrimoniales, una cama
-                                individual y baño privado.
-                            </p>
-                            <div className="flex w-full justify-between mt-4 flex-wrap">
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={wifi} />
-                                    <p>Wifi</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={ac} />
-                                    <p>A/C</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={tv} />
-                                    <p>TV</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={bath} />
-                                    <p>Baño</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div 
-                            className="sm:h-96 order-1 sm:order-none"
-                        >
-                            <GatsbyImage 
-                                className="h-full w-full rounded-t-2xl
-                                    sm:rounded-none"
-                                image={panoramica} 
-                                alt="Suite Terraza" 
-                            />
-                        </div>
-                        <div
-                            className="sm:h-96"
-                        >
-                            <GatsbyImage
-                                className="h-full w-full rounded-t-2xl
-                                    sm:rounded-none" 
-                                image={cabana} 
-                                alt="Suite Terraza" 
-                            />
-                        </div>
-                        <div 
-                            className="p-4 sm:p-10 flex items-center 
-                                justify-center flex-col sm:w-4/5
-                                shadow-2xl rounded-b-2xl sm:shadow-none
-                                sm:rounded-none mb-8 sm:mb-0"
-                        >
-                            <h2 
-                                className="text-beke text-3xl 
-                                    text-center mb-4"
-                            >
-                                BUNGALOW CON VISTA AL MAR 
-                            </h2>
-                            <p className="text-beke text-lg text-justify ">
-                                Cercano al mar, ideal para parejas,
-                                cuenta con una cama king size, sofá cama individual, baño privado y vista parcial al
-                                mar.
-                            </p>
-                            <div className="flex w-full justify-between mt-4 flex-wrap">
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={wifi} />
-                                    <p>Wifi</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={ac} />
-                                    <p>A/C</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={tv} />
-                                    <p>TV</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={bath} />
-                                    <p>Baño</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div 
-                            className="p-4 sm:p-10 flex ml-auto 
-                                justify-center flex-col sm:w-4/5 
-                                items-center order-4 sm:order-none 
-                                shadow-2xl rounded-b-2xl sm:shadow-none
-                                sm:rounded-none mb-8 sm:mb-0"
-                        >
-                            <h2 
-                                className="text-beke text-3xl 
-                                    mb-4 text-center "
-                            >
-                                BUNGALOW
-                            </h2>
-                            
-                            <p className=" ml-auto text-beke text-lg text-justify">
-                                Bungalow con una cama matrimonial y una cama individual, baño
-                                privado y vista al jardín.
-                            </p>
-                            <div className="flex w-full justify-between mt-4 flex-wrap">
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={wifi} />
-                                    <p>Wifi</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={ac} />
-                                    <p>A/C</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={tv} />
-                                    <p>TV</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={bath} />
-                                    <p>Baño</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div 
-                            className="sm:h-96 order-3 sm:order-none"
-                        >
-                            <GatsbyImage 
-                                className="h-full w-full rounded-t-2xl
-                                    sm:rounded-none"
-                                image={bungalow} 
-                                alt="Suite Terraza" 
-                            />
-                        </div>
-                        <div
-                            className="sm:h-96"
-                        >
-                            <GatsbyImage
-                                className="h-full w-full rounded-t-2xl
-                                    sm:rounded-none" 
-                                image={estandar} 
-                                alt="Suite Terraza" 
-                            />
-                        </div>
-                        <div 
-                            className="p-4 sm:p-10 flex items-center 
-                                justify-center flex-col sm:w-4/5
-                                shadow-2xl rounded-b-2xl sm:shadow-none
-                                sm:rounded-none mb-8 sm:mb-0"
-                        >
-                            <h2 
-                                className="text-beke text-3xl 
-                                    text-center mb-4 "
-                            >
-                                BUNGALOW ESTÁNDAR 
-                            </h2>
-                            <p className="text-beke text-lg text-justify ">
-                                Habitación perfecta para viajeros que buscan un lugar para descansar
-                                y aprovechar al máximo la isla. La habitación cuenta con una cama matrimonial, baño privado
-                                y televisión con cable.
-                            </p>
-                            <div className="flex w-full justify-between mt-4 flex-wrap">
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={wifi} />
-                                    <p>Wifi</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={ac} />
-                                    <p>A/C</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={tv} />
-                                    <p>TV</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={bath} />
-                                    <p>Baño</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
-                                </div>
-                                <div className="w-14 mx-2 text-xs flex flex-col items-center">
-                                    <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </section>
+      <section className="container mx-auto">
+        <h2
+          className="sm:text-6xl text-2xl text-gray-900 my-4
+            font-bold text-center sm:mt-24"
+        >
+          REVIEWS
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 p-4">
+          <Link className="lg:px-8 md:px-2 w-full" to="/">
+            <GatsbyImage image={cmReview} alt="Casa Maya" />
+          </Link>
+          <Link className="lg:px-8 md:px-2 w-full" to="/">
+            <GatsbyImage image={pierReview} alt="Pier" />
+          </Link>
+          <Link className="lg:px-8 md:px-2 w-full" to="/">
+            <GatsbyImage image={xoReview} alt="XO" />
+          </Link>
+        </div>
+      </section>
 
-                <section className="w-11/12 sm:w-full mx-auto sm:mx-0">
-                    <div 
-                        className="grid grid-cols-1 
-                            sm:grid-cols-2"
-                    >
-                        <div>
-                            <GatsbyImage 
-                                className="h-full w-full rounded-t-2xl
-                                    sm:rounded-none"
-                                image={holbox} 
-                                alt="Bacalar" 
-                            />
-                        </div>
-                        <div className="p-4 sm:p-16 bg-white rounded-b-2xl
-                                shadow-2xl mb-8 sm:mb-0 sm:shadow-none sm:bg-none
-                                sm:rounded-none">
-                            <h2
-                                className="text-beke sm:text-xl xl:text-3xl
-                                    mb-4 text-center"
-                            >
-                                HOLBOX
-                            </h2>
-                            <p
-                                className="text-beke 
-                                    text-xl text-justify"
-                            >
-                                La isla, ubicada dentro de la Reserva Natural Yum Balam, posee una extensión de tan solo 42 km de largo y 2 km de ancho y está situada al norte de la Península de Yucatán. Sus playas vírgenes y ecosistema son el hábitat de especies silvestres como delfines, pelícanos, flamencos, tortugas, entre otras. Sus aguas cristalinas la hacen un deleite para los bañistas y uno de los destinos ideales para practicar deportes como windsurf, kitesurf, buceo con snorkel, velerismo y navegación en kayak.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+      <section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-16 sm:mt-24">
+            <div>
+              <iframe 
+                title="map"
+                className="w-full"
+                src="https://www.google.com/maps/d/embed?mid=1OlFJI80we341EfI9Ve9uDCHAmMXyfchJ"
+                height="400px"
+              >
+              </iframe>
+            </div>
+            <div className="bg-yellow-400 text-white p-8">
+              <h3 className="text-4xl text-bold mb-4">LOCACIONES</h3>
+              <p>
+                Disfruta los destinos más increíbles de la
+                península de Yucatán y el estado de Quintana Roo
+                en los hoteles que Béke Hotels tiene a tu
+                disposición para que puedas relajarte.
+              </p>
+            </div>
+        </div>
+      </section>
 
-            </Layout>
-        </>
-    )
+      <section>
+      <div 
+        className="bg-fixed" 
+        style={{
+          backgroundImage: `url(${flamencosSrc})`
+        }}
+      >
+        <div className="p-8 sm:p-36 bg-blue-50 bg-opacity-70 text-center">
+          <GatsbyImage image={bekeAzul} alt="Beke blue logo"/>
+          <p style={{color: '#08495f'}} className="max-w-3xl mx-auto my-5 sm:text-2xl rounded  sm:p-8 p-4 ring-4 ring-blue-900">
+            En Béke Hotels nos esforzamos por siempre ofrecer una
+            experiencia diferente, que deja a todos nuestros 
+            huéspedes con ganas de regresar a disfrutar de nuestro 
+            servicio, hospedaje, instalaciones y esa esencia que nos 
+            caracteriza.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    </Layout>
+  )
 }
 
-export default CasaMayaPage
+IndexPageTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+}
 
-export const pageQuery = graphql `
-    query {
-        logo: file(relativePath: {eq: "logo-casa-maya-color.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 348
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        bungalow: file(relativePath: {eq: "22.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 700
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        bungalowFrente: file(relativePath: {eq: "20-1.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 700
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        bungalowmar: file(relativePath: {eq: "21.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 700
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        superior: file(relativePath: {eq: "19.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 700
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        estandar: file(relativePath: {eq: "18.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 700
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        holbox: file(relativePath: {eq: "flamencos.jpg"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 700
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        banorte: file(relativePath: {eq: "banorte-logo.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 500
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        bbva: file(relativePath: {eq: "bbva.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 400
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        visa: file(relativePath: {eq: "visa-logo.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 100
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        mastercard: file(relativePath: {eq: "mastercard-logo.webp"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 128
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
-        paypal: file(relativePath: {eq: "paypal-logo.png"}) {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 100
-                    placeholder: BLURRED 
-                    formats: [WEBP]
-                    quality: 100
-                )
-            }
-        }
+export default IndexPageTemplate
+
+export const pageQuery = graphql`query IndexPageTemplate {
+  first: file(relativePath: {eq: "2.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: FULL_WIDTH
+        width: 1920
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
     }
+  }
+  second: file(relativePath: {eq: "14.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: FULL_WIDTH
+        width: 1920
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  third: file(relativePath: {eq: "1XO-15.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: FULL_WIDTH
+        width: 1920
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  flamencos: file(relativePath: {eq: "flamencos.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 1536
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 70
+      )
+    }
+  }
+  secondSmall: file(relativePath: {eq: "14.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 1024
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  laguna: file(relativePath: {eq: "laguna.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 1024
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  pierMuelle: file(relativePath: {eq: "pier-muelle.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400 
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  lagunaBacalar: file(relativePath: {eq: "bacalar-laguna.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  muelle: file(relativePath: {eq: "muelle.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  duck: file(relativePath: {eq: "duck.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  cm: file(relativePath: {eq: "casa-maya.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  cmPlaya: file(relativePath: {eq: "casa-maya-portafolio.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  cmSecond: file(relativePath: {eq: "3.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  cmThird: file(relativePath: {eq: "35.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  pierReview: file(relativePath: {eq: "pier-review-btn.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 462
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  cmReview: file(relativePath: {eq: "cm-review-button.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 462
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xoReview: file(relativePath: {eq: "xo-btn.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 462
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  pier: file(relativePath: {eq: "pier.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 334
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  casamaya: file(relativePath: {eq: "logo-casa-maya.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 334
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  logoXoBlanco: file(relativePath: {eq: "logo-xo-blanco.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 334
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  bekeAzul: file(relativePath: {eq: "logo-beke-azul.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 200
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  allinclusive: file(relativePath: {eq: "all-inclusive.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 300
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xo: file(relativePath: {eq: "XO.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 800
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xobyday: file(relativePath: {eq: "XO-5.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xolakebynight: file(relativePath: {eq: "XO-9.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xolake: file(relativePath: {eq: "XO-6.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xoroom: file(relativePath: {eq: "XO-17.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  xobar: file(relativePath: {eq: "XO-8.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        width: 400
+        placeholder: BLURRED 
+        formats: [WEBP]
+        quality: 100
+      )
+    }
+  }
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    frontmatter {
+      title
+      heading
+      subheading
+    }
+  }
+}
 `
