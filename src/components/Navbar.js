@@ -193,10 +193,10 @@ const Navbar = class extends React.Component {
               <img className="w-8 fill-current hover:text-black" src={flex} alt="Tarifa Flex" />
               <span className="leading-none hidden sm:block">Tarifa flex</span>
             </button>
-            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.instagram.com/bekehotels/">
+            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.instagram.com/xobacalar/">
               <img src={instagram} className="fill-current text-white w-8" alt="Instagram logo" />
             </a>
-            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.facebook.com/BekeHotels">
+            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.facebook.com/XoBacalar/">
               <img src={facebook} className="fill-current text-white w-8" alt="Facebook logo" />
             </a>
           </div>

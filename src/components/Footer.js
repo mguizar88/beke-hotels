@@ -21,8 +21,8 @@ const Footer = class extends React.Component {
               <a className="block m-2" href="mailto: ventas@grupobeke.com">
                 ventas@grupobeke.com
               </a>
-              <a className="block m-2" href="tel: 9982722665">
-                (998) 272 2665
+              <a className="block m-2" href="tel: 9988002096">
+                (998) 800 2096
               </a>
               <a className="block m-2" target="_Blank" rel="noreferrer" href="https://api.whatsapp.com/send/?phone=5219981098729&text&app_absent=0">
                 Whatsapp
@@ -47,7 +47,7 @@ const Footer = class extends React.Component {
               <h3 className="mb-4">Síguenos</h3>
             </div>
             <div>
-              <a className="m-2 inline-flex" target="_Blank" rel="noreferrer" href="https://www.instagram.com/bekehotels/">
+              <a className="m-2 inline-flex" target="_Blank" rel="noreferrer" href="https://www.instagram.com/xobacalar/">
                 <StaticImage 
                   src="../img/social/instagram.svg"
                   alt="Instagram logo"
@@ -55,7 +55,7 @@ const Footer = class extends React.Component {
                   loading="lazy"
                 />
               </a>
-              <a className="m-2" target="_Blank" rel="noreferrer" href="https://www.facebook.com/BekeHotels">
+              <a className="m-2" target="_Blank" rel="noreferrer" href="https://www.facebook.com/XoBacalar/">
                 <StaticImage 
                   src="../img/social/facebook.svg"
                   alt="Facebook logo"
