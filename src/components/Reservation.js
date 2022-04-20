@@ -5,7 +5,7 @@ const Reservation = class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hotel: 'pier',
+            hotel: 'xo',
             checkin: '',
             checkout: '',
         }
