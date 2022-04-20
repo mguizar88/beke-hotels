@@ -185,7 +185,7 @@ const TemplateWrapper = ({
           />
         : ''
       }
-      <a className="fixed bottom-24 right-3 z-50" href="https://wa.me/+5219983223691" target="_BLANK" rel="noreferrer">
+      <a className="fixed bottom-24 right-3 z-50" href="https://wa.me/+5219988002096" target="_BLANK" rel="noreferrer">
         <img className="w-16" src={whatsappIcon} />
       </a>
       <Footer />

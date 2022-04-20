@@ -24,7 +24,7 @@ const Footer = class extends React.Component {
               <a className="block m-2" href="tel: 9988002096">
                 (998) 800 2096
               </a>
-              <a className="block m-2" target="_Blank" rel="noreferrer" href="https://api.whatsapp.com/send/?phone=5219981098729&text&app_absent=0">
+              <a className="block m-2" target="_Blank" rel="noreferrer" href="https://api.whatsapp.com/send/?phone=5219988002096&text&app_absent=0">
                 Whatsapp
               </a>
             </div>
