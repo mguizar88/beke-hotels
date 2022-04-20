@@ -5,7 +5,7 @@ const Reservation = class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hotel: 'pier',
+            hotel: 'cm',
             checkin: '',
             checkout: '',
         }
@@ -80,22 +80,10 @@ const Reservation = class extends React.Component {
                             className="bg-transparent w-full"
                         >
                             <option 
-                                className="text-beke"
-                                value="pier"
-                                >
-                                HOTEL PIER BACALAR - ALL INCLUSIVE
-                            </option>
-                            <option 
                                 className="text-beke" 
                                 value="cm"
                             >
                                 HOTEL CASA MAYA HOLBOX
-                            </option>
-                            <option 
-                                className="text-beke" 
-                                value="xo"
-                            >
-                                HOTEL XO BACALAR
                             </option>
                         </select>
                     </div>
