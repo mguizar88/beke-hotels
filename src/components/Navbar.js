@@ -84,15 +84,15 @@ const Navbar = class extends React.Component {
     
     return (
       <header 
-        className="flex justify-center text-white shadow-xl 
-        bg-gray-900 relative z-40"
+        className="flex justify-center text-black shadow-xl 
+        bg-white relative z-40"
       >
         <NavData />
         <div className="flex-row items-center flex justify-center sm:justify-between w-full lg:w-4/5 p-5">
           <div className="w-6/12 md:w-auto justify-center sm:justify-start relative">
             <Link className="w-full sm:w-40" to="/" >
               <StaticImage 
-                src="../img/logo-beke-horizontal.png"
+                src="../img/el-secreto-logo.png"
                 alt="Logo"
                 placeholder="blurred"
               />
@@ -279,11 +279,11 @@ const Navbar = class extends React.Component {
               <img className="w-8 fill-current hover:text-black" src={flex} alt="Tarifa Flex" />
               <span className="leading-none hidden sm:block">Tarifa flex</span>
             </button>
-            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.instagram.com/bekehotels/">
-              <img src={instagram} className="fill-current text-white w-8" alt="Instagram logo" />
+            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.instagram.com/hotelelsecretobacalar/">
+              <img src={instagram} className="fill-current text-black w-8" alt="Instagram logo" />
             </a>
-            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.facebook.com/BekeHotels">
-              <img src={facebook} className="fill-current text-white w-8" alt="Facebook logo" />
+            <a className="mx-2" target="_Blank" rel="noreferrer" href="https://www.facebook.com/El-Secreto-Hotel-Bacalar-102395252429749">
+              <img src={facebook} className="fill-current text-black w-8" alt="Facebook logo" />
             </a>
           </div>
         </div>
