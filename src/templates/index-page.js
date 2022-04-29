@@ -335,7 +335,7 @@ const ElCaminoPage = ({data}) => {
                               Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores, que además de su belleza natural única también guarda otros tesoros sorprendentes. hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y de los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
 
                             </p>
-                            <p className="uppercase">
+                            <p className="uppercase text-xl text-justify">
                               de manera colindante se encuentra la laguna de xul-há, que significa “donde termina el agua”.
                               ambos sitios siendo idoneos para la relajación y el esparcimiento debido a su ubicación geográfica, así como su extensa flora y fauna.
                             </p>
