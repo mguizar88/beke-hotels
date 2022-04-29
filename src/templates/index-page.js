@@ -4,9 +4,9 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 
-import chef from '../img/chef.svg'
-import iron from '../img/ironing.svg'
-import dryer from '../img/hair-dryer.svg'
+import chef from '../img/closet.png'
+import iron from '../img/equipaje.png'
+import dryer from '../img/escritorio.png'
 import wifi from '../img/wi-fi.svg'
 import bath from '../img/bathtub.svg'
 import tv from '../img/tv-screen.svg'
@@ -115,15 +115,15 @@ const ElCaminoPage = ({data}) => {
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
+                                    <p>Closet</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
+                                    <p>Escritorio</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
+                                    <p>Rack para equipaje</p>
                                 </div>
                                 
                             </div>
@@ -164,15 +164,15 @@ const ElCaminoPage = ({data}) => {
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
+                                    <p>Closet</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
+                                    <p>Escritorio</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
+                                    <p>Rack para equipaje</p>
                                 </div>
                                 
                             </div>
@@ -231,15 +231,15 @@ const ElCaminoPage = ({data}) => {
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
+                                    <p>Closet</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
+                                    <p>Escritorio</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
+                                    <p>Rack para equipaje</p>
                                 </div>
                                 
                             </div>
@@ -280,15 +280,15 @@ const ElCaminoPage = ({data}) => {
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={chef} />
-                                    <p>Cocineta</p>
+                                    <p>Closet</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={dryer} />
-                                    <p>Secadora</p>
+                                    <p>Escritorio</p>
                                 </div>
                                 <div className="w-14 mx-2 text-xs flex flex-col items-center">
                                     <img className="w-8 h-8" src={iron} />
-                                    <p>Plancha</p>
+                                    <p>Rack para equipaje</p>
                                 </div>
                                 
                             </div>
