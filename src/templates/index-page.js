@@ -88,12 +88,12 @@ const ElCaminoPage = ({data}) => {
                         >
                             <h2 
                                 className="text-beke sm:text-3xl 
-                                    mb-4 text-center text-xl capitalize"
+                                    mb-4 text-center text-xl uppercase"
                             >
                                 SUITE
                             </h2>
             
-                            <p className="text-beke text-lg text-justify capitalize">
+                            <p className="text-beke text-lg text-justify uppercase">
                               Con vista al Jardín
                             </p>
                             <div className="flex w-full justify-between mt-4 flex-wrap">
@@ -137,12 +137,12 @@ const ElCaminoPage = ({data}) => {
                         >
                             <h2 
                                 className="text-beke sm:text-3xl 
-                                    mb-4 text-center text-xl capitalize"
+                                    mb-4 text-center text-xl uppercase"
                             >
                                 Suite Familiar
                             </h2>
                             
-                            <p className="capitalize sm:ml-auto text-beke text-lg text-justify">
+                            <p className="uppercase sm:ml-auto text-beke text-lg text-justify">
                               Terraza con vista a la laguna
                             </p>
                             <div className="flex w-full justify-between mt-4 flex-wrap">
@@ -205,11 +205,11 @@ const ElCaminoPage = ({data}) => {
                         >
                             <h2 
                                 className="text-beke sm:text-3xl 
-                                    text-center mb-4 text-xl capitalize"
+                                    text-center mb-4 text-xl uppercase"
                             >
                                 Suite king
                             </h2>
-                            <p className="text-beke text-lg text-justify capitalize">
+                            <p className="text-beke text-lg text-justify uppercase">
                                 Con vista al Jardín
                             </p>
                             <div className="flex w-full justify-between mt-4 flex-wrap">
@@ -253,12 +253,12 @@ const ElCaminoPage = ({data}) => {
                         >
                             <h2 
                                 className="text-beke sm:text-3xl 
-                                    mb-4 text-center text-xl capitalize"
+                                    mb-4 text-center text-xl uppercase"
                             >
                                 Suite master king
                             </h2>
                             
-                            <p className=" ml-auto text-beke text-lg text-justify capitalize">
+                            <p className=" ml-auto text-beke text-lg text-justify uppercase">
                                 Terraza con vista a la laguna
                             </p>
                             <div className="flex w-full justify-between mt-4 flex-wrap">
@@ -324,18 +324,18 @@ const ElCaminoPage = ({data}) => {
                                 sm:rounded-none">
                             <h2
                                 className="text-beke text-xl xl:text-3xl
-                                    mb-4 text-center capitalize"
+                                    mb-4 text-center uppercase"
                             >
                                 BACALAR - XUL-HÁ
                             </h2>
                             <p
                                 className="text-beke 
-                                    text-xl text-justify capitalize"
+                                    text-xl text-justify uppercase"
                             >
                               Bacalar alberga uno de los tesoros más hermosos: la Laguna de los Siete Colores, que además de su belleza natural única también guarda otros tesoros sorprendentes. hogar de algunos de los organismos más antiguos del planeta que podrían ayudar a descifrar el origen de la vida y de los secretos que dejaron los piratas de los siglos XVII y XVIII cuando se escondieron allí.
 
                             </p>
-                            <p className="capitalize">
+                            <p className="uppercase">
                               de manera colindante se encuentra la laguna de xul-há, que significa “donde termina el agua”.
                               ambos sitios siendo idoneos para la relajación y el esparcimiento debido a su ubicación geográfica, así como su extensa flora y fauna.
                             </p>
