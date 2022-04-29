@@ -408,7 +408,7 @@ export const pageQuery = graphql `
                 )
             }
         }
-        bungalowmar: file(relativePath: {eq: "king-suite.jpg"}) {
+        bungalowmar: file(relativePath: {eq: "suite-king.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
