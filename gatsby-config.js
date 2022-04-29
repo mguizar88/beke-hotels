@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Beke Hotels',
+    title: 'Hotel el secreto',
     description:
       'Disfruta los destinos más increíbles de la península de Yucatán y el estado de Quintana Roo en los hoteles que Béke Hotels tiene a tu disposición para que puedas relajarte.',
   },
