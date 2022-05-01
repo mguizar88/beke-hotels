@@ -35,7 +35,7 @@ const HotelPackages = ({ hotel, packages }) => {
 
     return (
         <>
-            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes en {hotel}</h1>
+            <h1 className="text-center mb-12 text-white sm:text-5xl text-3xl font-bold">Paquetes</h1>
             
             <div className={`flex flex-col sm:flex-row w-full gap-6`}>
                 {
