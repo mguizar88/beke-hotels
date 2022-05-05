@@ -11,9 +11,10 @@ const Menu = class extends React.Component {
         this.state = {
             en: false,
             es: true,
-            alimentos: true,
+            alimentos: false,
             bebidas: false,
             desayunos: false,
+            cover: true
         }
         this.enHandler = this.enHandler.bind(this)
         this.esHandler = this.esHandler.bind(this)
@@ -25,7 +26,7 @@ const Menu = class extends React.Component {
     enHandler() {
         this.setState({
             en: true,
-            es: false
+            es: false,
         })
     }
 
@@ -69,6 +70,10 @@ const Menu = class extends React.Component {
         const food = getImage(data.food)
         const drinks = getImage(data.drinks)
         const breakfast = getImage(data.breakfast)
+        const footerEn = getImage(data.footerEn)
+        const coverEn = getImage(data.coverEn)
+        const portadaEs = getImage(data.coverEs)
+        const footerEs = getImage(data.footerEs)
 
         return (
             <Layout path={this.props.path}>
@@ -104,35 +109,52 @@ const Menu = class extends React.Component {
                             Desayunos
 				        </a>
                     </div>
-                    <div className="flex justify-center mt-8">
+                    <div className="flex flex-col items-center justify-center mt-8">
                         {
-                            this.state.alimentos
-                            ?<GatsbyImage
-                                className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                                image={alimentos}
-                                alt="Alimentos"
-                            />
-                            : ''
+                            this.state.cover
+                                ?<GatsbyImage
+                                    className={`${this.state.cover? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={portadaEs}
+                                    alt="cover"
+                                />
+                                : ''
                         }
-                        {
-                            this.state.bebidas
-                            ?<GatsbyImage
-                                className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                                image={bebidas}
-                                alt="Alimentos"
-                            />
-                            : ''
-                        }
-                        {
-                            this.state.desayunos
-                            ?<GatsbyImage
-                                className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                                image={desayunos}
-                                alt="Alimentos"
-                            />
-                            : ''
-                        }
+                        <div id="menu">
+                            {
+                                this.state.alimentos
+                                ?<GatsbyImage
+                                    className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={alimentos}
+                                    alt="Alimentos"
+                                />
+                                : ''
+                            }
+                            {
+                                this.state.bebidas
+                                ?<GatsbyImage
+                                    className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={bebidas}
+                                    alt="Alimentos"
+                                />
+                                : ''
+                            }
+                            {
+                                this.state.desayunos
+                                ?<GatsbyImage
+                                    className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={desayunos}
+                                    alt="Alimentos"
+                                />
+                                : ''
+                            }
+                        </div>
+                        <GatsbyImage
+                            className={`sm:max-w-screen-sm mx-auto`}
+                            image={footerEs}
+                            alt="socials"
+                        />
                     </div>
+                    
                 </div>
                 <div id="en" className={this.state.en? 'block' : 'hidden'}>
                     <div className="flex justify-center">
@@ -146,36 +168,52 @@ const Menu = class extends React.Component {
                             Breakfast
 				        </a>
                     </div>
-                    <div className="flex justify-center mt-8">
+                    <div className="flex flex-col items-center justify-center mt-8">
                         {
-                            this.state.alimentos
+                            this.state.cover
                                 ?<GatsbyImage
-                                    className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                                    image={food}
-                                    alt="Alimentos"
+                                    className={`${this.state.cover? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={coverEn}
+                                    alt="cover"
                                 />
                                 : ''
                         }
-                        {
-                            this.state.bebidas
-                            ?<GatsbyImage
-                                className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                                image={drinks}
-                                alt="Alimentos"
-                            />
-                            :''
-                        }
-                        
-                        {
-                            this.state.desayunos
-                            ? <GatsbyImage
-                                className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
-                                image={breakfast}
-                                alt="Alimentos"
-                            />
-                            :''
-                        }
-                        
+                        <div id="menu">
+                            {
+                                this.state.alimentos
+                                    ?<GatsbyImage
+                                        
+                                        className={`${this.state.alimentos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                        image={food}
+                                        alt="Alimentos"
+                                    />
+                                    : ''
+                            }
+                            {
+                                this.state.bebidas
+                                ?<GatsbyImage
+                                    className={`${this.state.bebidas? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={drinks}
+                                    alt="Alimentos"
+                                />
+                                :''
+                            }
+                            
+                            {
+                                this.state.desayunos
+                                ? <GatsbyImage
+                                    className={`${this.state.desayunos? 'block' : 'hidden'} sm:max-w-screen-sm`}
+                                    image={breakfast}
+                                    alt="Alimentos"
+                                />
+                                :''
+                            }
+                        </div>
+                        <GatsbyImage
+                            className={`sm:max-w-screen-sm mx-auto`}
+                            image={footerEn}
+                            alt="socials"
+                        />
                     </div>
                 </div>
             </Layout>
@@ -188,7 +226,7 @@ export default Menu
 
 export const query = graphql`
     query{
-        alimentos: file(relativePath: {eq: "menu-alimentos-esp.jpg"}) {
+        alimentos: file(relativePath: {eq: "alimentos-es.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
@@ -199,7 +237,7 @@ export const query = graphql`
                 )
             }
         }
-        bebidas: file(relativePath: {eq: "bebidas-es.jpg"}) {
+        bebidas: file(relativePath: {eq: "bebida-es.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
@@ -210,7 +248,7 @@ export const query = graphql`
                 )
             }
         }
-        desayunos: file(relativePath: {eq: "desayunos-es.jpg"}) {
+        desayunos: file(relativePath: {eq: "desayuno-es.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
@@ -221,7 +259,7 @@ export const query = graphql`
                 )
             }
         }
-        food: file(relativePath: {eq: "food-menu.jpg"}) {
+        food: file(relativePath: {eq: "comida-en.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
@@ -232,7 +270,7 @@ export const query = graphql`
                 )
             }
         }
-        drinks: file(relativePath: {eq: "drinks-en.jpg"}) {
+        drinks: file(relativePath: {eq: "drink-en.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
@@ -243,7 +281,51 @@ export const query = graphql`
                 )
             }
         }
-        breakfast: file(relativePath: {eq: "breakfast-en.jpg"}) {
+        breakfast: file(relativePath: {eq: "bf-en.jpg"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 640
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        footerEn: file(relativePath: {eq: "footer-en.jpg"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 640
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        coverEn: file(relativePath: {eq: "cover-en.jpg"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 640
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        coverEs: file(relativePath: {eq: "portada-es.jpg"}) {
+            childImageSharp {
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 640
+                    placeholder: BLURRED 
+                    formats: [WEBP]
+                    quality: 100
+                )
+            }
+        }
+        footerEs: file(relativePath: {eq: "footer-es.jpg"}) {
             childImageSharp {
                 gatsbyImageData(
                     layout: CONSTRAINED
